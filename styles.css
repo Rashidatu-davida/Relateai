@@ -443,7 +443,7 @@ section { padding: 80px 0; }
 =================================================== */
 .hero {
   position: relative;
-  padding: 50px 0 55px;
+  padding: 40px 0 45px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1400,7 +1400,7 @@ section { padding: 80px 0; }
 
   .hero {
     min-height: auto;
-    padding: 60px 0 70px;
+    padding: 16px 0 36px;
   }
 
   /* Hide bg image & overlay on small screens */
@@ -1448,7 +1448,7 @@ section { padding: 80px 0; }
 
   .hero {
     min-height: auto;
-    padding: 70px 0 80px;
+    padding: 24px 0 44px;
   }
 
   /* Show image but abbreviated */
