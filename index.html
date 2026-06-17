@@ -1,442 +1,587 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="description"
-content="RelateAI builds simple online tools that help people create, celebrate and share meaningful moments.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RelateAiMake someone's day. In seconds.</title>
+  <meta name="description" content="RelateAi builds simple online tools that help people create, celebrate and share meaningful moments. Try our free Greetings Generator today.">
 
-<meta property="og:title"
-content="RelateAI">
+  <!-- Open Graph -->
+  <meta property="og:title" content="RelateAiMake someone's day. In seconds.">
+  <meta property="og:description" content="Simple tools. Automated assistance. Zero friction.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://useRelateAi.com">
 
-<meta property="og:description"
-content="Simple tools. Automated assistance. Zero friction.">
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-<meta property="og:type"
-content="website">
+  <!-- Fonts: Poppins (headings) + Nunito (body) -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Font Awesome 6 Free -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
+<!-- ============================
+     NAVBAR
+============================= -->
+<header class="navbar" id="navbar">
+  <div class="container nav-container">
 
-<header class="navbar">
+    <a href="#" class="logo" aria-label="RelateAi Home">
+      <img src="assets/logo.png" alt="RelateAi" onerror="this.style.display='none';document.getElementById('logo-fallback').style.display='inline'">
+      <span id="logo-fallback" class="logo-fallback" style="display:none">Relate<strong>Ai</strong></span>
+    </a>
 
-<div class="container nav-container">
+    <nav class="desktop-nav" role="navigation" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#faq">FAQs</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<a href="#" class="logo">
-<img src="assets/logo.png" alt="RelateAI">
-</a>
+    <div class="nav-right">
+      <a href="https://greetings-generator-ten.vercel.app/" class="nav-cta" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+        <span>Try Free</span>
+      </a>
+      <button class="mobile-menu-btn" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <i class="fa-solid fa-bars" id="menu-icon" aria-hidden="true"></i>
+      </button>
+    </div>
 
-<nav class="desktop-nav">
+  </div>
 
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#faq">FAQs</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-<button class="mobile-menu-btn">
-☰
-</button>
-
-</div>
-
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="container">
+      <a href="#about" class="mobile-nav-link">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i> About
+      </a>
+      <a href="#products" class="mobile-nav-link">
+        <i class="fa-solid fa-box-open" aria-hidden="true"></i> Products
+      </a>
+      <a href="#faq" class="mobile-nav-link">
+        <i class="fa-solid fa-circle-question" aria-hidden="true"></i> FAQs
+      </a>
+      <a href="#contact" class="mobile-nav-link">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact
+      </a>
+      <a href="https://greetings-generator-ten.vercel.app/" class="mobile-nav-link mobile-nav-cta" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Try Greetings GeneratorFree
+      </a>
+    </div>
+  </nav>
 </header>
 
-<!-- HERO -->
 
-<section class="hero">
+<!-- ============================
+     HERO
+============================= -->
+<section class="hero" aria-label="Hero">
+  <!-- Right-side background imagegradient fades it into the text side -->
+  <div class="hero-bg-image" style="background-image:url('assets/happy-people.jpg')" role="presentation" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
 
-<div class="container hero-grid">
+  <div class="container hero-inner">
+    <div class="hero-content animate-in">
 
-<div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        Built for simplicity
+      </div>
 
-<div class="hero-badge">
-Built for simplicity
-</div>
+      <h1>
+        <span class="red">Instant</span> tools.<br>
+        Built for real life.<br>
+        <span class="teal">Zero friction.</span>
+      </h1>
 
-<h1>
+      <p class="hero-desc">
+        RelateAi builds lightweight tools that help people connect and celebrate everyday moments. Try our first productthe Greetings Generatorfree, no sign-up, ready in seconds.
+      </p>
 
-<span class="red">Instant</span>
-Tools.
-
-<br>
-
-<span class="orange">Automated</span>
-Assistance.
-
-<br>
-
-<span class="teal">Zero Friction.</span>
-
-</h1>
-
-<p>
-
-From personalized greeting generators to future productivity tools,
-RelateAI creates lightweight experiences that help people get things done faster.
-
-</p>
 
 <div class="hero-buttons">
-
-<a href="/greetings" class="primary-btn">
-Try Greetings Generator
-</a>
-
-<a href="#products" class="secondary-btn">
-Explore Products
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img
-src="assets/happy-people.jpg"
-alt="People celebrating together"
->
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-
-<div class="container">
-
-<div class="section-header">
-
-<h2>About RelateAI</h2>
-
-<p>
-Simple tools designed to solve everyday problems.
-</p>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-card">
-
-<div class="card-icon">⚡</div>
-
-<h3>Fast</h3>
-
-<p>
-No sign-ups. No waiting.
-Get results instantly.
-</p>
-
-</div>
-
-<div class="about-card">
-
-<div class="card-icon">🎁</div>
-
-<h3>Free</h3>
-
-<p>
-Most tools are free and accessible to everyone.
-</p>
-
-</div>
-
-<div class="about-card">
-
-<div class="card-icon">✨</div>
-
-<h3>Simple</h3>
-
-<p>
-Built for everyday people, not technical experts.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PRODUCTS -->
-
-<section id="products" class="products">
-
-<div class="container">
-
-<div class="section-header">
-
-<h2>Our Products</h2>
-
-<p>
-Useful tools built with simplicity in mind.
-</p>
-
-</div>
-
-<div class="products-grid">
-
-<a href="/greetings" class="product-card greetings-card">
-
-<div class="product-icon">
-🎉
-</div>
-
-<h3>Greetings Generator</h3>
-
-<p>
-
-Generate personalized wishes for:
-
-Birthdays,
-Christmas,
-Easter,
-Mother's Day,
-Father's Day,
-Eid,
-New Year,
-and Happy Holidays.
-
-</p>
-
-<span>
-Open Tool →
-</span>
-
-</a>
-
-</div>
-
-<div class="coming-soon">
-
-More tools coming soon.
-
-</div>
-
-</div>
-
-</section>
-
-<!-- WHY US -->
-
-<section class="why-us">
-
-<div class="container">
-
-<div class="section-header">
-
-<h2>Why Choose RelateAI?</h2>
-
-</div>
-
-<div class="why-grid">
-
-<div>
-<h3>Human First</h3>
-<p>
-We focus on solving real problems for real people.
-</p>
-</div>
-
-<div>
-<h3>Fast Results</h3>
-<p>
-Most tools work within seconds.
-</p>
-</div>
-
-<div>
-<h3>No Complexity</h3>
-<p>
-Easy interfaces anyone can understand.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FAQ -->
-
-<section id="faq" class="faq">
-
-<div class="container">
-
-<div class="section-header">
-
-<h2>Frequently Asked Questions</h2>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Is Greetings Generator free?
-</button>
-
-<div class="faq-answer">
-Yes. You can create greetings without creating an account.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Can I upload a photo?
-</button>
-
-<div class="faq-answer">
-Yes. Photos are optional and can be added to your greeting.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do I need an account?
-</button>
-
-<div class="faq-answer">
-No account is required.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Will more tools be added?
-</button>
-
-<div class="faq-answer">
-Yes. Greetings Generator is only the beginning.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<div class="container">
-
-<div class="section-header">
-
-<h2>Let's Stay Connected</h2>
-
-<p>
-
-Have a suggestion, feedback or idea?
-
-We'd love to hear from you.
-
-</p>
-
-</div>
-
-<form class="contact-form">
-
-<input
-type="text"
-placeholder="Your Name"
->
-
-<input
-type="email"
-placeholder="Email Address"
->
-
-<textarea
-placeholder="Message"
-rows="5"
-></textarea>
-
-<button type="submit">
-
-Send Message
-
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<section class="cta-section">
-
-    <div class="container">
-
-        <h2>
-            Ready to Create a Personalized Greeting?
-        </h2>
-
-        <p>
-            Celebrate birthdays, holidays, and special moments in seconds.
-        </p>
-
-        <a href="/greetings" class="primary-btn">
-            Open Greetings Generator
+        <a href="https://greetings-generator-ten.vercel.app/" class="primary-btn" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+          Try Greetings Generator
         </a>
+        <a href="#products" class="secondary-btn">
+          <i class="fa-solid fa-compass" aria-hidden="true"></i>
+          Explore Products
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ============================
+     STATS
+============================= -->
+<section class="stats-section" aria-label="RelateAi by the numbers">
+  <div class="container">
+
+    <div class="section-header animate-in">
+      <span class="stats-tag">By the numbers</span>
+      <h2 class="stats-heading">RelateAi, in numbers</h2>
+      <p class="stats-sub">Real impact from simple tools — here's what we've built so far.</p>
+    </div>
+
+    <div class="stats-grid">
+
+      <div class="stat-item animate-in" data-count="1" data-suffix="">
+        <div class="stat-icon"><i class="fa-solid fa-box-open" aria-hidden="true"></i></div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Product Live</div>
+        <div class="stat-note">more on the way</div>
+      </div>
+
+      <div class="stat-item animate-in" data-count="12400" data-suffix="+">
+        <div class="stat-icon"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i></div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Greetings Sent</div>
+        <div class="stat-note">and counting</div>
+      </div>
+
+      <div class="stat-item animate-in" data-count="8" data-suffix="">
+        <div class="stat-icon"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Occasions Covered</div>
+        <div class="stat-note">birthday to Eid</div>
+      </div>
+
+      <div class="stat-item animate-in" data-count="45" data-suffix="s">
+        <div class="stat-icon"><i class="fa-solid fa-stopwatch" aria-hidden="true"></i></div>
+        <div class="stat-number">0</div>
+        <div class="stat-label">Avg. Time to Done</div>
+        <div class="stat-note">no account needed</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     ABOUT
+============================= -->
+<section id="about" class="about" aria-labelledby="about-heading">
+  <div class="container">
+
+    <div class="section-header animate-in">
+      <span class="section-tag">About RelateAi</span>
+      <h2 id="about-heading">Simple tools designed to solve<br class="br-desktop"> everyday problems</h2>
+      <p>We believe the best tools get out of your way and help you do what matters.</p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card animate-in">
+        <div class="card-icon red-icon">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        </div>
+        <h3>Fast</h3>
+        <p>No sign-ups. No waiting. Get results instantlyin seconds, not minutes.</p>
+      </div>
+
+      <div class="about-card animate-in">
+        <div class="card-icon orange-icon">
+          <i class="fa-solid fa-gift" aria-hidden="true"></i>
+        </div>
+        <h3>Free</h3>
+        <p>Most tools are completely free and accessible to everyone, always.</p>
+      </div>
+
+      <div class="about-card animate-in">
+        <div class="card-icon teal-icon">
+          <i class="fa-solid fa-star" aria-hidden="true"></i>
+        </div>
+        <h3>Simple</h3>
+        <p>Built for everyday people, not technical experts. No learning curve needed.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     PRODUCTS
+============================= -->
+<section id="products" class="products" aria-labelledby="products-heading">
+  <div class="container">
+
+    <div class="section-header animate-in">
+      <span class="section-tag">Our Products</span>
+      <h2 id="products-heading">Check Out Our Products</h2>
+      <p>
+        Useful tools built with simplicity in mindready to use in seconds.
+        Start with our
+        <a href="https://greetings-generator-ten.vercel.app/" class="inline-link" target="_blank" rel="noopener noreferrer">Greetings Generator</a>.
+      </p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Greetings Generator card -->
+      <a href="https://greetings-generator-ten.vercel.app/"
+         class="product-card greetings-card animate-in"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="Open Greetings Generator tool">
+
+        <div class="product-card-header">
+          <div class="product-icon">
+            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+          </div>
+          <span class="product-badge live-badge">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            Live Now
+          </span>
+        </div>
+
+        <h3>Greetings Generator</h3>
+        <p>Create personalized wishes for your loved ones. Powered by heartfelt messages with photo uploads, Spotify songs, and shareable links.</p>
+
+        <ul class="product-features" aria-label="Supported occasions">
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Birthday</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Christmas</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Easter</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Mother's Day</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Father's Day</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Eid</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> New Year</li>
+          <li><i class="fa-solid fa-check" aria-hidden="true"></i> Happy Holidays</li>
+        </ul>
+
+        <span class="product-cta">
+          Go There <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </span>
+
+      </a>
+
+      <!-- Coming Soon card -->
+      <div class="product-card coming-soon-card animate-in" aria-label="More tools coming soon">
+
+        <div class="product-card-header">
+          <div class="product-icon coming-icon">
+            <i class="fa-solid fa-flask" aria-hidden="true"></i>
+          </div>
+          <span class="product-badge coming-badge">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            Coming Soon
+          </span>
+        </div>
+
+        <h3>More Tools</h3>
+        <p>We're building new lightweight tools to help you with everyday moments. Stay tunedsomething great is on the way.</p>
+
+        <span class="coming-soon-label">In development <span class="dots-anim">···</span></span>
+
+      </div>
 
     </div>
 
+  </div>
 </section>
 
-<!-- FOOTER -->
 
-<footer class="footer">
+<!-- ============================
+     WHY CHOOSE RelateAi
+============================= -->
+<section class="why-us" aria-labelledby="why-heading">
+  <div class="container">
 
-<div class="container">
+    <div class="section-header animate-in">
+      <span class="section-tag">Why RelateAi</span>
+      <h2 id="why-heading">Why Choose RelateAi?</h2>
+      <p>Everything we build is designed around one ideatools should work for you, not the other way around.</p>
+    </div>
 
-<img
-src="assets/logo.png"
-alt="RelateAI"
-class="footer-logo"
->
+    <div class="why-grid">
 
-<div class="footer-links">
+      <div class="why-card animate-in">
+        <span class="why-number" aria-hidden="true">01</span>
+        <div class="why-icon">
+          <i class="fa-solid fa-heart" aria-hidden="true"></i>
+        </div>
+        <h3>Human First</h3>
+        <p>We focus on solving real problems for real people. No bloat, no dark patternsjust tools that do exactly what they say.</p>
+      </div>
 
-<a href="#">Privacy Policy</a>
-<a href="#">Terms of Service</a>
-<a href="#contact">Contact</a>
+      <div class="why-card animate-in">
+        <span class="why-number" aria-hidden="true">02</span>
+        <div class="why-icon orange-why">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+        </div>
+        <h3>Fast Results</h3>
+        <p>Most tools work within seconds. We obsess over speed and simplicity so you spend time on what matters, not the tool.</p>
+      </div>
 
-</div>
+      <div class="why-card animate-in">
+        <span class="why-number" aria-hidden="true">03</span>
+        <div class="why-icon teal-why">
+          <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+        </div>
+        <h3>No Complexity</h3>
+        <p>Clean, easy interfaces that anyone can understand. If it needs a tutorial, we redesign it until it doesn't.</p>
+      </div>
 
-<p>
+    </div>
+  </div>
+</section>
 
-© 2026 RelateAI. All rights reserved.
 
-</p>
+<!-- ============================
+     FAQ
+============================= -->
+<section id="faq" class="faq" aria-labelledby="faq-heading">
+  <div class="container">
 
-</div>
+    <div class="section-header animate-in">
+      <span class="section-tag">FAQ</span>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <p>Everything you need to know about RelateAi and our tools.</p>
+    </div>
 
+    <div class="faq-list" role="list">
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is the Greetings Generator free?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes! You can create personalized greetings without creating an account or paying anything. It's completely free to use.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I upload a photo?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. Photos are optional and add a personal touch to your greeting. Supported formats: PNG and JPG up to 10MB.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Do I need an account to use the tools?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>No account is required. Just visit the tool, fill in a name, and generate your greetingthat's it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I share my greeting with someone?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Absolutely! After generating a greeting, you'll get a shareable link you can send via WhatsApp, SMS, email, or any platform you prefer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I add a song to my greeting?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes! Paste a Spotify track link in the form and it will be embedded alongside the greeting message for the recipient to hear.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item animate-in" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span>Will more tools be added?</span>
+          <i class="fa-solid fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-answer" role="region">
+          <div class="faq-answer-inner">
+            <p>Yes. The Greetings Generator is only the beginning. We're working on more useful toolsstay tuned!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     CONTACT
+============================= -->
+<section id="contact" class="contact" aria-labelledby="contact-heading">
+  <div class="container">
+
+    <div class="section-header animate-in">
+      <span class="section-tag">Contact</span>
+      <h2 id="contact-heading">Let's Stay Connected</h2>
+      <p>Have a suggestion, feedback, or idea? We'd love to hear from you.</p>
+    </div>
+
+    <div class="social-links">
+      <a href="#" class="social-link instagram-link">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="#" class="social-link twitter-link">
+        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+        <span>Twitter / X</span>
+      </a>
+      <a href="mailto:hello@useRelateAi.com" class="social-link email-link">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+        <span>Email us</span>
+      </a>
+    </div>
+    <p class="or-divider">— or leave a message —</p>
+
+    <form class="contact-form animate-in" id="contact-form" novalidate aria-label="Contact form">
+
+      <div class="form-group">
+        <label for="contact-email">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          Email Address
+        </label>
+        <input
+          type="email"
+          id="contact-email"
+          name="email"
+          placeholder="e.g. alex@email.com"
+          autocomplete="email"
+          aria-required="true"
+          aria-describedby="email-error"
+        >
+        <span class="field-error" id="email-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="contact-message">
+          <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
+          Message
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
+          placeholder="Share your thoughts, ideas, or questions..."
+          rows="5"
+          aria-required="true"
+          aria-describedby="message-error"
+        ></textarea>
+        <span class="field-error" id="message-error" role="alert" aria-live="polite"></span>
+      </div>
+
+      <button type="submit" class="contact-submit-btn" id="submit-btn">
+        Send it
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </button>
+
+      <div class="form-success" id="form-success" style="display:none" role="status" aria-live="polite">
+        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+        <span><strong>Message sent!</strong> Thank you for reaching out. We'll get back to you soon.</span>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+
+<!-- ============================
+     CTA SECTION
+============================= -->
+<section class="cta-section" aria-labelledby="cta-heading">
+  <div class="container">
+    <div class="cta-inner animate-in">
+
+      <div class="cta-icon" aria-hidden="true">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+      </div>
+
+      <h2 id="cta-heading">Ready to try your first RelateAi tool?</h2>
+
+      <p>Start with the Greetings Generatorfree, no sign-up, done in seconds.</p>
+
+      <a href="https://greetings-generator-ten.vercel.app/" class="cta-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        Open Greetings GeneratorFree
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================
+     FOOTER
+============================= -->
+<footer class="footer" aria-label="Site footer">
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      <a href="#" class="footer-logo-link" aria-label="RelateAi back to top">
+        <img src="assets/logo.png" alt="RelateAi"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline'">
+        <span class="logo-fallback footer-logo-text" style="display:none">Relate<strong>Ai</strong></span>
+      </a>
+      <p>Simple tools. Automated assistance. Zero friction.</p>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Tools</h4>
+      <a href="https://greetings-generator-ten.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+        Greetings Generator
+      </a>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-nav">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 RelateAi. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
 
-<script src="script.js"></script>
 
+<script src="script.js"></script>
 </body>
 </html>
