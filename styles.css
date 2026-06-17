@@ -59,7 +59,7 @@ section{
 }
 
 h1,h2,h3,h4{
-    font-family:'Poppins',sans-serif;
+    font-family:'Poppins',Nunito;
     color:#333333;
 }
 
@@ -395,7 +395,7 @@ p{
 
 .cta-section{
     background:#4b5563);
-    color:#ffffff;
+    color:#333333;
     text-align:center;
     padding:90px 20px;
 }
