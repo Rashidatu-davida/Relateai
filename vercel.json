@@ -1,12 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/greetings-generator",
-      "destination": "https://greetings-generator-ten.vercel.app"
-    },
-    {
-      "source": "/greetings-generator/:path*",
-      "destination": "https://greetings-generator-ten.vercel.app/:path*"
+      "destination": "https://greetings-generator-ten.vercel.app",
+      "permanent": false
     }
   ]
 }
