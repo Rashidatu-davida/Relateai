@@ -1292,7 +1292,7 @@ section { padding: 80px 0; }
    FOOTER
 =================================================== */
 .footer {
-  background: #111827;
+  background: linear-gradient(135deg, #005f6b 0%, #004d57 60%, #003d47 100%);
   color: white;
   padding: 60px 0 0;
 }
@@ -1326,7 +1326,7 @@ section { padding: 80px 0; }
 .footer-logo-text strong { color: var(--red); }
 
 .footer-brand p {
-  color: #9ca3af;
+  color: rgba(255,255,255,.6);
   font-size: .91rem;
   max-width: 220px;
 }
@@ -1341,6 +1341,7 @@ section { padding: 80px 0; }
   font-family: 'Poppins', sans-serif;
   font-size: .8rem;
   font-weight: 700;
+  color: rgba(255,255,255,.9);
   color: #9ca3af;
   text-transform: uppercase;
   letter-spacing: .07em;
@@ -1348,7 +1349,7 @@ section { padding: 80px 0; }
 }
 
 .footer-nav a {
-  color: #6b7280;
+  color: rgba(255,255,255,.55);
   font-size: .9rem;
   display: flex;
   align-items: center;
@@ -1360,12 +1361,12 @@ section { padding: 80px 0; }
 .footer-nav a i { font-size: .8rem; }
 
 .footer-bottom {
-  border-top: 1px solid #1f2937;
+  border-top: 1px solid rgba(255,255,255,.15);
   padding: 20px 0;
 }
 
 .footer-bottom p {
-  color: #4b5563;
+  color: rgba(255,255,255,.4);
   font-size: .84rem;
   text-align: center;
 }
