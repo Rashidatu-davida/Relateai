@@ -1,0 +1,267 @@
+/* ===================================================
+   LEGAL PAGES — privacy.html / terms pages
+   Shared styles for hero, cards, footer
+=================================================== */
+
+/* ── PAGE HERO ── */
+.terms-hero {
+  background: linear-gradient(135deg, #005f6b 0%, #004d57 60%, #003d47 100%);
+  padding: 72px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.terms-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 50% 100%, rgba(255,100,0,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.terms-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.1);
+  color: rgba(255,255,255,.85);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+.terms-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: #fff;
+  margin-bottom: 14px;
+}
+.terms-hero h1 span { color: var(--orange); }
+.terms-hero-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.55);
+  font-size: .88rem;
+}
+.terms-hero-meta i { color: var(--orange); }
+
+/* ── QUICK SUMMARY CHIPS ── */
+.terms-summary {
+  background: var(--light);
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+.summary-label {
+  text-align: center;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--subtext);
+  margin-bottom: 18px;
+}
+.summary-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.summary-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  color: #444;
+  transition: border-color .2s, color .2s;
+}
+.summary-chip i { color: var(--teal); font-size: .8rem; }
+.summary-chip:hover { border-color: var(--teal); color: var(--teal); }
+
+/* ── SECTIONS ── */
+.terms-body { padding: 72px 0 100px; }
+.terms-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── CARD ── */
+.terms-card {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 32px 36px;
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 0 20px;
+  align-items: start;
+  transition: box-shadow .25s ease, border-color .25s ease;
+}
+.terms-card:hover {
+  box-shadow: 0 6px 28px rgba(0,0,0,.07);
+  border-color: #d0d5dd;
+}
+.terms-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.icon-teal   { background: var(--teal-light); color: var(--teal); }
+.icon-red    { background: #fff0ef; color: var(--red); }
+.icon-orange { background: var(--orange-light); color: var(--orange); }
+
+.terms-card-body { min-width: 0; }
+.terms-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.terms-num {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  background: var(--orange-light);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.terms-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222;
+  margin: 0;
+}
+.terms-card p {
+  font-size: .93rem;
+  color: #555;
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+.terms-card p:last-child { margin-bottom: 0; }
+
+.terms-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.terms-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: .91rem;
+  color: #555;
+  line-height: 1.7;
+}
+.terms-list li i {
+  color: var(--teal);
+  margin-top: 4px;
+  flex-shrink: 0;
+  font-size: .78rem;
+}
+
+.terms-important {
+  background: #fff8f0;
+  border-left: 4px solid var(--orange);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin-top: 12px;
+  font-size: .88rem;
+  color: #555;
+  line-height: 1.7;
+}
+.terms-important strong { color: var(--orange); }
+
+.terms-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.terms-contact-row a {
+  color: var(--teal);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.terms-contact-row i { color: var(--orange); }
+
+/* ── BACK TO TOP ── */
+.back-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,136,145,.35);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .3s, transform .3s, background .2s;
+  z-index: 900;
+}
+.back-top.show { opacity: 1; transform: translateY(0); }
+.back-top:hover { background: #006670; }
+
+/* ── FOOTER ── */
+.terms-footer {
+  background: linear-gradient(135deg, #005f6b 0%, #004d57 60%, #003d47 100%);
+  padding: 36px 0;
+  text-align: center;
+}
+.terms-footer p { color: rgba(255,255,255,.5); font-size: .82rem; margin-bottom: 8px; }
+.terms-footer a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
+.terms-footer-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+.terms-footer-links a {
+  color: rgba(255,255,255,.55);
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s;
+}
+.terms-footer-links a:hover { color: #fff; }
+
+/* ── MOBILE ── */
+@media (max-width: 640px) {
+  .terms-hero { padding: 52px 0 60px; }
+  .terms-body { padding: 48px 0 80px; }
+  .terms-card {
+    grid-template-columns: 1fr;
+    padding: 24px 20px;
+  }
+  .terms-card-icon { margin-bottom: 14px; }
+  .terms-card h2 { font-size: 1rem; }
+  .back-top { bottom: 20px; right: 16px; }
+}
