@@ -53,17 +53,17 @@
   --floating2:     #16a34a22;
   --floating3:     #fbbf2420;
 }
-.theme-easter {
-  --page-bg:       #faf8f4;
+.theme-easter{
+  --page-bg:       #fcfaf6;
   --card-bg:       #ffffff;
-  --card-border:   #ede8e0;
-  --primary:       #ff6d02;
-  --primary-hover: #d37d00;
-  --secondary:     #00aeba;
-  --accent:        #ff0259;
-  --floating1:     #ff6d0220;
-  --floating2:     #00aeba20;
-  --floating3:     #ff025920;
+  --card-border:   #ece7dc;
+  --primary:       #8e7cc3;
+  --primary-hover: #7a69ac;
+  --secondary:     #7ec8b8;
+  --accent:        #ffb5a7;
+  --floating1:     #8e7cc320;
+  --floating2:     #7ec8b820;
+  --floating3:     #ffb5a720;
 }
 .theme-mothers {
   --page-bg:       #fff8fa;
