@@ -248,3 +248,115 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+
+/* ================================================
+   HERO CAROUSEL — rotates every 6 seconds
+================================================ */
+const heroSlides = [
+  {
+    badge:       'Made for real moments',
+    keyword:     'meaningful',
+    desc:        'RelateAi helps you create <strong>heartfelt greetings</strong> with photos, songs, and personal touches — <strong>instantly, effortlessly</strong>, and for free.',
+    cardTitle:   'Happy Birthday! 🎂',
+    cardMsg:     'Wishing you endless joy and amazing moments! ❤️',
+    cardHeaderBg:'linear-gradient(135deg, #fff5f3, #ffddd8)',
+    cardImg:     'assets/1.jpg',
+    musicTrack:  'Happy',
+    musicArtist: 'Pharrell Williams'
+  },
+  {
+    badge:       'Celebrate every occasion',
+    keyword:     'special',
+    desc:        'From weddings to anniversaries, RelateAi makes it effortless to send <strong>personalized greetings</strong> that truly resonate.',
+    cardTitle:   'Happy Anniversary! 💍',
+    cardMsg:     'Every day with you is a blessing. Here\'s to forever! 🥂',
+    cardHeaderBg:'linear-gradient(135deg, #fff0f5, #ffd6e8)',
+    cardImg:     'assets/3.jpg',
+    musicTrack:  'Perfect',
+    musicArtist: 'Ed Sheeran'
+  },
+  {
+    badge:       'Zero friction, all heart',
+    keyword:     'effortless',
+    desc:        'Pick an occasion, add a personal touch, and share — <strong>no sign-up, no waiting</strong>. RelateAi does the heavy lifting so you can focus on what matters.',
+    cardTitle:   'Eid Mubarak! 🌙',
+    cardMsg:     'May this Eid bring peace, joy, and countless blessings! ✨',
+    cardHeaderBg:'linear-gradient(135deg, #fffbf0, #ffecc0)',
+    cardImg:     'assets/2.jpeg',
+    musicTrack:  'Eid Medley',
+    musicArtist: 'Various Artists'
+  },
+  {
+    badge:       'Done in seconds',
+    keyword:     'instant',
+    desc:        'RelateAi generates <strong>beautiful, personalized greetings</strong> in under a minute — ready to share with just one tap.',
+    cardTitle:   'Happy Holidays! 🎄',
+    cardMsg:     'Wishing you warmth, laughter, and all the good things! 🎁',
+    cardHeaderBg:'linear-gradient(135deg, #f0fff8, #c8f0de)',
+    cardImg:     'assets/1.jpg',
+    musicTrack:  'All I Want for Christmas',
+    musicArtist: 'Mariah Carey'
+  }
+];
+
+let heroIdx   = 0;
+let heroTimer = null;
+
+function goToHeroSlide(idx) {
+  const slide  = heroSlides[idx];
+  const card   = document.getElementById('hero-card');
+  const header = document.getElementById('hero-card-header');
+  const title  = document.getElementById('hero-card-title');
+  const msg    = document.getElementById('hero-card-msg');
+  const track  = document.getElementById('hero-music-track');
+  const artist = document.getElementById('hero-music-artist');
+
+  if (card) card.style.opacity = '0.6';
+
+  setTimeout(() => {
+    if (header) header.style.background = slide.cardHeaderBg;
+    if (title)  title.textContent       = slide.cardTitle;
+    if (msg)    msg.textContent         = slide.cardMsg;
+    if (track)  track.textContent       = slide.musicTrack;
+    if (artist) artist.textContent      = slide.musicArtist;
+    const imgEl   = document.getElementById('hero-card-img');
+    const thumbEl = document.getElementById('hero-music-thumb');
+    if (imgEl)   imgEl.src   = slide.cardImg;
+    if (thumbEl) thumbEl.src = slide.cardImg;
+    if (card)    card.style.opacity = '1';
+  }, 260);
+
+  // Update dots
+  document.querySelectorAll('.cdot').forEach((dot, i) => {
+    const active = i === idx;
+    dot.classList.toggle('active', active);
+    dot.setAttribute('aria-selected', String(active));
+  });
+
+  heroIdx = idx;
+}
+
+function startHeroCarousel() {
+  heroTimer = setInterval(() => {
+    goToHeroSlide((heroIdx + 1) % heroSlides.length);
+  }, 6000);
+}
+
+// Dot click
+document.querySelectorAll('.cdot').forEach((dot, i) => {
+  dot.addEventListener('click', () => {
+    clearInterval(heroTimer);
+    goToHeroSlide(i);
+    startHeroCarousel();
+  });
+});
+
+// Pause on hover
+const heroVisualEl = document.querySelector('.hero-visual');
+if (heroVisualEl) {
+  heroVisualEl.addEventListener('mouseenter', () => clearInterval(heroTimer));
+  heroVisualEl.addEventListener('mouseleave', startHeroCarousel);
+}
+
+startHeroCarousel();
