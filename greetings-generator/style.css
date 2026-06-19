@@ -89,29 +89,29 @@
   --floating2:     #ff6d0220;
   --floating3:     #dfb40020;
 }
-.theme-eid {
-  --page-bg:       #f0f9ff;
+.theme-eid{
+  --page-bg:       #f9fcf8;
   --card-bg:       #ffffff;
-  --card-border:   #bae6fd;
-  --primary:       #0ea5e9;
-  --primary-hover: #0284c7;
-  --secondary:     #d4a017;
-  --accent:        #fbbf24;
-  --floating1:     #0ea5e922;
-  --floating2:     #d4a01722;
-  --floating3:     #fbbf2420;
+  --card-border:   #dfe9e0;
+  --primary:       #0c8745;
+  --primary-hover: #08582d;
+  --secondary:     #dfb400;
+  --accent:        #ff6d02;
+  --floating1:     #0c874520;
+  --floating2:     #dfb40020;
+  --floating3:     #ff6d0220;
 }
-.theme-newyear {
-  --page-bg:       #fdf4ff;
+.theme-newyear{
+  --page-bg:       #fffbf5;
   --card-bg:       #ffffff;
-  --card-border:   #e9d5ff;
-  --primary:       #9333ea;
-  --primary-hover: #7e22ce;
-  --secondary:     #f59e0b;
-  --accent:        #dc2626;
-  --floating1:     #9333ea25;
-  --floating2:     #f59e0b25;
-  --floating3:     #dc262620;
+  --card-border:   #f4ead0;
+  --primary:       #ff6d02;
+  --primary-hover: #ff4002;
+  --secondary:     #dfb400;
+  --accent:        #ff0259;
+  --floating1:     #ff6d0220;
+  --floating2:     #dfb40020;
+  --floating3:     #ff025920;
 }
 .theme-holidays {
   --page-bg:       #f8f8f6;
