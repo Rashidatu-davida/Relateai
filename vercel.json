@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/greetings-generator",
+      "destination": "https://greetings-generator-ten.vercel.app",
+      "permanent": false
+    }
+  ]
+}
