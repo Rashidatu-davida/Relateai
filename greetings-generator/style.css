@@ -78,14 +78,14 @@
   --floating3:     #dfb40020;
 }
 .theme-fathers{
-  --page-bg:       #f8faf8;
+  --page-bg:       #faf8f4;
   --card-bg:       #ffffff;
-  --card-border:   #d8e8dd;
-  --primary:       #0c8745;
-  --primary-hover: #08582d;
+  --card-border:   #ece6da;
+  --primary:       #333333;
+  --primary-hover: #222222;
   --secondary:     #ff6d02;
   --accent:        #dfb400;
-  --floating1:     #0c874520;
+  --floating1:     #33333315;
   --floating2:     #ff6d0220;
   --floating3:     #dfb40020;
 }
@@ -96,10 +96,10 @@
   --primary:       #0c8745;
   --primary-hover: #08582d;
   --secondary:     #dfb400;
-  --accent:        #ff6d02;
+  --accent:        #008891;
   --floating1:     #0c874520;
   --floating2:     #dfb40020;
-  --floating3:     #ff6d0220;
+  --floating3:     #00889120;
 }
 .theme-newyear{
   --page-bg:       #fffbf5;
