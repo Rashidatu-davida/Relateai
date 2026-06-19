@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greetings Generator App</title>
+  <meta name="description" content="Create personalized, elegant birthday and occasion wishes in seconds. Free, no sign-up required." />
+  <meta name="theme-color" content="#0d1117" />
+  <!-- Preconnect to external CDNs so connections start immediately -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <!-- App styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Instantly hide create screen if this is a shared link — runs before first paint -->
+  <script>if(location.search.includes('id='))document.documentElement.classList.add('is-shared');</script>
+  <!-- Scripts — defer so they download in parallel without blocking render -->
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script defer src="firebase.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="app">
+
+    <!-- ===================== CREATE SCREEN ===================== -->
+    <div id="create-screen" class="screen">
+      <div class="floating-elements" id="create-floats" aria-hidden="true"></div>
+
+      <div class="screen-inner">
+        <!-- Theme Carousel -->
+        <div class="carousel-wrap" role="group" aria-label="Select occasion">
+          <button class="carousel-btn" id="prev-btn" aria-label="Previous occasion theme">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="carousel-label-wrap">
+            <p class="by-relateai" id="by-relateai"><span class="by-word">by</span><span class="relateai-word">RelateAi</span></p>
+            <div class="carousel-label" id="carousel-label">
+              <span class="carousel-emoji" id="carousel-emoji"></span>
+              <span class="carousel-text" id="carousel-text"></span>
+            </div>
+          </div>
+          <button class="carousel-btn" id="next-btn" aria-label="Next occasion theme">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Occasion themes"></div>
+
+        <!-- Heading -->
+        <div class="heading-wrap">
+          <h1 class="main-heading" id="create-heading">
+            <span class="heading-line1" id="heading-line1"></span>
+            <span class="heading-line2" id="heading-line2"></span>
+          </h1>
+          <p class="heading-sub" id="heading-sub">Turn a simple name and photo into a beautiful personalized greeting in seconds.</p>
+        </div>
+
+        <!-- Form Card -->
+        <form class="glass-card create-form" id="create-form" novalidate>
+          <!-- Name input -->
+          <div class="form-group">
+            <label class="field-label" for="name-input">Enter Name</label>
+            <input
+              type="text"
+              class="name-input"
+              id="name-input"
+              maxlength="40"
+              autocomplete="off"
+              spellcheck="false"
+              autocapitalize="words"
+            />
+            <span class="char-counter" id="char-counter" aria-live="polite"></span>
+          </div>
+
+          <!-- Photo upload -->
+          <div class="form-group">
+            <label class="field-label">
+              Upload Photo
+              <span class="optional-tag">(Optional)</span>
+            </label>
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0" aria-label="Upload photo by clicking or dragging a file here">
+              <!-- Empty state -->
+              <div class="dz-empty" id="dz-empty">
+                <div class="dz-icon-wrap" id="dz-icon-wrap">
+                  <i class="fa-solid fa-camera dz-camera-icon" id="dz-camera-icon" aria-hidden="true"></i>
+                </div>
+                <div class="dz-text">
+                  <p class="dz-primary">Tap to upload a photo</p>
+                  <p class="dz-secondary">or drag and drop here</p>
+                </div>
+                <div class="dz-hint" aria-hidden="true">
+                  <i class="fa-solid fa-upload"></i>
+                  <span>PNG, JPG up to 10MB</span>
+                </div>
+              </div>
+              <!-- Preview state -->
+              <div class="dz-preview" id="dz-preview">
+                <img class="preview-img" id="preview-img" src="" alt="Uploaded photo preview" />
+                <div class="preview-info">
+                  <p class="preview-uploaded" id="preview-uploaded">Photo uploaded!</p>
+                  <p class="preview-change">Tap to change</p>
+                </div>
+                <button type="button" class="preview-remove" id="preview-remove" aria-label="Remove uploaded photo">Remove</button>
+              </div>
+            </div>
+            <input type="file" id="file-input" accept="image/*" aria-hidden="true" tabindex="-1" />
+          </div>
+
+          <!-- Sender name -->
+          <div class="form-group">
+            <label class="field-label" for="sender-input">
+              Your Name
+              <span class="optional-tag">(So they know who it's from)</span>
+            </label>
+            <input
+              type="text"
+              class="name-input"
+              id="sender-input"
+              maxlength="40"
+              placeholder="Enter your name…"
+              autocomplete="off"
+              spellcheck="false"
+              autocapitalize="words"
+            />
+          </div>
+
+          <!-- Spotify link -->
+          <div class="form-group">
+            <label class="field-label" for="spotify-input">
+              Add a Song
+              <span class="optional-tag">(Optional)</span>
+            </label>
+            <div class="spotify-input-wrap">
+              <i class="fa-brands fa-spotify spotify-input-icon" aria-hidden="true"></i>
+              <input
+                type="url"
+                class="spotify-input"
+                id="spotify-input"
+                placeholder="Paste a Spotify song link…"
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <!-- Terms checkbox -->
+          <label class="terms-checkbox-wrap">
+            <input type="checkbox" id="terms-checkbox" />
+            <span class="terms-checkbox-text">I agree to the <a href="privacy.html" target="_blank" class="terms-link">Terms &amp; Conditions and Privacy Policy</a>.</span>
+          </label>
+
+          <!-- Generate Button -->
+          <button type="submit" class="generate-btn" id="generate-btn" disabled>
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+            <strong id="generate-label">Generate Wish</strong>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- ===================== REVEAL SCREEN ===================== -->
+    <div id="reveal-screen" class="screen" style="display:none">
+      <div class="floating-elements" id="reveal-floats" aria-hidden="true"></div>
+      <div class="avatar-glow" id="avatar-glow" aria-hidden="true"></div>
+
+      <div class="screen-inner reveal-inner">
+        <!-- Avatar -->
+        <div class="avatar-wrap" id="avatar-wrap">
+          <div class="avatar-ring" id="avatar-ring" aria-hidden="true"></div>
+          <div class="avatar-circle" id="avatar-circle">
+            <img class="avatar-img" id="avatar-img" src="" alt="" />
+            <i class="fa-solid fa-heart avatar-heart" id="avatar-heart" aria-hidden="true"></i>
+          </div>
+          <div class="emoji-badge" id="emoji-badge" aria-hidden="true"></div>
+        </div>
+
+        <!-- Greeting -->
+        <div class="greeting-section">
+          <h1 class="greeting-heading" id="greeting-heading"></h1>
+        </div>
+
+        <!-- Wish Card -->
+        <div class="wish-card glass-card" id="wish-card">
+          <div class="card-accent-line" id="card-accent-line" aria-hidden="true"></div>
+          <div class="card-badge-row">
+            <div class="card-emoji-box" id="card-emoji-box" aria-hidden="true"></div>
+            <p class="card-badge-text" id="card-badge-text"></p>
+          </div>
+          <p class="wish-text" id="wish-text"></p>
+            <div class="card-footer-row"></div>
+        </div>
+
+            <!-- Reserved AdSense area -->
+            <div class="sponsor-zone" id="sponsor-zone">
+                Sponsored Message
+            </div>
+        <!-- Spotify Player -->
+        <div class="spotify-player-wrap" id="spotify-player-wrap" style="display:none">
+          <p class="spotify-player-label">
+            <i class="fa-brands fa-spotify" aria-hidden="true"></i>
+            Now Playing
+          </p>
+          <div id="spotify-player-container"></div>
+        </div>
+
+
+        <!-- Action Buttons -->
+        <div class="reveal-actions">
+          <button class="btn-primary-action" id="share-btn">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            Share Your Wish
+          </button>
+          <button class="btn-secondary-action" id="new-wish-btn">
+            <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+            Try a Different Message
+          </button>
+          <button class="btn-ghost-action" id="reset-btn">
+            <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+            Start over
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div><!-- /#app -->
+
+<!-- Shared-link loading overlay -->
+<div class="shared-loader" id="shared-loader">
+  <div class="loader-box">
+    <span class="loader-icon" id="loader-icon">🎁</span>
+    <h2 class="loader-heading">Something special<br>is loading for you</h2>
+    <div class="l-spinner">
+      <div class="l-bar"></div><div class="l-bar"></div><div class="l-bar"></div>
+      <div class="l-bar"></div><div class="l-bar"></div><div class="l-bar"></div>
+      <div class="l-bar"></div><div class="l-bar"></div><div class="l-bar"></div>
+      <div class="l-bar"></div><div class="l-bar"></div><div class="l-bar"></div>
+    </div>
+    <p class="loader-sub" id="loader-sub">Hold on, magic incoming ✨</p>
+  </div>
+</div>
+
+
+</body>
+</html>
+
