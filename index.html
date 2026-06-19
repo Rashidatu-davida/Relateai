@@ -68,7 +68,7 @@
       <a href="#contact" class="mobile-nav-link">
         <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact
       </a>
-      <a href="https://greetings-generator-ten.vercel.app/" class="mobile-nav-link mobile-nav-cta" target="_blank" rel="noopener noreferrer">
+      <a href="https://userelateai.com/greetings-generator" class="mobile-nav-link mobile-nav-cta" target="_blank" rel="noopener noreferrer">
          Try Greetings Generator Free
       </a>
     </div>
@@ -80,34 +80,98 @@
      HERO
 ============================= -->
 <section class="hero" aria-label="Hero">
-  <!-- Right-side background image gradient fades it into the text side -->
-  <div class="hero-bg-image" style="background-image:url('assets/happy-people.jpg')" role="presentation" aria-hidden="true"></div>
-  <div class="hero-overlay" aria-hidden="true"></div>
-
   <div class="container hero-inner">
-    <div class="hero-content animate-in">
-      <h1>
+
+    <!-- LEFT: text -->
+    <div class="hero-text">
+      <h1 class="animate-in">
         <span class="red">Instant</span> tools.<br>
         Built for real life.<br>
         <span class="teal">Zero friction.</span>
       </h1>
 
-      <p class="hero-desc">
+      <p class="hero-desc animate-in">
         RelateAi builds lightweight tools that help people connect and celebrate everyday moments. Try our first product the Greetings Generator free, no sign-up, ready in seconds.
       </p>
 
-
-<div class="hero-buttons">
-        <a href="https://greetings-generator-ten.vercel.app/" class="primary-btn" target="_blank" rel="noopener noreferrer">
+      <div class="hero-buttons animate-in">
+        <a href="https://userelateai.com/greetings-generator" class="primary-btn" target="_blank" rel="noopener noreferrer">
           Try Greetings Generator
         </a>
-        <a href="#products" class="secondary-btn">
-          Explore Products
-        </a>
+        <a href="#products" class="secondary-btn">Explore Products</a>
       </div>
+    </div>
 
+    <!-- RIGHT: carousel visual -->
+    <div class="hero-visual animate-in">
+      <div class="hero-card-scene">
+
+        <!-- Satellite photos -->
+        <div class="sat-photo sat-tl" aria-hidden="true">
+          <img src="assets/2.jpeg" alt="">
+        </div>
+        <div class="sat-photo sat-br" aria-hidden="true">
+          <img src="assets/3.jpg" alt="">
+        </div>
+
+        <!-- Main product card -->
+        <div class="hero-gc" id="hero-card">
+          <div class="hero-gc-img">
+            <img id="hero-card-img" src="assets/1.jpg" alt="Greeting card preview">
+          </div>
+        </div>
+
+        <!-- Floating action pills -->
+        <div class="float-pill float-photo" aria-hidden="true">
+          <i class="fa-regular fa-image"></i> Add Photo
+        </div>
+        <div class="float-pill float-song" aria-hidden="true">
+          <i class="fa-solid fa-music"></i> Add Song
+        </div>
+        <div class="float-pill float-share" aria-hidden="true">
+          <i class="fa-solid fa-share-nodes"></i> Share Instantly
+        </div>
+
+        <!-- Sparkle accents -->
+        <span class="spark spark-1" aria-hidden="true">✦</span>
+        <span class="spark spark-2" aria-hidden="true">✦</span>
+        <span class="spark spark-3" aria-hidden="true">+</span>
+        <span class="spark spark-4" aria-hidden="true">+</span>
+
+        <!-- Carousel dots -->
+        <div class="carousel-dots" role="tablist" aria-label="Hero carousel">
+          <button class="cdot active" data-slide="0" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
+          <button class="cdot"        data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+          <button class="cdot"        data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+          <button class="cdot"        data-slide="3" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Social proof bar -->
+  <div class="hero-proof">
+    <div class="container" style="display:flex;justify-content:center">
+    <div class="hero-proof-inner">
+      <p class="proof-tagline">Loved by thousands for<br>life's special moments</p>
+      <div class="proof-avatars-wrap" aria-hidden="true">
+        <div class="proof-av-photo" style="background:linear-gradient(135deg,#f9a8d4,#ec4899)"><i class="fa-solid fa-user"></i></div>
+        <div class="proof-av-photo" style="background:linear-gradient(135deg,#93c5fd,#3b82f6)"><i class="fa-solid fa-user"></i></div>
+        <div class="proof-av-photo" style="background:linear-gradient(135deg,#86efac,#22c55e)"><i class="fa-solid fa-user"></i></div>
+        <div class="proof-av-photo" style="background:linear-gradient(135deg,#fcd34d,#f59e0b)"><i class="fa-solid fa-user"></i></div>
+        <div class="proof-av-photo proof-av-heart"><i class="fa-solid fa-heart"></i></div>
+      </div>
+      <div class="proof-sep" aria-hidden="true"></div>
+      <div class="proof-metric">
+        <span class="proof-num">12,400+</span>
+        <span class="proof-lbl">Greetings sent and counting</span>
+      </div>
+    </div>
     </div>
   </div>
+
 </section>
 
 
@@ -212,17 +276,13 @@
     <div class="section-header animate-in">
       <span class="section-tag">Our Products</span>
       <h2 id="products-heading">Check Out Our Products</h2>
-      <p>
-        Useful tools built with simplicity in mind ready to use in seconds.
-        Start with our
-        <a href="https://greetings-generator-ten.vercel.app/" class="inline-link" target="_blank" rel="noopener noreferrer">Greetings Generator</a>.
-      </p>
+      <p>Useful tools built with simplicity in mind ready to use in seconds.</p>
     </div>
 
     <div class="products-grid">
 
       <!-- Greetings Generator card -->
-      <a href="https://greetings-generator-ten.vercel.app/"
+      <a href="https://userelateai.com/greetings-generator"
          class="product-card greetings-card animate-in"
          target="_blank"
          rel="noopener noreferrer"
@@ -513,7 +573,7 @@
 
       <p>Start with the Greetings Generator free, no sign-up, done in seconds.</p>
 
-      <a href="https://greetings-generator-ten.vercel.app/" class="secondary-btn" target="_blank" rel="noopener noreferrer">
+      <a href="https://userelateai.com/greetings-generator" class="tertiary-btn" target="_blank" rel="noopener noreferrer">
         Open Greetings Generator Free
       </a>
 
@@ -539,7 +599,7 @@
 
     <div class="footer-nav">
       <h4>Tools</h4>
-      <a href="https://greetings-generator-ten.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <a href="https://userelateai.com/greetings-generator" target="_blank" rel="noopener noreferrer">
         Greetings Generator
       </a>
     </div>
