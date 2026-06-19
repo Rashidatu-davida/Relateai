@@ -78,16 +78,16 @@
   --floating3:     #dfb40020;
 }
 .theme-fathers{
-  --page-bg:#f8faf8;
-  --card-bg:#ffffff;
-  --card-border:#d8e8dd;
-  --primary:#0c8745;
-  --primary-hover:#08582d;
-  --secondary:#ff6d02;
-  --accent:#dfb400;
-  --floating1:#0c874520;
-  --floating2:#ff6d0220;
-  --floating3:#dfb40020;
+  --page-bg:       #f8faf8;
+  --card-bg:       #ffffff;
+  --card-border:   #d8e8dd;
+  --primary:       #0c8745;
+  --primary-hover: #08582d;
+  --secondary:     #ff6d02;
+  --accent:        #dfb400;
+  --floating1:     #0c874520;
+  --floating2:     #ff6d0220;
+  --floating3:     #dfb40020;
 }
 .theme-eid {
   --page-bg:       #f0f9ff;
