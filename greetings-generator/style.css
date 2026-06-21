@@ -30,100 +30,100 @@
    THEME BODY CLASSES — set by JS on <body>
    ============================================================ */
 .theme-birthday {
-  --page-bg:       #fff8f6;
+  --page-bg:       #fdf5ff;
   --card-bg:       #ffffff;
-  --card-border:   #f0ebe9;
-  --primary:       #ff1502;
-  --primary-hover: #d00416;
-  --secondary:     #ff6d02;
-  --accent:        #00aeba;
-  --floating1:     #ff150220;
-  --floating2:     #ff025920;
-  --floating3:     #dfb40020;
+  --card-border:   #e4c4f0;
+  --primary:       #7B1FA2;
+  --primary-hover: #6a1b9a;
+  --secondary:     #ff8c00;
+  --accent:        #ff8c00;
+  --floating1:     #7B1FA222;
+  --floating2:     #ff8c0020;
+  --floating3:     #7B1FA215;
 }
 .theme-christmas {
   --page-bg:       #fff5f5;
   --card-bg:       #ffffff;
   --card-border:   #fecdd3;
-  --primary:       #e11d48;
-  --primary-hover: #be123c;
+  --primary:       #C8102E;
+  --primary-hover: #a00d25;
   --secondary:     #16a34a;
   --accent:        #fbbf24;
-  --floating1:     #e11d4822;
+  --floating1:     #C8102E22;
   --floating2:     #16a34a22;
   --floating3:     #fbbf2420;
 }
 .theme-easter {
-  --page-bg:       #faf8f4;
+  --page-bg:       #f3fbfa;
   --card-bg:       #ffffff;
-  --card-border:   #ede8e0;
-  --primary:       #ff6d02;
-  --primary-hover: #d37d00;
-  --secondary:     #00aeba;
-  --accent:        #ff0259;
-  --floating1:     #ff6d0220;
-  --floating2:     #00aeba20;
-  --floating3:     #ff025920;
+  --card-border:   #b2dfdb;
+  --primary:       #00897B;
+  --primary-hover: #00695C;
+  --secondary:     #dfb400;
+  --accent:        #dfb400;
+  --floating1:     #00897B22;
+  --floating2:     #dfb40020;
+  --floating3:     #00897B15;
 }
 .theme-mothers {
-  --page-bg:       #fff8fa;
+  --page-bg:       #fff5f8;
   --card-bg:       #ffffff;
-  --card-border:   #f0e8ec;
-  --primary:       #ff0259;
-  --primary-hover: #d00416;
+  --card-border:   #f8c8d8;
+  --primary:       #E91E63;
+  --primary-hover: #c2185b;
   --secondary:     #ff6d02;
   --accent:        #dfb400;
-  --floating1:     #ff025920;
+  --floating1:     #E91E6322;
   --floating2:     #ff6d0220;
   --floating3:     #dfb40020;
 }
 .theme-fathers {
-  --page-bg:       #f6f8f9;
+  --page-bg:       #f5f7fc;
   --card-bg:       #ffffff;
-  --card-border:   #e4eaec;
-  --primary:       #333333;
-  --primary-hover: #111111;
-  --secondary:     #00aeba;
-  --accent:        #d37d00;
-  --floating1:     #00aeba20;
-  --floating2:     #d37d0020;
-  --floating3:     #33333315;
+  --card-border:   #c8d8f0;
+  --primary:       #003DA5;
+  --primary-hover: #002d7a;
+  --secondary:     #f97316;
+  --accent:        #f97316;
+  --floating1:     #003DA520;
+  --floating2:     #f9731620;
+  --floating3:     #003DA515;
 }
 .theme-eid {
-  --page-bg:       #f7faf8;
+  --page-bg:       #f5fbf7;
   --card-bg:       #ffffff;
-  --card-border:   #e4ede8;
-  --primary:       #0c8745;
-  --primary-hover: #086838;
+  --card-border:   #b8e0ca;
+  --primary:       #00843D;
+  --primary-hover: #006630;
   --secondary:     #dfb400;
-  --accent:        #00aeba;
-  --floating1:     #0c874520;
+  --accent:        #dfb400;
+  --floating1:     #00843D22;
   --floating2:     #dfb40020;
-  --floating3:     #00aeba20;
+  --floating3:     #00843D18;
 }
 .theme-newyear {
-  --page-bg:       #fafafa;
+  --page-bg:       #fff8f0;
   --card-bg:       #ffffff;
-  --card-border:   #e8e8e8;
-  --primary:       #333333;
-  --primary-hover: #111111;
-  --secondary:     #ff1502;
-  --accent:        #dfb400;
-  --floating1:     #dfb40020;
-  --floating2:     #ff150220;
-  --floating3:     #00aeba18;
+  --card-border:   #ffe0b2;
+  --primary:       #FF8F00;
+  --primary-hover: #e65100;
+  --secondary:     #ff4500;
+  --accent:        #ff4500;
+  --floating1:     #FF8F0025;
+  --floating2:     #e6510020;
+  --floating3:     #FF8F0018;
 }
 .theme-holidays {
-  --page-bg:       #f8f8f6;
+  --page-bg:       #fdf5f8;
   --card-bg:       #ffffff;
-  --card-border:   #edeae4;
-  --primary:       #ff6d02;
-  --primary-hover: #d37d00;
-  --secondary:     #00aeba;
-  --accent:        #ff0259;
-  --floating1:     #ff6d0220;
-  --floating2:     #00aeba20;
-  --floating3:     #ff025920;
+  --card-border:   #f0c0d0;
+  --primary:       #AD1457;
+  --primary-hover: #880e4f;
+  --secondary:     #dfb400;
+  --accent:        #dfb400;
+  --floating1:     #AD145722;
+  --floating2:     #dfb40020;
+  --floating3:     #AD145715;
 }
 
 /* ============================================================
@@ -584,6 +584,10 @@ input  { font-family: var(--font-body); }
   color: #ffffff;
   cursor: pointer;
 }
+/* Light-background themes need dark button text */
+.theme-newyear   .generate-btn:not(:disabled) {
+  color: #1a1a1a;
+}
 
 .generate-btn:not(:disabled):hover  { background: var(--primary-hover); transform: translateY(-2px); }
 .generate-btn:not(:disabled):active { transform: translateY(0) scale(0.98); }
@@ -913,6 +917,7 @@ input  { font-family: var(--font-body); }
 
 .btn-primary-action:hover  { background: var(--primary-hover); transform: translateY(-2px); }
 .btn-primary-action:active { transform: translateY(0) scale(0.98); }
+.theme-newyear   .btn-primary-action { color: #1a1a1a; }
 
 .btn-secondary-action {
   width: 100%;
