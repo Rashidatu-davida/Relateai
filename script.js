@@ -251,112 +251,90 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 /* ================================================
-   HERO CAROUSEL — rotates every 6 seconds
+   HERO CAROUSEL — sliding 3-card conveyor
 ================================================ */
-const heroSlides = [
-  {
-    badge:       'Made for real moments',
-    keyword:     'meaningful',
-    desc:        'RelateAi helps you create <strong>heartfelt greetings</strong> with photos, songs, and personal touches — <strong>instantly, effortlessly</strong>, and for free.',
-    cardTitle:   'Happy Birthday! 🎂',
-    cardMsg:     'Wishing you endless joy and amazing moments! ❤️',
-    cardHeaderBg:'linear-gradient(135deg, #fff5f3, #ffddd8)',
-    cardImg:     'assets/1.jpg',
-    musicTrack:  'Happy',
-    musicArtist: 'Pharrell Williams'
-  },
-  {
-    badge:       'Celebrate every occasion',
-    keyword:     'special',
-    desc:        'From weddings to anniversaries, RelateAi makes it effortless to send <strong>personalized greetings</strong> that truly resonate.',
-    cardTitle:   'Happy Anniversary! 💍',
-    cardMsg:     'Every day with you is a blessing. Here\'s to forever! 🥂',
-    cardHeaderBg:'linear-gradient(135deg, #fff0f5, #ffd6e8)',
-    cardImg:     'assets/3.jpg',
-    musicTrack:  'Perfect',
-    musicArtist: 'Ed Sheeran'
-  },
-  {
-    badge:       'Zero friction, all heart',
-    keyword:     'effortless',
-    desc:        'Pick an occasion, add a personal touch, and share — <strong>no sign-up, no waiting</strong>. RelateAi does the heavy lifting so you can focus on what matters.',
-    cardTitle:   'Eid Mubarak! 🌙',
-    cardMsg:     'May this Eid bring peace, joy, and countless blessings! ✨',
-    cardHeaderBg:'linear-gradient(135deg, #fffbf0, #ffecc0)',
-    cardImg:     'assets/2.jpeg',
-    musicTrack:  'Eid Medley',
-    musicArtist: 'Various Artists'
-  },
-  {
-    badge:       'Done in seconds',
-    keyword:     'instant',
-    desc:        'RelateAi generates <strong>beautiful, personalized greetings</strong> in under a minute — ready to share with just one tap.',
-    cardTitle:   'Happy Holidays! 🎄',
-    cardMsg:     'Wishing you warmth, laughter, and all the good things! 🎁',
-    cardHeaderBg:'linear-gradient(135deg, #f0fff8, #c8f0de)',
-    cardImg:     'assets/1.jpg',
-    musicTrack:  'All I Want for Christmas',
-    musicArtist: 'Mariah Carey'
-  }
+const HC_IMGS = [
+  'assets/1.png',
+  'assets/2.png',
+  'assets/3.png',
+  'assets/4.png',
+  'assets/5.png'
+];
+const HC_N = HC_IMGS.length;
+
+// DOM pool — 3 reusable card elements
+const hcPool = [
+  document.getElementById('hc-0'),
+  document.getElementById('hc-1'),
+  document.getElementById('hc-2'),
 ];
 
-let heroIdx   = 0;
-let heroTimer = null;
+// Which pool element occupies each slot: [leftSlot, centerSlot, rightSlot]
+let hcSlots = [0, 1, 2];
+// Which image index is in each slot: [left, center, right]
+let hcImgs  = [HC_N - 1, 0, 1];
 
-function goToHeroSlide(idx) {
-  const slide  = heroSlides[idx];
-  const card   = document.getElementById('hero-card');
-  const header = document.getElementById('hero-card-header');
-  const title  = document.getElementById('hero-card-title');
-  const msg    = document.getElementById('hero-card-msg');
-  const track  = document.getElementById('hero-music-track');
-  const artist = document.getElementById('hero-music-artist');
+let hcTimer   = null;
+let hcBusy    = false;
 
-  if (card) card.style.opacity = '0.6';
+function hcSetPos(poolIdx, cls) {
+  hcPool[poolIdx].className = 'hc-item ' + cls;
+}
 
-  setTimeout(() => {
-    if (header) header.style.background = slide.cardHeaderBg;
-    if (title)  title.textContent       = slide.cardTitle;
-    if (msg)    msg.textContent         = slide.cardMsg;
-    if (track)  track.textContent       = slide.musicTrack;
-    if (artist) artist.textContent      = slide.musicArtist;
-    const imgEl   = document.getElementById('hero-card-img');
-    const thumbEl = document.getElementById('hero-music-thumb');
-    if (imgEl)   imgEl.src   = slide.cardImg;
-    if (thumbEl) thumbEl.src = slide.cardImg;
-    if (card)    card.style.opacity = '1';
-  }, 260);
+function hcSetImg(poolIdx, imgIdx) {
+  hcPool[poolIdx].querySelector('img').src = HC_IMGS[imgIdx];
+}
 
-  // Update dots
+function hcUpdateDots(centerImgIdx) {
   document.querySelectorAll('.cdot').forEach((dot, i) => {
-    const active = i === idx;
-    dot.classList.toggle('active', active);
-    dot.setAttribute('aria-selected', String(active));
+    dot.classList.toggle('active', i === centerImgIdx);
+    dot.setAttribute('aria-selected', String(i === centerImgIdx));
   });
-
-  heroIdx = idx;
 }
 
-function startHeroCarousel() {
-  heroTimer = setInterval(() => {
-    goToHeroSlide((heroIdx + 1) % heroSlides.length);
-  }, 6000);
+function hcAdvance() {
+  if (hcBusy) return;
+  hcBusy = true;
+
+  const [L, C, R] = hcSlots;
+  const newImgIdx  = (hcImgs[2] + 1) % HC_N;
+
+  // Step 1 — animate all three simultaneously
+  hcSetPos(L, 'hc-exit');    // left flies out
+  hcSetPos(C, 'hc-left');    // center shrinks → left
+  hcSetPos(R, 'hc-center');  // right grows   → center
+
+  hcUpdateDots(hcImgs[2]);   // new center image
+
+  // Step 2 — after exit completes, recycle L as new right entry
+  setTimeout(() => {
+    hcSetImg(L, newImgIdx);
+    hcPool[L].classList.add('no-anim');
+    hcSetPos(L, 'hc-enter');       // instant: place off-screen right
+    hcPool[L].offsetHeight;        // force reflow
+    hcPool[L].classList.remove('no-anim');
+    hcSetPos(L, 'hc-right');       // animate into right position
+
+    // Rotate tracking arrays
+    hcSlots = [C, R, L];
+    hcImgs  = [hcImgs[1], hcImgs[2], newImgIdx];
+
+    setTimeout(() => { hcBusy = false; }, 700);
+  }, 680);
 }
 
-// Dot click
-document.querySelectorAll('.cdot').forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    clearInterval(heroTimer);
-    goToHeroSlide(i);
-    startHeroCarousel();
-  });
-});
+function hcStart() {
+  hcTimer = setInterval(hcAdvance, 4500);
+}
+function hcStop() {
+  clearInterval(hcTimer);
+}
 
 // Pause on hover
 const heroVisualEl = document.querySelector('.hero-visual');
 if (heroVisualEl) {
-  heroVisualEl.addEventListener('mouseenter', () => clearInterval(heroTimer));
-  heroVisualEl.addEventListener('mouseleave', startHeroCarousel);
+  heroVisualEl.addEventListener('mouseenter', hcStop);
+  heroVisualEl.addEventListener('mouseleave', hcStart);
 }
 
-startHeroCarousel();
+hcStart();
