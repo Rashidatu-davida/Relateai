@@ -16,17 +16,17 @@ const THEMES = [
     tagBadge: "Birthday Message",
     cardEmoji: "🎂",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(255,21,2,0.1)",
-    primaryColor: "#ff1502",
-    secondaryColor: "#ff6d02",
+    primaryGlow: "rgba(123,31,162,0.15)",
+    primaryColor: "#7B1FA2",
+    secondaryColor: "#ff8c00",
     goldColor: "#dfb400",
-    buttonGradient: "linear-gradient(135deg, #ff1502 0%, #ff4002 55%, #ff6d02 100%)",
-    buttonShadow: "0 6px 20px rgba(255,21,2,0.28)",
-    badgeBg: "rgba(255,21,2,0.08)",
-    badgeColor: "#ff1502",
-    headingGradient: "linear-gradient(135deg, #ff1502 0%, #ff4002 50%, #ff6d02 100%)",
-    namePill: { bg: "rgba(255,21,2,0.07)", border: "rgba(255,21,2,0.22)", color: "#ff1502" },
-    topAccentLine: "linear-gradient(90deg, transparent, #ff1502, #ff6d02, transparent)",
+    buttonGradient: "linear-gradient(135deg, #7B1FA2 0%, #6a1b9a 55%, #ff8c00 100%)",
+    buttonShadow: "0 6px 20px rgba(123,31,162,0.35)",
+    badgeBg: "rgba(123,31,162,0.08)",
+    badgeColor: "#7B1FA2",
+    headingGradient: "linear-gradient(135deg, #7B1FA2 0%, #6a1b9a 50%, #ff8c00 100%)",
+    namePill: { bg: "rgba(123,31,162,0.07)", border: "rgba(123,31,162,0.25)", color: "#7B1FA2" },
+    topAccentLine: "linear-gradient(90deg, transparent, #7B1FA2, #ff8c00, transparent)",
     confettiColors: ["#ff1502","#ff6d02","#ff4002","#ff0259","#dfb400","#00aeba"],
     sparkleColor: "rgba(223,180,0,0.75)",
     blobColors: ["rgba(255,21,2,0.09)","rgba(255,109,2,0.07)","rgba(0,174,186,0.06)","rgba(223,180,0,0.06)"],
@@ -56,17 +56,17 @@ const THEMES = [
     tagBadge: "Christmas Message",
     cardEmoji: "🎄",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(225,29,72,0.15)",
-    primaryColor: "#e11d48",
+    primaryGlow: "rgba(200,16,46,0.15)",
+    primaryColor: "#C8102E",
     secondaryColor: "#16a34a",
     goldColor: "#fbbf24",
-    buttonGradient: "linear-gradient(135deg, #e11d48 0%, #be123c 55%, #16a34a 100%)",
-    buttonShadow: "0 6px 20px rgba(225,29,72,0.35)",
-    badgeBg: "rgba(225,29,72,0.08)",
-    badgeColor: "#e11d48",
-    headingGradient: "linear-gradient(135deg, #e11d48 0%, #be123c 50%, #16a34a 100%)",
-    namePill: { bg: "rgba(225,29,72,0.07)", border: "rgba(225,29,72,0.25)", color: "#e11d48" },
-    topAccentLine: "linear-gradient(90deg, transparent, #e11d48, #16a34a, transparent)",
+    buttonGradient: "linear-gradient(135deg, #C8102E 0%, #a00d25 55%, #16a34a 100%)",
+    buttonShadow: "0 6px 20px rgba(200,16,46,0.35)",
+    badgeBg: "rgba(200,16,46,0.08)",
+    badgeColor: "#C8102E",
+    headingGradient: "linear-gradient(135deg, #C8102E 0%, #a00d25 50%, #16a34a 100%)",
+    namePill: { bg: "rgba(200,16,46,0.07)", border: "rgba(200,16,46,0.25)", color: "#C8102E" },
+    topAccentLine: "linear-gradient(90deg, transparent, #C8102E, #16a34a, transparent)",
     confettiColors: ["#e11d48","#16a34a","#fbbf24","#be123c","#4ade80","#fca5a5"],
     sparkleColor: "rgba(251,191,36,0.85)",
     blobColors: ["rgba(225,29,72,0.1)","rgba(22,163,74,0.08)","rgba(251,191,36,0.07)","rgba(225,29,72,0.06)"],
@@ -93,17 +93,17 @@ const THEMES = [
     tagBadge: "Easter Message",
     cardEmoji: "🐣",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(255,109,2,0.1)",
-    primaryColor: "#ff6d02",
-    secondaryColor: "#00aeba",
+    primaryGlow: "rgba(0,137,123,0.15)",
+    primaryColor: "#00897B",
+    secondaryColor: "#dfb400",
     goldColor: "#dfb400",
-    buttonGradient: "linear-gradient(135deg, #ff6d02 0%, #ff8c00 55%, #00aeba 100%)",
-    buttonShadow: "0 6px 20px rgba(255,109,2,0.28)",
-    badgeBg: "rgba(255,109,2,0.08)",
-    badgeColor: "#ff6d02",
-    headingGradient: "linear-gradient(135deg, #ff6d02 0%, #dfb400 50%, #00aeba 100%)",
-    namePill: { bg: "rgba(255,109,2,0.07)", border: "rgba(255,109,2,0.22)", color: "#ff6d02" },
-    topAccentLine: "linear-gradient(90deg, transparent, #ff6d02, #00aeba, transparent)",
+    buttonGradient: "linear-gradient(135deg, #00897B 0%, #00695C 55%, #dfb400 100%)",
+    buttonShadow: "0 6px 20px rgba(0,137,123,0.35)",
+    badgeBg: "rgba(0,137,123,0.08)",
+    badgeColor: "#00897B",
+    headingGradient: "linear-gradient(135deg, #00897B 0%, #00695C 50%, #dfb400 100%)",
+    namePill: { bg: "rgba(0,137,123,0.07)", border: "rgba(0,137,123,0.25)", color: "#00897B" },
+    topAccentLine: "linear-gradient(90deg, transparent, #00897B, #dfb400, transparent)",
     confettiColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745"],
     sparkleColor: "rgba(223,180,0,0.8)",
     blobColors: ["rgba(255,109,2,0.09)","rgba(0,174,186,0.07)","rgba(223,180,0,0.06)","rgba(255,2,89,0.05)"],
@@ -129,17 +129,17 @@ const THEMES = [
     tagBadge: "Mother's Day Message",
     cardEmoji: "💐",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(255,2,89,0.1)",
-    primaryColor: "#ff0259",
+    primaryGlow: "rgba(233,30,99,0.15)",
+    primaryColor: "#E91E63",
     secondaryColor: "#ff6d02",
     goldColor: "#dfb400",
-    buttonGradient: "linear-gradient(135deg, #ff0259 0%, #ff1562 55%, #ff6d02 100%)",
-    buttonShadow: "0 6px 20px rgba(255,2,89,0.28)",
-    badgeBg: "rgba(255,2,89,0.08)",
-    badgeColor: "#ff0259",
-    headingGradient: "linear-gradient(135deg, #ff0259 0%, #ff4002 50%, #dfb400 100%)",
-    namePill: { bg: "rgba(255,2,89,0.07)", border: "rgba(255,2,89,0.22)", color: "#ff0259" },
-    topAccentLine: "linear-gradient(90deg, transparent, #ff0259, #ff6d02, transparent)",
+    buttonGradient: "linear-gradient(135deg, #E91E63 0%, #c2185b 55%, #ff6d02 100%)",
+    buttonShadow: "0 6px 20px rgba(233,30,99,0.35)",
+    badgeBg: "rgba(233,30,99,0.08)",
+    badgeColor: "#E91E63",
+    headingGradient: "linear-gradient(135deg, #E91E63 0%, #c2185b 50%, #ff6d02 100%)",
+    namePill: { bg: "rgba(233,30,99,0.07)", border: "rgba(233,30,99,0.25)", color: "#E91E63" },
+    topAccentLine: "linear-gradient(90deg, transparent, #E91E63, #ff6d02, transparent)",
     confettiColors: ["#ff0259","#ff6d02","#ff4002","#dfb400","#ff1502","#00aeba"],
     sparkleColor: "rgba(223,180,0,0.8)",
     blobColors: ["rgba(255,2,89,0.09)","rgba(255,109,2,0.07)","rgba(223,180,0,0.06)","rgba(0,174,186,0.05)"],
@@ -166,17 +166,17 @@ const THEMES = [
     tagBadge: "Father's Day Message",
     cardEmoji: "👔",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(37,99,235,0.15)",
-    primaryColor: "#2563eb",
+    primaryGlow: "rgba(0,61,165,0.15)",
+    primaryColor: "#003DA5",
     secondaryColor: "#f97316",
     goldColor: "#fbbf24",
-    buttonGradient: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 55%, #f97316 100%)",
-    buttonShadow: "0 6px 20px rgba(37,99,235,0.35)",
-    badgeBg: "rgba(37,99,235,0.1)",
-    badgeColor: "#2563eb",
-    headingGradient: "linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #f97316 100%)",
-    namePill: { bg: "rgba(37,99,235,0.08)", border: "rgba(37,99,235,0.25)", color: "#2563eb" },
-    topAccentLine: "linear-gradient(90deg, transparent, #2563eb, #f97316, transparent)",
+    buttonGradient: "linear-gradient(135deg, #003DA5 0%, #002d7a 55%, #f97316 100%)",
+    buttonShadow: "0 6px 20px rgba(0,61,165,0.35)",
+    badgeBg: "rgba(0,61,165,0.08)",
+    badgeColor: "#003DA5",
+    headingGradient: "linear-gradient(135deg, #003DA5 0%, #002d7a 50%, #f97316 100%)",
+    namePill: { bg: "rgba(0,61,165,0.07)", border: "rgba(0,61,165,0.25)", color: "#003DA5" },
+    topAccentLine: "linear-gradient(90deg, transparent, #003DA5, #f97316, transparent)",
     confettiColors: ["#2563eb","#f97316","#fbbf24","#1d4ed8","#fb923c","#93c5fd"],
     sparkleColor: "rgba(249,115,22,0.8)",
     blobColors: ["rgba(37,99,235,0.1)","rgba(249,115,22,0.09)","rgba(251,191,36,0.08)","rgba(37,99,235,0.06)"],
@@ -203,17 +203,17 @@ const THEMES = [
     tagBadge: "Eid Mubarak Message",
     cardEmoji: "🌙",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(14,165,233,0.15)",
-    primaryColor: "#0ea5e9",
-    secondaryColor: "#d4a017",
-    goldColor: "#fbbf24",
-    buttonGradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 55%, #d4a017 100%)",
-    buttonShadow: "0 6px 20px rgba(14,165,233,0.35)",
-    badgeBg: "rgba(14,165,233,0.08)",
-    badgeColor: "#0ea5e9",
-    headingGradient: "linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #d4a017 100%)",
-    namePill: { bg: "rgba(14,165,233,0.07)", border: "rgba(14,165,233,0.25)", color: "#0ea5e9" },
-    topAccentLine: "linear-gradient(90deg, transparent, #0ea5e9, #d4a017, transparent)",
+    primaryGlow: "rgba(0,132,61,0.15)",
+    primaryColor: "#00843D",
+    secondaryColor: "#dfb400",
+    goldColor: "#dfb400",
+    buttonGradient: "linear-gradient(135deg, #00843D 0%, #006630 55%, #dfb400 100%)",
+    buttonShadow: "0 6px 20px rgba(0,132,61,0.35)",
+    badgeBg: "rgba(0,132,61,0.08)",
+    badgeColor: "#00843D",
+    headingGradient: "linear-gradient(135deg, #00843D 0%, #006630 50%, #dfb400 100%)",
+    namePill: { bg: "rgba(0,132,61,0.07)", border: "rgba(0,132,61,0.25)", color: "#00843D" },
+    topAccentLine: "linear-gradient(90deg, transparent, #00843D, #dfb400, transparent)",
     confettiColors: ["#0ea5e9","#d4a017","#fbbf24","#0284c7","#38bdf8","#fde68a"],
     sparkleColor: "rgba(212,160,23,0.85)",
     blobColors: ["rgba(14,165,233,0.1)","rgba(212,160,23,0.09)","rgba(251,191,36,0.07)","rgba(14,165,233,0.06)"],
@@ -240,17 +240,17 @@ const THEMES = [
     tagBadge: "New Year Message",
     cardEmoji: "🥂",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(147,51,234,0.15)",
-    primaryColor: "#9333ea",
-    secondaryColor: "#f59e0b",
-    goldColor: "#f59e0b",
-    buttonGradient: "linear-gradient(135deg, #9333ea 0%, #7e22ce 55%, #f59e0b 100%)",
-    buttonShadow: "0 6px 20px rgba(147,51,234,0.35)",
-    badgeBg: "rgba(147,51,234,0.1)",
-    badgeColor: "#9333ea",
-    headingGradient: "linear-gradient(135deg, #9333ea 0%, #7e22ce 50%, #f59e0b 100%)",
-    namePill: { bg: "rgba(147,51,234,0.08)", border: "rgba(147,51,234,0.25)", color: "#9333ea" },
-    topAccentLine: "linear-gradient(90deg, transparent, #9333ea, #f59e0b, transparent)",
+    primaryGlow: "rgba(255,143,0,0.15)",
+    primaryColor: "#FF8F00",
+    secondaryColor: "#ff4500",
+    goldColor: "#FF8F00",
+    buttonGradient: "linear-gradient(135deg, #FF8F00 0%, #e65100 55%, #ff4500 100%)",
+    buttonShadow: "0 6px 20px rgba(255,143,0,0.40)",
+    badgeBg: "rgba(255,143,0,0.10)",
+    badgeColor: "#b35f00",
+    headingGradient: "linear-gradient(135deg, #b35f00 0%, #cc7000 50%, #e65100 100%)",
+    namePill: { bg: "rgba(255,143,0,0.09)", border: "rgba(255,143,0,0.38)", color: "#b35f00" },
+    topAccentLine: "linear-gradient(90deg, transparent, #FF8F00, #ff4500, transparent)",
     confettiColors: ["#9333ea","#f59e0b","#dc2626","#7e22ce","#fbbf24","#c084fc"],
     sparkleColor: "rgba(245,158,11,0.9)",
     blobColors: ["rgba(147,51,234,0.1)","rgba(245,158,11,0.09)","rgba(220,38,38,0.07)","rgba(147,51,234,0.06)"],
@@ -277,17 +277,17 @@ const THEMES = [
     tagBadge: "Holiday Message",
     cardEmoji: "🎁",
     glassCard: "#ffffff",
-    primaryGlow: "rgba(255,109,2,0.1)",
-    primaryColor: "#ff6d02",
-    secondaryColor: "#00aeba",
+    primaryGlow: "rgba(173,20,87,0.15)",
+    primaryColor: "#AD1457",
+    secondaryColor: "#dfb400",
     goldColor: "#dfb400",
-    buttonGradient: "linear-gradient(135deg, #ff6d02 0%, #ff8c00 55%, #00aeba 100%)",
-    buttonShadow: "0 6px 20px rgba(255,109,2,0.28)",
-    badgeBg: "rgba(255,109,2,0.08)",
-    badgeColor: "#ff6d02",
-    headingGradient: "linear-gradient(135deg, #ff6d02 0%, #dfb400 50%, #00aeba 100%)",
-    namePill: { bg: "rgba(255,109,2,0.07)", border: "rgba(255,109,2,0.22)", color: "#ff6d02" },
-    topAccentLine: "linear-gradient(90deg, transparent, #ff6d02, #00aeba, transparent)",
+    buttonGradient: "linear-gradient(135deg, #AD1457 0%, #880e4f 55%, #dfb400 100%)",
+    buttonShadow: "0 6px 20px rgba(173,20,87,0.35)",
+    badgeBg: "rgba(173,20,87,0.08)",
+    badgeColor: "#AD1457",
+    headingGradient: "linear-gradient(135deg, #AD1457 0%, #880e4f 50%, #dfb400 100%)",
+    namePill: { bg: "rgba(173,20,87,0.07)", border: "rgba(173,20,87,0.25)", color: "#AD1457" },
+    topAccentLine: "linear-gradient(90deg, transparent, #AD1457, #dfb400, transparent)",
     confettiColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745"],
     sparkleColor: "rgba(223,180,0,0.8)",
     blobColors: ["rgba(255,109,2,0.09)","rgba(0,174,186,0.07)","rgba(223,180,0,0.06)","rgba(255,2,89,0.05)"],
@@ -512,6 +512,14 @@ function fireSmallConfetti(theme) {
 /* ============================================================
    APPLY THEME — updates all dynamic styles
    ============================================================ */
+function darkenHex(hex, amount) {
+  const n = parseInt(hex.replace('#', ''), 16);
+  const r = Math.max(0, (n >> 16)        - Math.round(255 * amount));
+  const g = Math.max(0, ((n >> 8) & 0xff) - Math.round(255 * amount));
+  const b = Math.max(0, (n & 0xff)        - Math.round(255 * amount));
+  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+}
+
 function applyTheme(theme) {
   // Page title + localStorage
   document.title = `${theme.label} Wish Generator`;
@@ -522,6 +530,12 @@ function applyTheme(theme) {
 
   // Page background via body class
   document.body.className = theme.className;
+
+  // Sync CSS variables so every var(--primary) consumer gets the right color
+  // Must be set on body (not html) to win over the body class cascade
+  document.body.style.setProperty('--primary',       theme.primaryColor);
+  document.body.style.setProperty('--secondary',     theme.secondaryColor);
+  document.body.style.setProperty('--primary-hover', darkenHex(theme.primaryColor, 0.14));
 
   // Carousel buttons
   ["prev-btn", "next-btn"].forEach((id) => {
@@ -586,11 +600,18 @@ function applyRevealTheme(theme) {
   // Card badge text
   document.getElementById("card-badge-text").textContent = theme.tagBadge;
 
+  // Share Your Wish (primary action)
+  const shareBtn = document.getElementById("share-btn");
+  if (shareBtn) {
+    shareBtn.style.background = theme.primaryColor;
+    shareBtn.style.boxShadow  = theme.buttonShadow;
+  }
+
   // Try a Different Message (secondary) — border and text follow theme color
   const newWishBtn = document.getElementById("new-wish-btn");
   if (newWishBtn) {
     newWishBtn.style.borderColor = theme.primaryColor;
-    newWishBtn.style.color = theme.primaryColor;
+    newWishBtn.style.color       = theme.primaryColor;
   }
 
   // Start over (tertiary ghost) — text follows theme color
