@@ -324,17 +324,24 @@ function hcAdvance() {
 }
 
 function hcStart() {
+  clearInterval(hcTimer); // always clear first — prevents duplicate intervals
   hcTimer = setInterval(hcAdvance, 4500);
 }
 function hcStop() {
   clearInterval(hcTimer);
 }
 
-// Pause on hover
+// Pause on hover — only on devices that have a real pointer (mouse), not touch screens
 const heroVisualEl = document.querySelector('.hero-visual');
-if (heroVisualEl) {
+if (heroVisualEl && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
   heroVisualEl.addEventListener('mouseenter', hcStop);
   heroVisualEl.addEventListener('mouseleave', hcStart);
 }
+
+// Resume carousel when user returns to the tab
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') hcStart();
+  else hcStop();
+});
 
 hcStart();
