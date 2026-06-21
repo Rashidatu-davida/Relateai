@@ -125,6 +125,18 @@
   --floating2:     #dfb40020;
   --floating3:     #AD145715;
 }
+.theme-vday {
+  --page-bg:       #fff5f8;
+  --card-bg:       #ffffff;
+  --card-border:   #f8c8d8;
+  --primary:       #C2185B;
+  --primary-hover: #880e4f;
+  --secondary:     #FF8F00;
+  --accent:        #FF8F00;
+  --floating1:     #C2185B22;
+  --floating2:     #FF8F0020;
+  --floating3:     #C2185B15;
+}
 
 /* ============================================================
    RESET
