@@ -614,11 +614,7 @@ function applyRevealTheme(theme) {
     newWishBtn.style.color       = theme.primaryColor;
   }
 
-  // Start over (tertiary ghost) — text follows theme color
-  const resetBtn = document.getElementById("reset-btn");
-  if (resetBtn) {
-    resetBtn.style.color = theme.primaryColor;
-  }
+  // Start over (tertiary ghost) — color comes from var(--primary) in CSS, no inline override needed
 }
 
 /* ============================================================
@@ -1186,6 +1182,7 @@ async function init() {
     // Make reset button a primary CTA: "Generate Your Wish"
     const resetBtn = document.getElementById("reset-btn");
     resetBtn.className = "btn-primary-action";
+    resetBtn.style.removeProperty('color');
     resetBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generate Your Wish`;
     resetBtn.addEventListener("click", () => {
       window.location.href = window.location.pathname;
