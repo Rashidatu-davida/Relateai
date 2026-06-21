@@ -942,7 +942,7 @@ input  { font-family: var(--font-body); }
 .btn-ghost-action {
   background: none;
   border: none;
-  color: #aaaaaa;
+  color: var(--primary);
   font-size: 0.82rem;
   font-family: var(--font-body);
   display: flex;
