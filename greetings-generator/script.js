@@ -300,6 +300,43 @@ const THEMES = [
       "Whatever this season means to you, may it bring you peace, joy, and the presence of the people who make life worth celebrating. Happy Holidays — you are so very loved and appreciated. 🌟🎁",
     ],
   },
+  {
+    id: "valentines",
+    className: "theme-vday",
+    emoji: "💘",
+    label: "Valentine's Day",
+    carouselLabel: " Valentine's Greeter",
+    heading: "Send a Heartfelt\nValentine's Wish",
+    subtitle: "Tell someone special just how much they mean to you.",
+    namePlaceholder: "Who holds your heart? 💘",
+    generateLabel: "Send My Love",
+    revealGreeting: (n) => `Happy Valentine's Day, ${n}!`,
+    tagBadge: "Valentine's Day Message",
+    cardEmoji: "💘",
+    glassCard: "#ffffff",
+    primaryGlow: "rgba(194,24,91,0.15)",
+    primaryColor: "#C2185B",
+    secondaryColor: "#FF8F00",
+    goldColor: "#FF8F00",
+    buttonGradient: "linear-gradient(135deg, #C2185B 0%, #ad1457 55%, #FF8F00 100%)",
+    buttonShadow: "0 6px 20px rgba(194,24,91,0.35)",
+    badgeBg: "rgba(194,24,91,0.08)",
+    badgeColor: "#C2185B",
+    headingGradient: "linear-gradient(135deg, #C2185B 0%, #880e4f 50%, #FF8F00 100%)",
+    namePill: { bg: "rgba(194,24,91,0.07)", border: "rgba(194,24,91,0.25)", color: "#C2185B" },
+    topAccentLine: "linear-gradient(90deg, transparent, #C2185B, #FF8F00, transparent)",
+    confettiColors: ["#C2185B","#FF8F00","#E91E63","#ff4081","#fce4ec","#ffccbc"],
+    sparkleColor: "rgba(255,64,129,0.85)",
+    blobColors: ["rgba(194,24,91,0.10)","rgba(255,143,0,0.09)","rgba(233,30,99,0.08)","rgba(194,24,91,0.06)"],
+    dotColors: ["#C2185B","#FF8F00","#E91E63","#ff4081","#C2185B","#FF8F00","#880e4f","#E91E63"],
+    messages: [
+      "You make every day feel like Valentine's Day — but today is just an extra reminder of how completely you've stolen my heart. Thank you for being the person who makes this world a more beautiful place simply by being in it. I love you more than words will ever fully capture. 💘✨",
+      "Happy Valentine's Day to the one who holds my whole heart. You are the kind of love I used to only read about — patient, warm, real, and absolutely extraordinary. Every single moment with you is my favourite. Here's to us and every beautiful day ahead. 💕🌹",
+      "On this day filled with hearts and roses, I want you to know that you are the most wonderful surprise life ever gave me. You're my person — my calm, my joy, my greatest adventure. Happy Valentine's Day, with every bit of love I have. 🌹💘",
+      "Some people are lucky to find a love that feels like home — and I found that in you. You are my safe place, my brightest light, and the reason my heart feels so full every single day. Happy Valentine's Day to the one who means everything to me. 💖",
+      "Happy Valentine's Day to someone who deserves all the love in the world — today and every day. Whether we share a romantic love or the beautiful bond of a true friendship, know that you are deeply valued, genuinely cherished, and always in my heart. 💌✨",
+    ],
+  },
 ];
 
 /* ============================================================
@@ -949,6 +986,7 @@ async function handleShare() {
     "eid":           `🌙 Eid Mubarak — someone sent you warm blessings...`,
     "new-year":      `🥂 A new year wish has found its way to you...`,
     "happy-holidays":`❄️ A holiday surprise is waiting for you...`,
+    "valentines":    `💘 Someone has sent you a heartfelt Valentine's message...`,
   };
 
   const intro = themeIntros[theme.id] || `${theme.cardEmoji} A special ${theme.label} greeting is waiting for you...`;
