@@ -1,614 +1,807 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy & Terms — RelateAi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy & Terms — RelateAi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    :root {
-      --red:    #ff1502;
-      --orange: #ff6d02;
-      --pink:   #ff0259;
-      --teal:   #00aeba;
-      --green:  #0c8745;
-      --gold:   #dfb400;
-      --text:   #333333;
-      --muted:  #666666;
-      --bg:     #fff8f6;
-      --card:   #ffffff;
-      --border: #f0ebe9;
-    }
+      :root {
+        --red: #ff1502;
+        --orange: #ff6d02;
+        --pink: #ff0259;
+        --teal: #00aeba;
+        --green: #0c8745;
+        --gold: #dfb400;
+        --text: #333333;
+        --muted: #666666;
+        --bg: #fff8f6;
+        --card: #ffffff;
+        --border: #f0ebe9;
+      }
 
-    html { scroll-behavior: smooth; }
+      html {
+        scroll-behavior: smooth;
+      }
 
-    body {
-      font-family: 'Nunito', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
-    }
+      body {
+        font-family: "Nunito", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
 
-    /* ── Header ── */
-    .site-header {
-      background: #ffffff;
-      border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
-    }
+      /* ── Header ── */
+      .site-header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
+        padding: 18px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      }
 
-    .header-brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
+      .header-brand {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+      }
 
-    .header-by {
-      font-size: 0.6rem;
-      font-weight: 400;
-      font-style: italic;
-      color: var(--red);
-    }
+      .header-by {
+        font-size: 0.6rem;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--red);
+      }
 
-    .header-name {
-      font-size: 1rem;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--red);
-    }
+      .header-name {
+        font-size: 1rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--red);
+      }
 
-    .header-back {
-      text-decoration: none;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #fff;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
-    }
+      .header-back {
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--muted);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: #fff;
+        transition:
+          color 0.2s,
+          border-color 0.2s,
+          background 0.2s;
+      }
 
-    .header-back:hover {
-      color: var(--red);
-      border-color: rgba(255,21,2,0.3);
-      background: rgba(255,21,2,0.04);
-    }
+      .header-back:hover {
+        color: var(--red);
+        border-color: rgba(255, 21, 2, 0.3);
+        background: rgba(255, 21, 2, 0.04);
+      }
 
-    /* ── Hero banner ── */
-    .hero {
-      background: linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
-      color: #ffffff;
-      text-align: center;
-      padding: 56px 24px 48px;
-    }
+      /* ── Hero banner ── */
+      .hero {
+        background: linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
+        color: #ffffff;
+        text-align: center;
+        padding: 56px 24px 48px;
+      }
 
-    .hero-label {
-      display: inline-block;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 999px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 5px 16px;
-      margin-bottom: 18px;
-    }
+      .hero-label {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 999px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 5px 16px;
+        margin-bottom: 18px;
+      }
 
-    .hero h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 6vw, 3rem);
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 12px;
-    }
+      .hero h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(2rem, 6vw, 3rem);
+        font-weight: 900;
+        line-height: 1.15;
+        margin-bottom: 12px;
+      }
 
-    .hero p {
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
+      .hero p {
+        font-size: 0.9rem;
+        opacity: 0.85;
+      }
 
-    /* ── Layout ── */
-    .page-wrap {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 48px 24px 80px;
-    }
+      /* ── Layout ── */
+      .page-wrap {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
 
-    /* ── Table of contents ── */
-    .toc {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px 32px;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
+      /* ── Table of contents ── */
+      .toc {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px 32px;
+        margin-bottom: 40px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
 
-    .toc-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--red);
-      margin-bottom: 14px;
-    }
+      .toc-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--red);
+        margin-bottom: 14px;
+      }
 
-    .toc ol {
-      padding-left: 20px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px 24px;
-    }
+      .toc ol {
+        padding-left: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 24px;
+      }
 
-    @media (max-width: 560px) {
-      .toc ol { grid-template-columns: 1fr; }
-    }
+      @media (max-width: 560px) {
+        .toc ol {
+          grid-template-columns: 1fr;
+        }
+      }
 
-    .toc a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
+      .toc a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
 
-    .toc a:hover { color: var(--red); }
+      .toc a:hover {
+        color: var(--red);
+      }
 
-    /* ── Sections ── */
-    .section {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      scroll-margin-top: 80px;
-    }
+      /* ── Sections ── */
+      .section {
+        background: #ffffff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 32px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        scroll-margin-top: 80px;
+      }
 
-    .section-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--red), var(--orange));
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 800;
-      flex-shrink: 0;
-      margin-right: 12px;
-    }
+      .section-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--red), var(--orange));
+        color: #ffffff;
+        font-size: 0.75rem;
+        font-weight: 800;
+        flex-shrink: 0;
+        margin-right: 12px;
+      }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 18px;
-    }
+      .section-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 18px;
+      }
 
-    .section h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--text);
-    }
+      .section h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--text);
+      }
 
-    .section p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin-bottom: 12px;
-    }
+      .section p {
+        color: var(--muted);
+        font-size: 0.93rem;
+        margin-bottom: 12px;
+      }
 
-    .section p:last-child { margin-bottom: 0; }
+      .section p:last-child {
+        margin-bottom: 0;
+      }
 
-    .section b { color: var(--text); font-weight: 700; }
+      .section b {
+        color: var(--text);
+        font-weight: 700;
+      }
 
-    .section a {
-      color: var(--red);
-      text-decoration: none;
-      font-weight: 600;
-    }
+      .section a {
+        color: var(--red);
+        text-decoration: none;
+        font-weight: 600;
+      }
 
-    .section a:hover { text-decoration: underline; }
+      .section a:hover {
+        text-decoration: underline;
+      }
 
-    /* sub-heading inside section */
-    .sub-heading {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text);
-      margin: 20px 0 8px;
-    }
+      /* sub-heading inside section */
+      .sub-heading {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        margin: 20px 0 8px;
+      }
 
-    /* definition pill */
-    .def-block {
-      background: rgba(255,21,2,0.04);
-      border-left: 3px solid var(--red);
-      border-radius: 0 10px 10px 0;
-      padding: 12px 16px;
-      margin-bottom: 10px;
-    }
+      /* definition pill */
+      .def-block {
+        background: rgba(255, 21, 2, 0.04);
+        border-left: 3px solid var(--red);
+        border-radius: 0 10px 10px 0;
+        padding: 12px 16px;
+        margin-bottom: 10px;
+      }
 
-    .def-block b { color: var(--red); }
+      .def-block b {
+        color: var(--red);
+      }
 
-    /* list items */
-    .list-item {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
+      /* list items */
+      .list-item {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
 
-    .list-item::before {
-      content: "•";
-      color: var(--red);
-      font-weight: 900;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
+      .list-item::before {
+        content: "•";
+        color: var(--red);
+        font-weight: 900;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
 
-    /* effective date chip */
-    .date-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,109,2,0.08);
-      border: 1px solid rgba(255,109,2,0.2);
-      border-radius: 999px;
-      padding: 5px 14px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--orange);
-      margin-bottom: 32px;
-    }
+      /* effective date chip */
+      .date-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 109, 2, 0.08);
+        border: 1px solid rgba(255, 109, 2, 0.2);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--orange);
+        margin-bottom: 32px;
+      }
 
-    /* ── Contact card ── */
-    .contact-card {
-      background: linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
-      border-radius: 20px;
-      padding: 32px;
-      text-align: center;
-      color: #ffffff;
-      margin-top: 32px;
-    }
+      /* ── Contact card ── */
+      .contact-card {
+        background: linear-gradient(135deg, var(--red) 0%, var(--orange) 100%);
+        border-radius: 20px;
+        padding: 32px;
+        text-align: center;
+        color: #ffffff;
+        margin-top: 32px;
+      }
 
-    .contact-card h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
+      .contact-card h3 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 1.4rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
 
-    .contact-card p {
-      opacity: 0.88;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+      .contact-card p {
+        opacity: 0.88;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
 
-    .contact-card a {
-      display: inline-block;
-      background: #ffffff;
-      color: var(--red);
-      font-weight: 800;
-      font-size: 0.9rem;
-      padding: 12px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    }
+      .contact-card a {
+        display: inline-block;
+        background: #ffffff;
+        color: var(--red);
+        font-weight: 800;
+        font-size: 0.9rem;
+        padding: 12px 28px;
+        border-radius: 999px;
+        text-decoration: none;
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      }
 
-    .contact-card a:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
+      .contact-card a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      }
 
-    /* ── Footer ── */
-    .site-footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.75rem;
-      color: #aaaaaa;
-      border-top: 1px solid var(--border);
-      background: #ffffff;
-    }
+      /* ── Footer ── */
+      .site-footer {
+        text-align: center;
+        padding: 24px;
+        font-size: 0.75rem;
+        color: #aaaaaa;
+        border-top: 1px solid var(--border);
+        background: #ffffff;
+      }
 
-    .site-footer a { color: var(--red); text-decoration: none; }
-  </style>
-</head>
-<body>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-brand">
-      <span class="header-by">by</span>
-      <span class="header-name">RelateAi</span>
-    </div>
-    <a href="index.html" class="header-back">Back to App</a>
-  </header>
-
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-label">Legal</div>
-    <h1>Privacy Policy &amp;<br>Terms &amp; Conditions</h1>
-    <p>How we handle your data and what you agree to by using our service.</p>
-  </div>
-
-  <div class="page-wrap">
-
-    <div class="date-chip">
-      Effective date: 2026-06-16
-    </div>
-
-    <!-- Table of Contents -->
-    <div class="toc">
-      <div class="toc-title">Contents</div>
-      <ol>
-        <li><a href="#s1">Introduction</a></li>
-        <li><a href="#s2">Definitions</a></li>
-        <li><a href="#s3">Information Collection &amp; Use</a></li>
-        <li><a href="#s4">Types of Data Collected</a></li>
-        <li><a href="#s5">Use of Data</a></li>
-        <li><a href="#s6">Retention of Data</a></li>
-        <li><a href="#s7">Transfer of Data</a></li>
-        <li><a href="#s8">Disclosure of Data</a></li>
-        <li><a href="#s9">Security of Data</a></li>
-        <li><a href="#s10">GDPR Rights</a></li>
-        <li><a href="#s11">CalOPPA Rights</a></li>
-        <li><a href="#s12">CCPA Rights</a></li>
-        <li><a href="#s13">Service Providers</a></li>
-        <li><a href="#s18">Links to Other Sites</a></li>
-        <li><a href="#s19">Children's Privacy</a></li>
-        <li><a href="#s20">Policy Changes</a></li>
-      </ol>
-    </div>
-
-    <!-- Section 1 -->
-    <div class="section" id="s1">
-      <div class="section-header">
-        <span class="section-number">1</span>
-        <h2>Introduction</h2>
+      .site-footer a {
+        color: var(--red);
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-brand">
+        <span class="header-by">by</span>
+        <span class="header-name">RelateAi</span>
       </div>
-      <p>Welcome to <b>Greetings Wish Generator</b>.</p>
-      <p><b>Greetings Wish Generator</b> ("us", "we", or "our") operates <b>userelateai.com</b> (hereinafter referred to as <b>"Service"</b>).</p>
-      <p>Our Privacy Policy governs your visit to <b>userelateai.com</b> and explains how we collect, safeguard and disclose information that results from your use of our Service.</p>
-      <p>We use your data to provide and improve Service. By using Service, you agree to the collection and use of information in accordance with this policy. Unless otherwise defined in this Privacy Policy, the terms used have the same meanings as in our Terms and Conditions.</p>
-      <p>Our Terms and Conditions (<b>"Terms"</b>) govern all use of our Service and together with the Privacy Policy constitutes your agreement with us (<b>"agreement"</b>).</p>
+      <a href="index.html" class="header-back">Back to App</a>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-label">Legal</div>
+      <h1>Privacy Policy &amp;<br />Terms &amp; Conditions</h1>
+      <p>How we handle your data and what you agree to by using our service.</p>
     </div>
 
-    <!-- Section 2 -->
-    <div class="section" id="s2">
-      <div class="section-header">
-        <span class="section-number">2</span>
-        <h2>Definitions</h2>
+    <div class="page-wrap">
+      <div class="date-chip">Effective date: 2026-06-16</div>
+
+      <!-- Table of Contents -->
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <ol>
+          <li><a href="#s1">Introduction</a></li>
+          <li><a href="#s2">Definitions</a></li>
+          <li><a href="#s3">Information Collection &amp; Use</a></li>
+          <li><a href="#s4">Types of Data Collected</a></li>
+          <li><a href="#s5">Use of Data</a></li>
+          <li><a href="#s6">Retention of Data</a></li>
+          <li><a href="#s7">Transfer of Data</a></li>
+          <li><a href="#s8">Disclosure of Data</a></li>
+          <li><a href="#s9">Security of Data</a></li>
+          <li><a href="#s10">GDPR Rights</a></li>
+          <li><a href="#s11">CalOPPA Rights</a></li>
+          <li><a href="#s12">CCPA Rights</a></li>
+          <li><a href="#s13">Service Providers</a></li>
+          <li><a href="#s18">Links to Other Sites</a></li>
+          <li><a href="#s19">Children's Privacy</a></li>
+          <li><a href="#s20">Policy Changes</a></li>
+        </ol>
       </div>
-      <div class="def-block"><b>SERVICE</b> — the userelateai.com website operated by Greetings Wish Generator.</div>
-      <div class="def-block"><b>PERSONAL DATA</b> — data about a living individual who can be identified from those data (or from those and other information in our possession).</div>
-      <div class="def-block"><b>USAGE DATA</b> — data collected automatically, generated by the use of Service or from Service infrastructure itself.</div>
-      <div class="def-block"><b>COOKIES</b> — small files stored on your device (computer or mobile device).</div>
-      <div class="def-block"><b>DATA CONTROLLER</b> — a natural or legal person who determines the purposes for which personal data are processed. For the purpose of this Privacy Policy, we are a Data Controller of your data.</div>
-      <div class="def-block"><b>DATA PROCESSORS (OR SERVICE PROVIDERS)</b> — any natural or legal person who processes the data on behalf of the Data Controller.</div>
-      <div class="def-block"><b>DATA SUBJECT</b> — any living individual who is the subject of Personal Data.</div>
-      <div class="def-block"><b>THE USER</b> — the individual using our Service, corresponding to the Data Subject.</div>
-    </div>
 
-    <!-- Section 3 -->
-    <div class="section" id="s3">
-      <div class="section-header">
-        <span class="section-number">3</span>
-        <h2>Information Collection and Use</h2>
+      <!-- Section 1 -->
+      <div class="section" id="s1">
+        <div class="section-header">
+          <span class="section-number">1</span>
+          <h2>Introduction</h2>
+        </div>
+        <p>Welcome to <b>Greetings Generator</b>.</p>
+        <p>
+          <b>Greetings Generator</b> ("us", "we", or "our") operates
+          <b>userelateai.com</b> (hereinafter referred to as <b>"Service"</b>).
+        </p>
+        <p>
+          Our Privacy Policy governs your visit to <b>userelateai.com</b> and explains how we
+          collect, safeguard and disclose information that results from your use of our Service.
+        </p>
+        <p>
+          We use your data to provide and improve Service. By using Service, you agree to the
+          collection and use of information in accordance with this policy. Unless otherwise defined
+          in this Privacy Policy, the terms used have the same meanings as in our Terms and
+          Conditions.
+        </p>
+        <p>
+          Our Terms and Conditions (<b>"Terms"</b>) govern all use of our Service and together with
+          the Privacy Policy constitutes your agreement with us (<b>"agreement"</b>).
+        </p>
       </div>
-      <p>We collect several different types of information for various purposes to provide and improve our Service to you.</p>
-    </div>
 
-    <!-- Section 4 -->
-    <div class="section" id="s4">
-      <div class="section-header">
-        <span class="section-number">4</span>
-        <h2>Types of Data Collected</h2>
+      <!-- Section 2 -->
+      <div class="section" id="s2">
+        <div class="section-header">
+          <span class="section-number">2</span>
+          <h2>Definitions</h2>
+        </div>
+        <div class="def-block">
+          <b>SERVICE</b> — the userelateai.com website operated by Greetings Generator.
+        </div>
+        <div class="def-block">
+          <b>PERSONAL DATA</b> — data about a living individual who can be identified from those
+          data (or from those and other information in our possession).
+        </div>
+        <div class="def-block">
+          <b>USAGE DATA</b> — data collected automatically, generated by the use of Service or from
+          Service infrastructure itself.
+        </div>
+        <div class="def-block">
+          <b>COOKIES</b> — small files stored on your device (computer or mobile device).
+        </div>
+        <div class="def-block">
+          <b>DATA CONTROLLER</b> — a natural or legal person who determines the purposes for which
+          personal data are processed. For the purpose of this Privacy Policy, we are a Data
+          Controller of your data.
+        </div>
+        <div class="def-block">
+          <b>DATA PROCESSORS (OR SERVICE PROVIDERS)</b> — any natural or legal person who processes
+          the data on behalf of the Data Controller.
+        </div>
+        <div class="def-block">
+          <b>DATA SUBJECT</b> — any living individual who is the subject of Personal Data.
+        </div>
+        <div class="def-block">
+          <b>THE USER</b> — the individual using our Service, corresponding to the Data Subject.
+        </div>
       </div>
-      <p class="sub-heading">Personal Data</p>
-      <p>While using our Service, we may ask you to provide certain personally identifiable information that can be used to contact or identify you (<b>"Personal Data"</b>). This may include, but is not limited to:</p>
-      <div class="list-item">Email address</div>
-      <div class="list-item">First name and last name</div>
-      <div class="list-item">Phone number</div>
-      <div class="list-item">Address, Country, State, Province, ZIP/Postal code, City</div>
-      <div class="list-item">Cookies and Usage Data</div>
-      <p style="margin-top:14px;">We may use your Personal Data to contact you with newsletters or promotional materials. You may opt out at any time by following the unsubscribe link.</p>
 
-      <p class="sub-heading">Usage Data</p>
-      <p>We may collect information that your browser sends whenever you visit our Service (<b>"Usage Data"</b>). This may include your IP address, browser type and version, pages visited, time and date of your visit, time spent on pages, and other diagnostic data.</p>
-
-      <p class="sub-heading">Tracking &amp; Cookies Data</p>
-      <p>We use cookies and similar tracking technologies to track activity on our Service. You can instruct your browser to refuse all cookies; however, some parts of our Service may not function correctly.</p>
-      <div class="list-item"><b>Session Cookies</b> — to operate our Service.</div>
-      <div class="list-item"><b>Preference Cookies</b> — to remember your preferences and settings.</div>
-      <div class="list-item"><b>Security Cookies</b> — for security purposes.</div>
-      <div class="list-item"><b>Advertising Cookies</b> — to serve relevant advertisements.</div>
-    </div>
-
-    <!-- Section 5 -->
-    <div class="section" id="s5">
-      <div class="section-header">
-        <span class="section-number">5</span>
-        <h2>Use of Data</h2>
+      <!-- Section 3 -->
+      <div class="section" id="s3">
+        <div class="section-header">
+          <span class="section-number">3</span>
+          <h2>Information Collection and Use</h2>
+        </div>
+        <p>
+          We collect several different types of information for various purposes to provide and
+          improve our Service to you.
+        </p>
       </div>
-      <p>Greetings Wish Generator uses collected data to:</p>
-      <div class="list-item">Provide and maintain our Service</div>
-      <div class="list-item">Notify you about changes to our Service</div>
-      <div class="list-item">Allow participation in interactive features</div>
-      <div class="list-item">Provide customer support</div>
-      <div class="list-item">Gather analysis to improve our Service</div>
-      <div class="list-item">Monitor the usage of our Service</div>
-      <div class="list-item">Detect, prevent and address technical issues</div>
-      <div class="list-item">Carry out obligations and enforce rights from any contracts</div>
-      <div class="list-item">Send notices about your account or subscription</div>
-      <div class="list-item">Provide news, special offers and general information about similar goods or services</div>
-      <div class="list-item">For any other purpose with your consent</div>
-    </div>
 
-    <!-- Section 6 -->
-    <div class="section" id="s6">
-      <div class="section-header">
-        <span class="section-number">6</span>
-        <h2>Retention of Data</h2>
+      <!-- Section 4 -->
+      <div class="section" id="s4">
+        <div class="section-header">
+          <span class="section-number">4</span>
+          <h2>Types of Data Collected</h2>
+        </div>
+        <p class="sub-heading">Personal Data</p>
+        <p>
+          While using our Service, we may ask you to provide certain personally identifiable
+          information that can be used to contact or identify you (<b>"Personal Data"</b>). This may
+          include, but is not limited to:
+        </p>
+        <div class="list-item">Email address</div>
+        <div class="list-item">First name and last name</div>
+        <div class="list-item">Phone number</div>
+        <div class="list-item">Address, Country, State, Province, ZIP/Postal code, City</div>
+        <div class="list-item">Cookies and Usage Data</div>
+        <p style="margin-top: 14px">
+          We may use your Personal Data to contact you with newsletters or promotional materials.
+          You may opt out at any time by following the unsubscribe link.
+        </p>
+
+        <p class="sub-heading">Usage Data</p>
+        <p>
+          We may collect information that your browser sends whenever you visit our Service (<b
+            >"Usage Data"</b
+          >). This may include your IP address, browser type and version, pages visited, time and
+          date of your visit, time spent on pages, and other diagnostic data.
+        </p>
+
+        <p class="sub-heading">Tracking &amp; Cookies Data</p>
+        <p>
+          We use cookies and similar tracking technologies to track activity on our Service. You can
+          instruct your browser to refuse all cookies; however, some parts of our Service may not
+          function correctly.
+        </p>
+        <div class="list-item"><b>Session Cookies</b> — to operate our Service.</div>
+        <div class="list-item">
+          <b>Preference Cookies</b> — to remember your preferences and settings.
+        </div>
+        <div class="list-item"><b>Security Cookies</b> — for security purposes.</div>
+        <div class="list-item"><b>Advertising Cookies</b> — to serve relevant advertisements.</div>
       </div>
-      <p>We will retain your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy — including to comply with legal obligations, resolve disputes, and enforce our agreements.</p>
-      <p>Usage Data is generally retained for a shorter period, except when used to strengthen security or improve Service functionality, or when we are legally obligated to retain it longer.</p>
-    </div>
 
-    <!-- Section 7 -->
-    <div class="section" id="s7">
-      <div class="section-header">
-        <span class="section-number">7</span>
-        <h2>Transfer of Data</h2>
+      <!-- Section 5 -->
+      <div class="section" id="s5">
+        <div class="section-header">
+          <span class="section-number">5</span>
+          <h2>Use of Data</h2>
+        </div>
+        <p>Greetings Generator uses collected data to:</p>
+        <div class="list-item">Provide and maintain our Service</div>
+        <div class="list-item">Notify you about changes to our Service</div>
+        <div class="list-item">Allow participation in interactive features</div>
+        <div class="list-item">Provide customer support</div>
+        <div class="list-item">Gather analysis to improve our Service</div>
+        <div class="list-item">Monitor the usage of our Service</div>
+        <div class="list-item">Detect, prevent and address technical issues</div>
+        <div class="list-item">Carry out obligations and enforce rights from any contracts</div>
+        <div class="list-item">Send notices about your account or subscription</div>
+        <div class="list-item">
+          Provide news, special offers and general information about similar goods or services
+        </div>
+        <div class="list-item">For any other purpose with your consent</div>
       </div>
-      <p>Your information, including Personal Data, may be transferred to and maintained on computers located outside of your state, province, country or other governmental jurisdiction where data protection laws may differ.</p>
-      <p>If you are located outside Ghana and choose to provide information to us, please note that we transfer the data to Ghana and process it there. Your consent to this Privacy Policy followed by your submission of such information represents your agreement to that transfer.</p>
-      <p>Greetings Wish Generator will take all steps reasonably necessary to ensure your data is treated securely and in accordance with this Privacy Policy.</p>
-    </div>
 
-    <!-- Section 8 -->
-    <div class="section" id="s8">
-      <div class="section-header">
-        <span class="section-number">8</span>
-        <h2>Disclosure of Data</h2>
+      <!-- Section 6 -->
+      <div class="section" id="s6">
+        <div class="section-header">
+          <span class="section-number">6</span>
+          <h2>Retention of Data</h2>
+        </div>
+        <p>
+          We will retain your Personal Data only for as long as is necessary for the purposes set
+          out in this Privacy Policy — including to comply with legal obligations, resolve disputes,
+          and enforce our agreements.
+        </p>
+        <p>
+          Usage Data is generally retained for a shorter period, except when used to strengthen
+          security or improve Service functionality, or when we are legally obligated to retain it
+          longer.
+        </p>
       </div>
-      <p>We may disclose personal information that we collect or you provide in the following situations:</p>
-      <div class="list-item"><b>Business Transaction</b> — if involved in a merger, acquisition or asset sale, your Personal Data may be transferred.</div>
-      <div class="list-item">To our subsidiaries and affiliates</div>
-      <div class="list-item">To contractors, service providers, and third parties that support our business</div>
-      <div class="list-item">To fulfill the purpose for which you provide it</div>
-      <div class="list-item">With your consent in any other cases</div>
-      <div class="list-item">If disclosure is necessary to protect the rights, property, or safety of the Company, our customers, or others</div>
-    </div>
 
-    <!-- Section 9 -->
-    <div class="section" id="s9">
-      <div class="section-header">
-        <span class="section-number">9</span>
-        <h2>Security of Data</h2>
+      <!-- Section 7 -->
+      <div class="section" id="s7">
+        <div class="section-header">
+          <span class="section-number">7</span>
+          <h2>Transfer of Data</h2>
+        </div>
+        <p>
+          Your information, including Personal Data, may be transferred to and maintained on
+          computers located outside of your state, province, country or other governmental
+          jurisdiction where data protection laws may differ.
+        </p>
+        <p>
+          If you are located outside Ghana and choose to provide information to us, please note that
+          we transfer the data to Ghana and process it there. Your consent to this Privacy Policy
+          followed by your submission of such information represents your agreement to that
+          transfer.
+        </p>
+        <p>
+          Greetings Generator will take all steps reasonably necessary to ensure your data is
+          treated securely and in accordance with this Privacy Policy.
+        </p>
       </div>
-      <p>The security of your data is important to us, but remember that no method of transmission over the Internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Data, we cannot guarantee its absolute security.</p>
-    </div>
 
-    <!-- Section 10 -->
-    <div class="section" id="s10">
-      <div class="section-header">
-        <span class="section-number">10</span>
-        <h2>Your Data Protection Rights Under GDPR</h2>
+      <!-- Section 8 -->
+      <div class="section" id="s8">
+        <div class="section-header">
+          <span class="section-number">8</span>
+          <h2>Disclosure of Data</h2>
+        </div>
+        <p>
+          We may disclose personal information that we collect or you provide in the following
+          situations:
+        </p>
+        <div class="list-item">
+          <b>Business Transaction</b> — if involved in a merger, acquisition or asset sale, your
+          Personal Data may be transferred.
+        </div>
+        <div class="list-item">To our subsidiaries and affiliates</div>
+        <div class="list-item">
+          To contractors, service providers, and third parties that support our business
+        </div>
+        <div class="list-item">To fulfill the purpose for which you provide it</div>
+        <div class="list-item">With your consent in any other cases</div>
+        <div class="list-item">
+          If disclosure is necessary to protect the rights, property, or safety of the Company, our
+          customers, or others
+        </div>
       </div>
-      <p>If you are a resident of the European Union (EU) or European Economic Area (EEA), you have certain data protection rights under GDPR. To be informed what Personal Data we hold or to have it removed, please email us at <b>getrelateai@gmail.com</b>.</p>
-      <p>In certain circumstances, you have the right to:</p>
-      <div class="list-item">Access, update or delete the information we hold on you</div>
-      <div class="list-item">Rectification — have inaccurate or incomplete information corrected</div>
-      <div class="list-item">Object to our processing of your Personal Data</div>
-      <div class="list-item">Restriction — request that we restrict the processing of your personal information</div>
-      <div class="list-item">Data portability — receive a copy of your data in a structured, machine-readable format</div>
-      <div class="list-item">Withdraw consent at any time where we rely on your consent to process your information</div>
-      <p style="margin-top:14px;">You have the right to complain to a Data Protection Authority about our collection and use of your Personal Data.</p>
-    </div>
 
-    <!-- Section 11 -->
-    <div class="section" id="s11">
-      <div class="section-header">
-        <span class="section-number">11</span>
-        <h2>Your Rights Under CalOPPA</h2>
+      <!-- Section 9 -->
+      <div class="section" id="s9">
+        <div class="section-header">
+          <span class="section-number">9</span>
+          <h2>Security of Data</h2>
+        </div>
+        <p>
+          The security of your data is important to us, but remember that no method of transmission
+          over the Internet or electronic storage is 100% secure. While we strive to use
+          commercially acceptable means to protect your Personal Data, we cannot guarantee its
+          absolute security.
+        </p>
       </div>
-      <p>CalOPPA is the first state law in the nation to require commercial websites to post a privacy policy. According to CalOPPA we agree to the following:</p>
-      <div class="list-item">Users can visit our site anonymously</div>
-      <div class="list-item">Our Privacy Policy link includes the word "Privacy" and can easily be found on the home page</div>
-      <div class="list-item">Users will be notified of any privacy policy changes on our Privacy Policy page</div>
-      <div class="list-item">Users can change their personal information by emailing us at <b>getrelateai@gmail.com</b></div>
-      <p style="margin-top:14px;">We honor Do Not Track signals and do not track, plant cookies, or use advertising when a Do Not Track browser mechanism is in place.</p>
-    </div>
 
-    <!-- Section 12 -->
-    <div class="section" id="s12">
-      <div class="section-header">
-        <span class="section-number">12</span>
-        <h2>Your Rights Under CCPA</h2>
+      <!-- Section 10 -->
+      <div class="section" id="s10">
+        <div class="section-header">
+          <span class="section-number">10</span>
+          <h2>Your Data Protection Rights Under GDPR</h2>
+        </div>
+        <p>
+          If you are a resident of the European Union (EU) or European Economic Area (EEA), you have
+          certain data protection rights under GDPR. To be informed what Personal Data we hold or to
+          have it removed, please email us at <b>getrelateai@gmail.com</b>.
+        </p>
+        <p>In certain circumstances, you have the right to:</p>
+        <div class="list-item">Access, update or delete the information we hold on you</div>
+        <div class="list-item">
+          Rectification — have inaccurate or incomplete information corrected
+        </div>
+        <div class="list-item">Object to our processing of your Personal Data</div>
+        <div class="list-item">
+          Restriction — request that we restrict the processing of your personal information
+        </div>
+        <div class="list-item">
+          Data portability — receive a copy of your data in a structured, machine-readable format
+        </div>
+        <div class="list-item">
+          Withdraw consent at any time where we rely on your consent to process your information
+        </div>
+        <p style="margin-top: 14px">
+          You have the right to complain to a Data Protection Authority about our collection and use
+          of your Personal Data.
+        </p>
       </div>
-      <p>If you are a California resident, you are entitled to learn what data we collect about you, ask to delete your data, and opt out of its sale. To exercise your rights you can request:</p>
-      <div class="list-item">What personal information we have collected about you and from which sources</div>
-      <div class="list-item">Deletion of your personal information from our records</div>
-      <div class="list-item">That we stop selling your personal information — <b>we do not sell or rent your personal information to any third parties</b></div>
-      <p style="margin-top:14px;">To exercise your California data protection rights, please send your request by email: <b>getrelateai@gmail.com</b>.</p>
-    </div>
 
-    <!-- Section 13 -->
-    <div class="section" id="s13">
-      <div class="section-header">
-        <span class="section-number">13</span>
-        <h2>Service Providers</h2>
+      <!-- Section 11 -->
+      <div class="section" id="s11">
+        <div class="section-header">
+          <span class="section-number">11</span>
+          <h2>Your Rights Under CalOPPA</h2>
+        </div>
+        <p>
+          CalOPPA is the first state law in the nation to require commercial websites to post a
+          privacy policy. According to CalOPPA we agree to the following:
+        </p>
+        <div class="list-item">Users can visit our site anonymously</div>
+        <div class="list-item">
+          Our Privacy Policy link includes the word "Privacy" and can easily be found on the home
+          page
+        </div>
+        <div class="list-item">
+          Users will be notified of any privacy policy changes on our Privacy Policy page
+        </div>
+        <div class="list-item">
+          Users can change their personal information by emailing us at <b>getrelateai@gmail.com</b>
+        </div>
+        <p style="margin-top: 14px">
+          We honor Do Not Track signals and do not track, plant cookies, or use advertising when a
+          Do Not Track browser mechanism is in place.
+        </p>
       </div>
-      <p>We may employ third party companies and individuals to facilitate our Service, provide Service on our behalf, or assist us in analysing how our Service is used. These third parties have access to your Personal Data only to perform these tasks and are obligated not to disclose or use it for any other purpose.</p>
-    </div>
 
-    <!-- Section 14–17 combined -->
-    <div class="section" id="s14">
-      <div class="section-header">
-        <span class="section-number">14</span>
-        <h2>Analytics, Advertising &amp; Remarketing</h2>
+      <!-- Section 12 -->
+      <div class="section" id="s12">
+        <div class="section-header">
+          <span class="section-number">12</span>
+          <h2>Your Rights Under CCPA</h2>
+        </div>
+        <p>
+          If you are a California resident, you are entitled to learn what data we collect about
+          you, ask to delete your data, and opt out of its sale. To exercise your rights you can
+          request:
+        </p>
+        <div class="list-item">
+          What personal information we have collected about you and from which sources
+        </div>
+        <div class="list-item">Deletion of your personal information from our records</div>
+        <div class="list-item">
+          That we stop selling your personal information —
+          <b>we do not sell or rent your personal information to any third parties</b>
+        </div>
+        <p style="margin-top: 14px">
+          To exercise your California data protection rights, please send your request by email:
+          <b>getrelateai@gmail.com</b>.
+        </p>
       </div>
-      <p>We may use third-party Service Providers to monitor and analyze the use of our Service, to automate the development process (CI/CD tools), to show advertisements that help support and maintain our Service, and to run remarketing campaigns on third-party websites based on your past visits to our Service.</p>
-    </div>
 
-    <!-- Section 18 -->
-    <div class="section" id="s18">
-      <div class="section-header">
-        <span class="section-number">18</span>
-        <h2>Links to Other Sites</h2>
+      <!-- Section 13 -->
+      <div class="section" id="s13">
+        <div class="section-header">
+          <span class="section-number">13</span>
+          <h2>Service Providers</h2>
+        </div>
+        <p>
+          We may employ third party companies and individuals to facilitate our Service, provide
+          Service on our behalf, or assist us in analysing how our Service is used. These third
+          parties have access to your Personal Data only to perform these tasks and are obligated
+          not to disclose or use it for any other purpose.
+        </p>
       </div>
-      <p>Our Service may contain links to other sites not operated by us. If you click a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
-      <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third-party sites or services.</p>
-    </div>
 
-    <!-- Section 19 -->
-    <div class="section" id="s19">
-      <div class="section-header">
-        <span class="section-number">19</span>
-        <h2>Children's Privacy</h2>
+      <!-- Section 14–17 combined -->
+      <div class="section" id="s14">
+        <div class="section-header">
+          <span class="section-number">14</span>
+          <h2>Analytics, Advertising &amp; Remarketing</h2>
+        </div>
+        <p>
+          We may use third-party Service Providers to monitor and analyze the use of our Service, to
+          automate the development process (CI/CD tools), to show advertisements that help support
+          and maintain our Service, and to run remarketing campaigns on third-party websites based
+          on your past visits to our Service.
+        </p>
       </div>
-      <p>Our Services are not intended for use by children under the age of 18. We do not knowingly collect personally identifiable information from Children under 18.</p>
-      <p>If you become aware that a Child has provided us with Personal Data, please contact us. If we become aware we have collected Personal Data from Children without verification of parental consent, we take steps to remove that information from our servers.</p>
-    </div>
 
-    <!-- Section 20 -->
-    <div class="section" id="s20">
-      <div class="section-header">
-        <span class="section-number">20</span>
-        <h2>Changes to This Privacy Policy</h2>
+      <!-- Section 18 -->
+      <div class="section" id="s18">
+        <div class="section-header">
+          <span class="section-number">18</span>
+          <h2>Links to Other Sites</h2>
+        </div>
+        <p>
+          Our Service may contain links to other sites not operated by us. If you click a
+          third-party link, you will be directed to that third party's site. We strongly advise you
+          to review the Privacy Policy of every site you visit.
+        </p>
+        <p>
+          We have no control over and assume no responsibility for the content, privacy policies or
+          practices of any third-party sites or services.
+        </p>
       </div>
-      <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "effective date" at the top.</p>
-      <p>You are advised to review this Privacy Policy periodically for any changes. Changes are effective when they are posted on this page.</p>
+
+      <!-- Section 19 -->
+      <div class="section" id="s19">
+        <div class="section-header">
+          <span class="section-number">19</span>
+          <h2>Children's Privacy</h2>
+        </div>
+        <p>
+          Our Services are not intended for use by children under the age of 18. We do not knowingly
+          collect personally identifiable information from Children under 18.
+        </p>
+        <p>
+          If you become aware that a Child has provided us with Personal Data, please contact us. If
+          we become aware we have collected Personal Data from Children without verification of
+          parental consent, we take steps to remove that information from our servers.
+        </p>
+      </div>
+
+      <!-- Section 20 -->
+      <div class="section" id="s20">
+        <div class="section-header">
+          <span class="section-number">20</span>
+          <h2>Changes to This Privacy Policy</h2>
+        </div>
+        <p>
+          We may update our Privacy Policy from time to time. We will notify you of any changes by
+          posting the new Privacy Policy on this page and updating the "effective date" at the top.
+        </p>
+        <p>
+          You are advised to review this Privacy Policy periodically for any changes. Changes are
+          effective when they are posted on this page.
+        </p>
+      </div>
+
+      <!-- Contact card -->
+      <div class="contact-card">
+        <h3>Have Questions?</h3>
+        <p>If you have any questions about this Privacy Policy or Terms, we're happy to help.</p>
+        <a href="mailto:getrelateai@gmail.com">getrelateai@gmail.com</a>
+      </div>
     </div>
 
-    <!-- Contact card -->
-    <div class="contact-card">
-      <h3>Have Questions?</h3>
-      <p>If you have any questions about this Privacy Policy or Terms, we're happy to help.</p>
-      <a href="mailto:getrelateai@gmail.com">getrelateai@gmail.com</a>
-    </div>
-
-  </div>
-
-  <footer class="site-footer">
-    <p>© 2026 <a href="index.html">RelateAi Greetings Wish Generator</a> · userelateai.com</p>
-    <p style="margin-top:6px;">This Privacy Policy was created on 2026-06-16.</p>
-  </footer>
-
-</body>
+    <footer class="site-footer">
+      <p>© 2026 <a href="index.html">RelateAi Greetings Generator</a> · userelateai.com</p>
+      <p style="margin-top: 6px">This Privacy Policy was created on 2026-06-16.</p>
+    </footer>
+  </body>
 </html>
