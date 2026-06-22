@@ -9,6 +9,10 @@
       content="Create personalized, elegant birthday and occasion greetings in seconds. Free, no sign-up required."
     />
     <meta name="theme-color" content="#0d1117" />
+    <meta property="og:title" content="Greetings Generator by RelateAi" />
+    <meta property="og:description" content="Create personalized, heartfelt greetings in seconds. Free, no sign-up required." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <base href="/greetings-generator/" />
     <!-- Preconnect to external CDNs so connections start immediately -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +21,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Nunito:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <!-- Font Awesome -->
@@ -46,6 +50,15 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+    <noscript>
+      <div style="padding:60px 24px;text-align:center;font-family:sans-serif;background:#fff8f6;min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+        <p style="font-size:2rem">💌</p>
+        <p style="font-size:1.1rem;font-weight:700;color:#333">JavaScript is required</p>
+        <p style="font-size:0.9rem;color:#666;max-width:300px;line-height:1.6">Please enable JavaScript in your browser settings to use the Greetings Generator.</p>
+      </div>
+    </noscript>
+    <a href="#create-form" class="skip-link">Skip to form</a>
+    <div id="theme-announce" class="sr-only" aria-live="assertive" aria-atomic="true"></div>
     <div id="app">
       <!-- ===================== CREATE SCREEN ===================== -->
       <div id="create-screen" class="screen">
@@ -189,13 +202,15 @@
               <div class="spotify-input-wrap">
                 <i class="fa-brands fa-spotify spotify-input-icon" aria-hidden="true"></i>
                 <input
-                  type="url"
+                  type="text"
                   class="spotify-input"
                   id="spotify-input"
                   placeholder="Paste a Spotify song link…"
                   autocomplete="off"
+                  spellcheck="false"
                 />
               </div>
+              <p class="spotify-hint" id="spotify-hint" aria-live="polite"></p>
             </div>
 
             <!-- Terms checkbox -->
@@ -214,6 +229,7 @@
               <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
               <strong id="generate-label">Generate Greetings</strong>
             </button>
+            <p class="generate-hint" id="generate-hint" aria-live="polite"></p>
           </form>
         </div>
       </div>
@@ -243,15 +259,19 @@
           <div class="greeting-card glass-card" id="greeting-card">
             <div class="card-accent-line" id="card-accent-line" aria-hidden="true"></div>
             <div class="card-badge-row">
-              <div class="card-emoji-box" id="card-emoji-box" aria-hidden="true"></div>
-              <p class="card-badge-text" id="card-badge-text"></p>
+              <div class="card-badge-pill" id="card-badge-pill">
+                <div class="card-emoji-box" id="card-emoji-box" aria-hidden="true"></div>
+                <p class="card-badge-text" id="card-badge-text"></p>
+              </div>
             </div>
             <p class="greeting-text" id="greeting-text"></p>
             <div class="card-footer-row"></div>
           </div>
 
           <!-- Reserved AdSense area -->
-          <div class="sponsor-zone" id="sponsor-zone">Sponsored Message</div>
+          <div class="sponsor-zone" id="sponsor-zone">
+            <span class="sponsor-label">Sponsored</span>
+          </div>
           <!-- Spotify Player -->
           <div class="spotify-player-wrap" id="spotify-player-wrap" style="display: none">
             <p class="spotify-player-label">
@@ -285,7 +305,7 @@
 
     <!-- Shared-link loading overlay -->
     <div class="shared-loader" id="shared-loader">
-      <div class="loader-box">
+      <div class="loader-box" tabindex="-1">
         <span class="loader-icon" id="loader-icon">🎁</span>
         <h2 class="loader-heading">Something special<br />is loading for you</h2>
         <div class="l-spinner">
