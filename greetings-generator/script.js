@@ -524,7 +524,6 @@ const state = {
   name: "",
   senderName: "",
   photo: null,
-  firebasePhotoUrl: null,
   greeting: "",
   greetingIndex: 0,
   greetingDocId: null,
@@ -706,10 +705,11 @@ function applyTheme(theme) {
   document.body.className = theme.className;
 
   // Sync CSS variables so every var(--primary) consumer gets the right color
-  // Must be set on body (not html) to win over the body class cascade
   document.body.style.setProperty("--primary", theme.primaryColor);
   document.body.style.setProperty("--secondary", theme.secondaryColor);
   document.body.style.setProperty("--primary-hover", darkenHex(theme.primaryColor, 0.14));
+  document.body.style.setProperty("--btn-gradient", theme.buttonGradient);
+  document.body.style.setProperty("--btn-shadow", theme.buttonShadow);
 
   // Carousel buttons
   ["prev-btn", "next-btn"].forEach((id) => {
@@ -763,30 +763,30 @@ function applyRevealTheme(theme) {
   badge.style.background = `linear-gradient(135deg, ${theme.goldColor}, ${theme.primaryColor})`;
   badge.textContent = theme.cardEmoji;
 
-  // Card emoji box
-  const emojiBox = document.getElementById("card-emoji-box");
-  emojiBox.style.background = `${theme.primaryColor}22`;
-  emojiBox.style.borderColor = `${theme.primaryColor}44`;
-  emojiBox.textContent = theme.cardEmoji;
-
   // Card badge text
   document.getElementById("card-badge-text").textContent = theme.tagBadge;
 
-  // Share Your Greeting (primary action)
-  const shareBtn = document.getElementById("share-btn");
-  if (shareBtn) {
-    shareBtn.style.background = theme.primaryColor;
-    shareBtn.style.boxShadow = theme.buttonShadow;
+  // Card accent line — solid primary color
+  const accentLine = document.getElementById("card-accent-line");
+  if (accentLine) {
+    accentLine.style.backgroundImage = "none";
+    accentLine.style.background = theme.primaryColor;
   }
 
-  // Try a Different Message (secondary) — border and text follow theme color
-  const newGreetingBtn = document.getElementById("new-greeting-btn");
-  if (newGreetingBtn) {
-    newGreetingBtn.style.borderColor = theme.primaryColor;
-    newGreetingBtn.style.color = theme.primaryColor;
+  // Badge pill — background and border tinted from primary
+  const badgePill = document.getElementById("card-badge-pill");
+  if (badgePill) {
+    badgePill.style.background = `${theme.primaryColor}18`;
+    badgePill.style.borderColor = `${theme.primaryColor}33`;
   }
 
-  // Start over (tertiary ghost) — color comes from var(--primary) in CSS, no inline override needed
+  // Emoji box inside pill — no border/background needed now
+  const emojiBox = document.getElementById("card-emoji-box");
+  if (emojiBox) {
+    emojiBox.style.background = "none";
+    emojiBox.style.border = "none";
+    emojiBox.textContent = theme.cardEmoji;
+  }
 }
 
 /* ============================================================
@@ -794,7 +794,6 @@ function applyRevealTheme(theme) {
    ============================================================ */
 function updateCarouselLabel(theme) {
   const label = document.getElementById("carousel-label");
-  // Fade out
   label.classList.add("fade-out");
   setTimeout(() => {
     document.getElementById("carousel-emoji").textContent = theme.emoji;
@@ -804,11 +803,13 @@ function updateCarouselLabel(theme) {
     document.getElementById("carousel-text").style.color = theme.primaryColor;
     label.style.background = `${theme.primaryColor}1a`;
     label.style.borderColor = `${theme.primaryColor}4d`;
-    // Fade in
     label.classList.remove("fade-out");
     label.classList.add("fade-in");
-    label.offsetHeight; // force reflow
+    label.offsetHeight;
     label.classList.remove("fade-in");
+    // Announce theme change to screen readers
+    const announcer = document.getElementById("theme-announce");
+    if (announcer) announcer.textContent = `${theme.label} theme selected`;
   }, 150);
 }
 
@@ -846,7 +847,22 @@ function refreshInputBorder(input, theme) {
 function refreshGenerateBtn(value, theme) {
   const btn = document.getElementById("generate-btn");
   const checkbox = document.getElementById("terms-checkbox");
-  btn.disabled = !(value.trim().length > 0 && checkbox && checkbox.checked);
+  const hint = document.getElementById("generate-hint");
+  const hasName = value.trim().length > 0;
+  const hasTerms = checkbox && checkbox.checked;
+  btn.disabled = !(hasName && hasTerms);
+
+  if (hint) {
+    if (!hasName && !hasTerms) {
+      hint.textContent = "Enter a name and agree to the terms to continue";
+    } else if (!hasName) {
+      hint.textContent = "Enter a name above to continue";
+    } else if (!hasTerms) {
+      hint.textContent = "Please agree to the terms to continue";
+    } else {
+      hint.textContent = "";
+    }
+  }
 }
 
 /* ============================================================
@@ -999,7 +1015,7 @@ function showReveal(name, photo, greeting) {
     const playerWrap = document.getElementById("spotify-player-wrap");
     const playerContainer = document.getElementById("spotify-player-container");
     if (state.spotifyTrackId) {
-      playerContainer.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${state.spotifyTrackId}?utm_source=generator&autoplay=1" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
+      playerContainer.innerHTML = `<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${encodeURIComponent(state.spotifyTrackId)}?utm_source=generator&autoplay=1" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>`;
       playerWrap.style.display = "block";
     } else {
       playerContainer.innerHTML = "";
@@ -1029,14 +1045,17 @@ function showCreate() {
     nameInput.value = "";
     const tc = document.getElementById("terms-checkbox");
     if (tc) tc.checked = false;
-    document.getElementById("spotify-input").value = "";
     state.spotifyTrackId = null;
     const si = document.getElementById("sender-input");
     if (si) si.value = "";
     state.senderName = "";
     state.greetingDocId = null;
-    state.firebasePhotoUrl = null;
+    state.greetingIndex = 0;
     clearPhoto();
+    // Reset Spotify input and hint
+    document.getElementById("spotify-input").value = "";
+    const sHint = document.getElementById("spotify-hint");
+    if (sHint) { sHint.textContent = ""; sHint.className = "spotify-hint"; }
     refreshGenerateBtn("", theme);
     refreshInputBorder(nameInput, theme);
 
@@ -1066,7 +1085,7 @@ function resetRevealAnimations() {
     "avatar-wrap",
     "greeting-section",
     "greeting-card",
-    "ad-placeholder",
+    "sponsor-zone",
     "reveal-actions",
   ];
   ids.forEach((id) => {
@@ -1084,30 +1103,15 @@ function resetRevealAnimations() {
 function showAdBanner() {
   const adspace = document.getElementById("sponsor-zone");
   if (!adspace) return;
-  adspace.style.display = "flex";
-  adspace.offsetHeight;
+  // CSS handles display:flex via .ad-visible; just add the class
   adspace.classList.add("ad-visible");
 
-  const closeBtn = document.getElementById("ad-close-btn");
-  if (closeBtn) {
-    closeBtn.onclick = () => {
-      adspace.classList.remove("ad-visible");
-      adspace.addEventListener(
-        "transitionend",
-        () => {
-          adspace.style.display = "none";
-        },
-        { once: true },
-      );
-    };
-  }
 }
 
 function hideAdBanner() {
   const adspace = document.getElementById("sponsor-zone");
   if (!adspace) return;
   adspace.classList.remove("ad-visible");
-  adspace.style.display = "none";
 }
 
 /* ============================================================
@@ -1496,11 +1500,32 @@ async function init() {
     clearPhoto();
   });
 
+  // ---- Spotify — validate on blur ----
+  const spotifyInput = document.getElementById("spotify-input");
+  const spotifyHint = document.getElementById("spotify-hint");
+  spotifyInput.addEventListener("blur", () => {
+    const val = spotifyInput.value.trim();
+    if (!val) { if (spotifyHint) spotifyHint.textContent = ""; return; }
+    if (!spotifyHint) return;
+    if (extractTrackId(val)) {
+      spotifyHint.textContent = "✓ Song added";
+      spotifyHint.className = "spotify-hint success";
+    } else {
+      spotifyHint.textContent = "Paste a full Spotify track link or spotify:track:… URI";
+      spotifyHint.className = "spotify-hint error";
+    }
+  });
+  spotifyInput.addEventListener("input", () => {
+    if (spotifyHint) { spotifyHint.textContent = ""; spotifyHint.className = "spotify-hint"; }
+  });
+
   // ---- Form Submit ----
   document.getElementById("create-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const name = nameInput.value.trim();
     if (!name) return;
+
+    const theme = THEMES[state.themeIndex];
 
     // Loading state on the button
     const genBtn = document.getElementById("generate-btn");
@@ -1510,7 +1535,6 @@ async function init() {
     genIcon.className = "fa-solid fa-spinner fa-spin";
     genLabel.textContent = "Generating…";
 
-    const spotifyInput = document.getElementById("spotify-input");
     state.spotifyTrackId = extractTrackId(spotifyInput.value.trim()) || null;
 
     const senderInput = document.getElementById("sender-input");
@@ -1518,13 +1542,13 @@ async function init() {
 
     const greeting = pickGreeting();
 
-    // Compress photo + save greeting to Firebase, then show reveal
+    // Compress photo + save to Firebase, then show reveal
     (async () => {
       const photoUrl = await compressPhoto(state.photo);
 
       await saveGreetingToDb({
         recipientName: name,
-        themeId: THEMES[state.themeIndex].id,
+        themeId: theme.id,
         greetingIndex: state.greetingIndex,
         senderName: state.senderName,
         photoUrl: photoUrl || null,
@@ -1534,7 +1558,13 @@ async function init() {
       });
 
       showReveal(name, state.photo, greeting);
-    })();
+    })().catch(() => {
+      // Restore button on unexpected failure so user can retry
+      genBtn.disabled = false;
+      genIcon.className = "fa-solid fa-wand-magic-sparkles";
+      genLabel.textContent = theme.generateLabel;
+      showToast("Something went wrong — please try again.");
+    });
   });
 
   // ---- Reveal Buttons ----
@@ -1565,7 +1595,31 @@ async function init() {
 
   document.getElementById("share-btn").addEventListener("click", handleShare);
 
-  document.getElementById("reset-btn").addEventListener("click", showCreate);
+  // ---- Start over (with brief undo window) ----
+  document.getElementById("reset-btn").addEventListener("click", () => {
+    let cancelled = false;
+    const undoTimer = setTimeout(() => {
+      if (!cancelled) showCreate();
+    }, 3200);
+    showToast("Starting over… tap to undo");
+    // Allow one tap on the toast area to cancel (toast is pointer-events: none but we can listen once)
+    const undoOnce = () => {
+      cancelled = true;
+      clearTimeout(undoTimer);
+      showToast("Cancelled — your greeting is still here.");
+      document.removeEventListener("touchstart", undoOnce);
+      document.removeEventListener("mousedown", undoOnce);
+    };
+    setTimeout(() => {
+      document.addEventListener("touchstart", undoOnce, { once: true });
+      document.addEventListener("mousedown", undoOnce, { once: true });
+      // Remove listeners after undo window expires
+      setTimeout(() => {
+        document.removeEventListener("touchstart", undoOnce);
+        document.removeEventListener("mousedown", undoOnce);
+      }, 3100);
+    }, 100); // 100ms grace so the button tap itself doesn't trigger undo
+  });
 
   // ---- Keyboard: arrow keys cycle themes on create screen ----
   document.addEventListener("keydown", (e) => {
