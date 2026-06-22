@@ -309,7 +309,7 @@ const THEMES = [
     heading: "Send a Heartfelt\nValentine's Wish",
     subtitle: "Tell someone special just how much they mean to you.",
     namePlaceholder: "Who holds your heart? 💘",
-    generateLabel: "Send My Love",
+    generateLabel: "Generate Wish",
     revealGreeting: (n) => `Happy Valentine's Day, ${n}!`,
     tagBadge: "Valentine's Day Message",
     cardEmoji: "💘",
