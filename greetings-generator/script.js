@@ -8,7 +8,7 @@ const THEMES = [
     emoji: "🎂",
     label: "Birthday",
     carouselLabel: " Birthday Greetings Generator",
-    heading: "Create a Personalized\nBirthday Wish",
+    heading: "Create a Personalized\nBirthday Greeting",
     subtitle: "Create a heartfelt message your birthday star will treasure.",
     namePlaceholder: "Who's the birthday star? 🎂",
     generateLabel: "Generate Greeting",
@@ -27,18 +27,32 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #7B1FA2 0%, #6a1b9a 50%, #ff8c00 100%)",
     namePill: { bg: "rgba(123,31,162,0.07)", border: "rgba(123,31,162,0.25)", color: "#7B1FA2" },
     topAccentLine: "linear-gradient(90deg, transparent, #7B1FA2, #ff8c00, transparent)",
-    confettiColors: ["#ff1502","#ff6d02","#ff4002","#ff0259","#dfb400","#00aeba"],
+    confettiColors: ["#ff1502", "#ff6d02", "#ff4002", "#ff0259", "#dfb400", "#00aeba"],
     sparkleColor: "rgba(223,180,0,0.75)",
-    blobColors: ["rgba(255,21,2,0.09)","rgba(255,109,2,0.07)","rgba(0,174,186,0.06)","rgba(223,180,0,0.06)"],
-    dotColors: ["#ff1502","#ff6d02","#ff4002","#ff0259","#dfb400","#00aeba","#ff1502","#ff4002"],
+    blobColors: [
+      "rgba(255,21,2,0.09)",
+      "rgba(255,109,2,0.07)",
+      "rgba(0,174,186,0.06)",
+      "rgba(223,180,0,0.06)",
+    ],
+    dotColors: [
+      "#ff1502",
+      "#ff6d02",
+      "#ff4002",
+      "#ff0259",
+      "#dfb400",
+      "#00aeba",
+      "#ff1502",
+      "#ff4002",
+    ],
     messages: [
       "May your birthday be as luminous as your spirit — overflowing with laughter, love, and every beautiful thing you deserve. Here's to a year where all your boldest dreams become your reality. You are beyond cherished. 🎂✨",
-      "Another year of being absolutely magnetic! Your light makes the whole world brighter. Wishing you a birthday filled with magic moments, genuine connections, and the kind of joy that makes time slow down. 💫🌸",
+      "Another year of being absolutely magnetic! Your light makes the whole world brighter. Sending you a birthday filled with magic moments, genuine connections, and the kind of joy that makes time slow down. 💫🌸",
       "To the most iconic person in the room — happy birthday! May this year bring you clarity, confidence, and celebrations big and small. The world is richer simply because you're in it. Keep shining exactly as you are. 🎉",
-      "On your special day, may every small thing feel extraordinary — your morning coffee, the songs on your playlist, the people who love you most. You radiate warmth wherever you go. Wishing you a year as wonderful as you are. 🌟🎈",
-      "Happy birthday! Wishing you a year that feels like your favourite playlist on a golden afternoon — full of good vibes, the right people, and moments you'll want to replay forever. You are endlessly loved. 🎶💛",
+      "On your special day, may every small thing feel extraordinary — your morning coffee, the songs on your playlist, the people who love you most. You radiate warmth wherever you go. Sending you a year as wonderful as you are. 🌟🎈",
+      "Happy birthday! Sending you a year that feels like your favourite playlist on a golden afternoon — full of good vibes, the right people, and moments you'll want to replay forever. You are endlessly loved. 🎶💛",
       "Today the universe is celebrating YOU, and honestly, same. You deserve every gift, every laugh, every sweet moment this birthday brings. May this next chapter be your most beautiful one yet. 🦋✨",
-      "Wishing you a birthday as radiant and extraordinary as you are. May this year open doors you didn't even know existed, bring you closer to your dreams, and surround you with all the love you deserve. 🌈🎂",
+      "Sending you a birthday as radiant and extraordinary as you are. May this year open doors you didn't even know existed, bring you closer to your dreams, and surround you with all the love you deserve. 🌈🎂",
       "Here's to you — the one who makes ordinary days feel like adventures. May this year bring abundance, peace, unexpected joy, and all the things that make your soul feel alive. You are so very loved. 🌙⭐",
     ],
   },
@@ -49,7 +63,7 @@ const THEMES = [
     label: "Christmas",
     carouselLabel: " Christmas Greetings Generator",
     heading: "Send a Magical\nChristmas Greeting",
-    subtitle: "Send warm seasonal wishes to someone on your nice list.",
+    subtitle: "Send warm seasonal greetings to someone on your nice list.",
     namePlaceholder: "Who's on the nice list? 🎅",
     generateLabel: "Generate Greeting",
     revealGreeting: (n) => `Merry Christmas, ${n}!`,
@@ -67,16 +81,30 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #C8102E 0%, #a00d25 50%, #16a34a 100%)",
     namePill: { bg: "rgba(200,16,46,0.07)", border: "rgba(200,16,46,0.25)", color: "#C8102E" },
     topAccentLine: "linear-gradient(90deg, transparent, #C8102E, #16a34a, transparent)",
-    confettiColors: ["#e11d48","#16a34a","#fbbf24","#be123c","#4ade80","#fca5a5"],
+    confettiColors: ["#e11d48", "#16a34a", "#fbbf24", "#be123c", "#4ade80", "#fca5a5"],
     sparkleColor: "rgba(251,191,36,0.85)",
-    blobColors: ["rgba(225,29,72,0.1)","rgba(22,163,74,0.08)","rgba(251,191,36,0.07)","rgba(225,29,72,0.06)"],
-    dotColors: ["#e11d48","#16a34a","#fbbf24","#be123c","#4ade80","#fca5a5","#e11d48","#16a34a"],
+    blobColors: [
+      "rgba(225,29,72,0.1)",
+      "rgba(22,163,74,0.08)",
+      "rgba(251,191,36,0.07)",
+      "rgba(225,29,72,0.06)",
+    ],
+    dotColors: [
+      "#e11d48",
+      "#16a34a",
+      "#fbbf24",
+      "#be123c",
+      "#4ade80",
+      "#fca5a5",
+      "#e11d48",
+      "#16a34a",
+    ],
     messages: [
-      "May your Christmas be as warm and bright as the lights on the tree — filled with laughter around the table, cozy moments by the fire, and the joy of being loved. Wishing you magic in every corner of this season. 🎄✨",
+      "May your Christmas be as warm and bright as the lights on the tree — filled with laughter around the table, cozy moments by the fire, and the joy of being loved. Sending you magic in every corner of this season. 🎄✨",
       "Season's warmest greetings! May this Christmas wrap you in all the peace, joy, and love you deserve. Here's to twinkling lights, familiar songs, and moments that make your heart feel full. 🎅🌟",
-      "Wishing you a Christmas that sparkles from morning to midnight — with festive surprises, cherished company, and memories that will last long after the decorations come down. You deserve every bit of this magic. 🎁❄️",
-      "May the spirit of Christmas fill your home with warmth, your heart with gratitude, and your days with all the love and laughter the season brings. Sending you the cosiest of holiday wishes! ☃️🕯️",
-      "Christmas is a little more special because of people like you. Wishing you a season full of wonder, rest, and togetherness — and a new year shining with everything you hope for. Merry Christmas! 🦌💛",
+      "Sending you a Christmas that sparkles from morning to midnight — with festive surprises, cherished company, and memories that will last long after the decorations come down. You deserve every bit of this magic. 🎁❄️",
+      "May the spirit of Christmas fill your home with warmth, your heart with gratitude, and your days with all the love and laughter the season brings. Sending you the cosiest of holiday greetings! ☃️🕯️",
+      "Christmas is a little more special because of people like you. Sending you a season full of wonder, rest, and togetherness — and a new year shining with everything you hope for. Merry Christmas! 🦌💛",
     ],
   },
   {
@@ -104,14 +132,28 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #00897B 0%, #00695C 50%, #dfb400 100%)",
     namePill: { bg: "rgba(0,137,123,0.07)", border: "rgba(0,137,123,0.25)", color: "#00897B" },
     topAccentLine: "linear-gradient(90deg, transparent, #00897B, #dfb400, transparent)",
-    confettiColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745"],
+    confettiColors: ["#ff6d02", "#00aeba", "#dfb400", "#ff0259", "#ff1502", "#0c8745"],
     sparkleColor: "rgba(223,180,0,0.8)",
-    blobColors: ["rgba(255,109,2,0.09)","rgba(0,174,186,0.07)","rgba(223,180,0,0.06)","rgba(255,2,89,0.05)"],
-    dotColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745","#ff6d02","#00aeba"],
+    blobColors: [
+      "rgba(255,109,2,0.09)",
+      "rgba(0,174,186,0.07)",
+      "rgba(223,180,0,0.06)",
+      "rgba(255,2,89,0.05)",
+    ],
+    dotColors: [
+      "#ff6d02",
+      "#00aeba",
+      "#dfb400",
+      "#ff0259",
+      "#ff1502",
+      "#0c8745",
+      "#ff6d02",
+      "#00aeba",
+    ],
     messages: [
-      "Wishing you an Easter overflowing with colour, hope, and new beginnings. May this season remind you of all the beauty that surrounds you and the wonderful things still ahead. You are a true gift to this world. 🌸🐣",
+      "Sending you an Easter overflowing with colour, hope, and new beginnings. May this season remind you of all the beauty that surrounds you and the wonderful things still ahead. You are a true gift to this world. 🌸🐣",
       "Happy Easter! May every egg you find, every smile you share, and every moment of this beautiful season fill your heart with the purest joy. Here's to fresh starts, blooming friendships, and all things wonderful. 🌷✨",
-      "Spring is here, and so is the perfect moment to celebrate YOU! Wishing you an Easter as vibrant and full of life as you are. May this season plant seeds of joy that bloom all year long. 🌼💛",
+      "Spring is here, and so is the perfect moment to celebrate YOU! Sending you an Easter as vibrant and full of life as you are. May this season plant seeds of joy that bloom all year long. 🌼💛",
       "May this Easter bring you renewed energy, blossoming hopes, and the warmth of everyone who loves you. You deserve a season that feels as bright and full of promise as you make every room you enter. 🐰🌸",
     ],
   },
@@ -140,10 +182,24 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #E91E63 0%, #c2185b 50%, #ff6d02 100%)",
     namePill: { bg: "rgba(233,30,99,0.07)", border: "rgba(233,30,99,0.25)", color: "#E91E63" },
     topAccentLine: "linear-gradient(90deg, transparent, #E91E63, #ff6d02, transparent)",
-    confettiColors: ["#ff0259","#ff6d02","#ff4002","#dfb400","#ff1502","#00aeba"],
+    confettiColors: ["#ff0259", "#ff6d02", "#ff4002", "#dfb400", "#ff1502", "#00aeba"],
     sparkleColor: "rgba(223,180,0,0.8)",
-    blobColors: ["rgba(255,2,89,0.09)","rgba(255,109,2,0.07)","rgba(223,180,0,0.06)","rgba(0,174,186,0.05)"],
-    dotColors: ["#ff0259","#ff6d02","#ff4002","#dfb400","#ff1502","#00aeba","#ff0259","#ff4002"],
+    blobColors: [
+      "rgba(255,2,89,0.09)",
+      "rgba(255,109,2,0.07)",
+      "rgba(223,180,0,0.06)",
+      "rgba(0,174,186,0.05)",
+    ],
+    dotColors: [
+      "#ff0259",
+      "#ff6d02",
+      "#ff4002",
+      "#dfb400",
+      "#ff1502",
+      "#00aeba",
+      "#ff0259",
+      "#ff4002",
+    ],
     messages: [
       "To the woman who made everything possible — you are the definition of unconditional love, quiet strength, and boundless grace. Thank you for being our anchor, our cheerleader, and our greatest gift. Happy Mother's Day, with all the love in the world. 💐✨",
       "There are no words powerful enough to capture everything you mean to us — but on this special day, we want you to feel every ounce of the love you have always given so freely. You deserve the world, Mum. 🌸💛",
@@ -177,10 +233,24 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #003DA5 0%, #002d7a 50%, #f97316 100%)",
     namePill: { bg: "rgba(0,61,165,0.07)", border: "rgba(0,61,165,0.25)", color: "#003DA5" },
     topAccentLine: "linear-gradient(90deg, transparent, #003DA5, #f97316, transparent)",
-    confettiColors: ["#2563eb","#f97316","#fbbf24","#1d4ed8","#fb923c","#93c5fd"],
+    confettiColors: ["#2563eb", "#f97316", "#fbbf24", "#1d4ed8", "#fb923c", "#93c5fd"],
     sparkleColor: "rgba(249,115,22,0.8)",
-    blobColors: ["rgba(37,99,235,0.1)","rgba(249,115,22,0.09)","rgba(251,191,36,0.08)","rgba(37,99,235,0.06)"],
-    dotColors: ["#2563eb","#f97316","#fbbf24","#1d4ed8","#fb923c","#93c5fd","#2563eb","#f97316"],
+    blobColors: [
+      "rgba(37,99,235,0.1)",
+      "rgba(249,115,22,0.09)",
+      "rgba(251,191,36,0.08)",
+      "rgba(37,99,235,0.06)",
+    ],
+    dotColors: [
+      "#2563eb",
+      "#f97316",
+      "#fbbf24",
+      "#1d4ed8",
+      "#fb923c",
+      "#93c5fd",
+      "#2563eb",
+      "#f97316",
+    ],
     messages: [
       "To the man who showed us what strength, patience, and love really look like — thank you for every sacrifice made quietly, every lesson taught by example, and every moment you showed up. Happy Father's Day. You are our hero, always. 👔✨",
       "Dad, your steady presence has been our greatest comfort. You lead with wisdom, love with courage, and always make us feel safe just by being there. Today we celebrate everything you are. We are beyond grateful for you. 🌟💛",
@@ -214,16 +284,30 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #00843D 0%, #006630 50%, #dfb400 100%)",
     namePill: { bg: "rgba(0,132,61,0.07)", border: "rgba(0,132,61,0.25)", color: "#00843D" },
     topAccentLine: "linear-gradient(90deg, transparent, #00843D, #dfb400, transparent)",
-    confettiColors: ["#0ea5e9","#d4a017","#fbbf24","#0284c7","#38bdf8","#fde68a"],
+    confettiColors: ["#0ea5e9", "#d4a017", "#fbbf24", "#0284c7", "#38bdf8", "#fde68a"],
     sparkleColor: "rgba(212,160,23,0.85)",
-    blobColors: ["rgba(14,165,233,0.1)","rgba(212,160,23,0.09)","rgba(251,191,36,0.07)","rgba(14,165,233,0.06)"],
-    dotColors: ["#0ea5e9","#d4a017","#fbbf24","#0284c7","#38bdf8","#fde68a","#0ea5e9","#d4a017"],
+    blobColors: [
+      "rgba(14,165,233,0.1)",
+      "rgba(212,160,23,0.09)",
+      "rgba(251,191,36,0.07)",
+      "rgba(14,165,233,0.06)",
+    ],
+    dotColors: [
+      "#0ea5e9",
+      "#d4a017",
+      "#fbbf24",
+      "#0284c7",
+      "#38bdf8",
+      "#fde68a",
+      "#0ea5e9",
+      "#d4a017",
+    ],
     messages: [
       "Eid Mubarak! May this blessed occasion fill your heart with peace, your home with joy, and your life with the warmth of all those you love. Taqabbalallahu minna wa minkum — may Allah accept from us and from you. 🌙✨",
-      "On this beautiful day of celebration and gratitude, I send you my warmest wishes. May your Eid be as radiant as the crescent moon, as sweet as the finest dates, and filled with all the blessings your heart can hold. ☪️🌟",
-      "Wishing you an Eid filled with divine blessings, cherished family moments, and the deep contentment that comes from faith and gratitude. May Allah's mercy and grace surround you always. Eid Mubarak, dear friend! 🌙💛",
+      "On this beautiful day of celebration and gratitude, I send you my warmest greetings. May your Eid be as radiant as the crescent moon, as sweet as the finest dates, and filled with all the blessings your heart can hold. ☪️🌟",
+      "Sending you an Eid filled with divine blessings, cherished family moments, and the deep contentment that comes from faith and gratitude. May Allah's mercy and grace surround you always. Eid Mubarak, dear friend! 🌙💛",
       "May the spirit of Eid bring you renewed hope, abundant joy, and togetherness with all who matter most. Sending you prayers of peace and happiness on this sacred and joyful occasion. Eid Mubarak! 🕌✨",
-      "Eid Mubarak! May your prayers be answered, your heart be at peace, and this celebration remind you of all the beauty and blessings that surround you. You are thought of with the warmest of wishes today. 🌙🌟",
+      "Eid Mubarak! May your prayers be answered, your heart be at peace, and this celebration remind you of all the beauty and blessings that surround you. You are thought of with the warmest of greetings today. 🌙🌟",
     ],
   },
   {
@@ -232,8 +316,8 @@ const THEMES = [
     emoji: "🎆",
     label: "New Year",
     carouselLabel: " New Year's Greetings Generator",
-    heading: "Ring in the New Year\nwith a Beautiful Wish",
-    subtitle: "Start the new year right with a heartfelt wish for someone you love.",
+    heading: "Ring in the New Year\nwith a Beautiful Greeting",
+    subtitle: "Start the new year right with a heartfelt greeting for someone you love.",
     namePlaceholder: "Who's stepping into the new year? 🥂",
     generateLabel: "Generate Greeting",
     revealGreeting: (n) => `Happy New Year, ${n}!`,
@@ -251,15 +335,29 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #b35f00 0%, #cc7000 50%, #e65100 100%)",
     namePill: { bg: "rgba(255,143,0,0.09)", border: "rgba(255,143,0,0.38)", color: "#b35f00" },
     topAccentLine: "linear-gradient(90deg, transparent, #FF8F00, #ff4500, transparent)",
-    confettiColors: ["#9333ea","#f59e0b","#dc2626","#7e22ce","#fbbf24","#c084fc"],
+    confettiColors: ["#9333ea", "#f59e0b", "#dc2626", "#7e22ce", "#fbbf24", "#c084fc"],
     sparkleColor: "rgba(245,158,11,0.9)",
-    blobColors: ["rgba(147,51,234,0.1)","rgba(245,158,11,0.09)","rgba(220,38,38,0.07)","rgba(147,51,234,0.06)"],
-    dotColors: ["#9333ea","#f59e0b","#dc2626","#7e22ce","#fbbf24","#c084fc","#9333ea","#f59e0b"],
+    blobColors: [
+      "rgba(147,51,234,0.1)",
+      "rgba(245,158,11,0.09)",
+      "rgba(220,38,38,0.07)",
+      "rgba(147,51,234,0.06)",
+    ],
+    dotColors: [
+      "#9333ea",
+      "#f59e0b",
+      "#dc2626",
+      "#7e22ce",
+      "#fbbf24",
+      "#c084fc",
+      "#9333ea",
+      "#f59e0b",
+    ],
     messages: [
-      "Happy New Year! As the clock strikes midnight and a new chapter begins, I wish you a year filled with bold adventures, meaningful connections, and all the abundance your heart desires. The best is truly yet to come. 🥂✨",
-      "Here's to a brand new year — a blank canvas waiting for your most beautiful story. May this year bring you clarity, courage, and countless reasons to smile. Wishing you health, happiness, and everything wonderful. 🎆🌟",
+      "Happy New Year! As the clock strikes midnight and a new chapter begins, I hope you have a year filled with bold adventures, meaningful connections, and all the abundance your heart desires. The best is truly yet to come. 🥂✨",
+      "Here's to a brand new year — a blank canvas waiting for your most beautiful story. May this year bring you clarity, courage, and countless reasons to smile. Sending you health, happiness, and everything wonderful. 🎆🌟",
       "As we step into the new year together, I'm grateful for everything you bring to this world. May this year exceed every expectation, surprise you in the most beautiful ways, and feel like the fresh start you've been waiting for. Happy New Year! 🥂💛",
-      "New year, same extraordinary you — but with new opportunities, new possibilities, and a whole world of moments waiting to be lived. Wishing you a year as incredible as you are. Let's make it one for the books. 🎇🌙",
+      "New year, same extraordinary you — but with new opportunities, new possibilities, and a whole world of moments waiting to be lived. Sending you a year as incredible as you are. Let's make it one for the books. 🎇🌙",
       "May the new year wrap you in hope, fill your path with light, and bring you closer to everything you've been working toward. You deserve a year that matches the size of your dreams. Happy New Year! 🎆✨",
     ],
   },
@@ -288,15 +386,29 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #AD1457 0%, #880e4f 50%, #dfb400 100%)",
     namePill: { bg: "rgba(173,20,87,0.07)", border: "rgba(173,20,87,0.25)", color: "#AD1457" },
     topAccentLine: "linear-gradient(90deg, transparent, #AD1457, #dfb400, transparent)",
-    confettiColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745"],
+    confettiColors: ["#ff6d02", "#00aeba", "#dfb400", "#ff0259", "#ff1502", "#0c8745"],
     sparkleColor: "rgba(223,180,0,0.8)",
-    blobColors: ["rgba(255,109,2,0.09)","rgba(0,174,186,0.07)","rgba(223,180,0,0.06)","rgba(255,2,89,0.05)"],
-    dotColors: ["#ff6d02","#00aeba","#dfb400","#ff0259","#ff1502","#0c8745","#ff6d02","#00aeba"],
+    blobColors: [
+      "rgba(255,109,2,0.09)",
+      "rgba(0,174,186,0.07)",
+      "rgba(223,180,0,0.06)",
+      "rgba(255,2,89,0.05)",
+    ],
+    dotColors: [
+      "#ff6d02",
+      "#00aeba",
+      "#dfb400",
+      "#ff0259",
+      "#ff1502",
+      "#0c8745",
+      "#ff6d02",
+      "#00aeba",
+    ],
     messages: [
-      "Wishing you a season filled with cosy moments, warm laughter, and the quiet magic that only this time of year brings. May your holidays be everything you hoped for and your heart feel full of gratitude and joy. Happy Holidays! 🎁✨",
-      "As the year draws to a close, I want you to know how much joy you bring to everyone around you. Wishing you the most wonderful holiday season — filled with warmth, togetherness, and all the little things that matter most. 🌟🎁",
+      "Sending you a season filled with cosy moments, warm laughter, and the quiet magic that only this time of year brings. May your holidays be everything you hoped for and your heart feel full of gratitude and joy. Happy Holidays! 🎁✨",
+      "As the year draws to a close, I want you to know how much joy you bring to everyone around you. Sending you the most wonderful holiday season — filled with warmth, togetherness, and all the little things that matter most. 🌟🎁",
       "Happy Holidays! May your season be wrapped in warmth, your days be merry and bright, and your home filled with the sounds of laughter and love. Here's to celebrating the beauty of the season with everyone you hold dear. ❄️🕯️",
-      "Sending you the warmest wishes this holiday season — for rest, for joy, for connection, and for all the magic that lives in this special time of year. You deserve every bit of light and happiness coming your way. 🎁💛",
+      "Sending you the warmest greetings this holiday season — for rest, for joy, for connection, and for all the magic that lives in this special time of year. You deserve every bit of light and happiness coming your way. 🎁💛",
       "Whatever this season means to you, may it bring you peace, joy, and the presence of the people who make life worth celebrating. Happy Holidays — you are so very loved and appreciated. 🌟🎁",
     ],
   },
@@ -306,7 +418,7 @@ const THEMES = [
     emoji: "💘",
     label: "Valentine's Day",
     carouselLabel: " Valentine's Greetings Generator",
-    heading: "Send a Heartfelt\nValentine's Wish",
+    heading: "Send a Heartfelt\nValentine's Greeting",
     subtitle: "Tell someone special just how much they mean to you.",
     namePlaceholder: "Who holds your heart? 💘",
     generateLabel: "Generate Greeting",
@@ -325,10 +437,24 @@ const THEMES = [
     headingGradient: "linear-gradient(135deg, #C2185B 0%, #880e4f 50%, #FF8F00 100%)",
     namePill: { bg: "rgba(194,24,91,0.07)", border: "rgba(194,24,91,0.25)", color: "#C2185B" },
     topAccentLine: "linear-gradient(90deg, transparent, #C2185B, #FF8F00, transparent)",
-    confettiColors: ["#C2185B","#FF8F00","#E91E63","#ff4081","#fce4ec","#ffccbc"],
+    confettiColors: ["#C2185B", "#FF8F00", "#E91E63", "#ff4081", "#fce4ec", "#ffccbc"],
     sparkleColor: "rgba(255,64,129,0.85)",
-    blobColors: ["rgba(194,24,91,0.10)","rgba(255,143,0,0.09)","rgba(233,30,99,0.08)","rgba(194,24,91,0.06)"],
-    dotColors: ["#C2185B","#FF8F00","#E91E63","#ff4081","#C2185B","#FF8F00","#880e4f","#E91E63"],
+    blobColors: [
+      "rgba(194,24,91,0.10)",
+      "rgba(255,143,0,0.09)",
+      "rgba(233,30,99,0.08)",
+      "rgba(194,24,91,0.06)",
+    ],
+    dotColors: [
+      "#C2185B",
+      "#FF8F00",
+      "#E91E63",
+      "#ff4081",
+      "#C2185B",
+      "#FF8F00",
+      "#880e4f",
+      "#E91E63",
+    ],
     messages: [
       "You make every day feel like Valentine's Day — but today is just an extra reminder of how completely you've stolen my heart. Thank you for being the person who makes this world a more beautiful place simply by being in it. I love you more than words will ever fully capture. 💘✨",
       "Happy Valentine's Day to the one who holds my whole heart. You are the kind of love I used to only read about — patient, warm, real, and absolutely extraordinary. Every single moment with you is my favourite. Here's to us and every beautiful day ahead. 💕🌹",
@@ -343,31 +469,31 @@ const THEMES = [
    FLOATING ELEMENT POSITIONS (from FloatingElements.tsx)
    ============================================================ */
 const SPARKLE_POSITIONS = [
-  { x: "8%",  y: "12%", size: 16, delay: 0,   dur: 3.2 },
-  { x: "88%", y: "8%",  size: 12, delay: 0.8, dur: 2.8 },
-  { x: "5%",  y: "55%", size: 20, delay: 1.4, dur: 3.6 },
+  { x: "8%", y: "12%", size: 16, delay: 0, dur: 3.2 },
+  { x: "88%", y: "8%", size: 12, delay: 0.8, dur: 2.8 },
+  { x: "5%", y: "55%", size: 20, delay: 1.4, dur: 3.6 },
   { x: "92%", y: "45%", size: 14, delay: 0.3, dur: 2.5 },
   { x: "15%", y: "85%", size: 10, delay: 1.8, dur: 3.0 },
   { x: "80%", y: "78%", size: 18, delay: 0.6, dur: 3.4 },
-  { x: "45%", y: "4%",  size:  8, delay: 2.0, dur: 2.6 },
+  { x: "45%", y: "4%", size: 8, delay: 2.0, dur: 2.6 },
   { x: "72%", y: "22%", size: 22, delay: 1.1, dur: 3.8 },
 ];
 
 const DOT_POSITIONS = [
-  { x: "12%", y: "20%", size: 8,  delay: 0.2 },
-  { x: "85%", y: "15%", size: 6,  delay: 1.0 },
+  { x: "12%", y: "20%", size: 8, delay: 0.2 },
+  { x: "85%", y: "15%", size: 6, delay: 1.0 },
   { x: "20%", y: "70%", size: 10, delay: 0.5 },
-  { x: "75%", y: "65%", size: 7,  delay: 1.5 },
-  { x: "60%", y: "88%", size: 9,  delay: 0.8 },
-  { x: "35%", y: "92%", size: 6,  delay: 1.2 },
+  { x: "75%", y: "65%", size: 7, delay: 1.5 },
+  { x: "60%", y: "88%", size: 9, delay: 0.8 },
+  { x: "35%", y: "92%", size: 6, delay: 1.2 },
   { x: "90%", y: "55%", size: 11, delay: 0.4 },
-  { x: "3%",  y: "38%", size: 8,  delay: 1.7 },
+  { x: "3%", y: "38%", size: 8, delay: 1.7 },
 ];
 
 const BLOB_POSITIONS = [
   { cx: "15%", cy: "20%", r: "120px", idx: 0 },
   { cx: "85%", cy: "25%", r: "100px", idx: 1 },
-  { cx: "10%", cy: "75%", r:  "90px", idx: 2 },
+  { cx: "10%", cy: "75%", r: "90px", idx: 2 },
   { cx: "82%", cy: "72%", r: "130px", idx: 3 },
 ];
 
@@ -399,9 +525,9 @@ const state = {
   senderName: "",
   photo: null,
   firebasePhotoUrl: null,
-  wish: "",
-  wishIndex: 0,
-  wishDocId: null,
+  greeting: "",
+  greetingIndex: 0,
+  greetingDocId: null,
   spotifyTrackId: null,
   transitioning: false,
 };
@@ -533,34 +659,45 @@ function showDropZoneError(message) {
   err.className = "dz-error";
   err.textContent = message;
   document.getElementById("dz-empty").appendChild(err);
-  setTimeout(() => { if (err.parentNode) err.remove(); }, 3500);
+  setTimeout(() => {
+    if (err.parentNode) err.remove();
+  }, 3500);
 }
 
 /* ============================================================
-   SMALL CONFETTI — for wish regeneration
-   ============================================================ */
+  SMALL CONFETTI — for greeting regeneration
+  ============================================================ */
 function fireSmallConfetti(theme) {
-  if (typeof confetti === 'undefined') return;
+  if (typeof confetti === "undefined") return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const colors = theme.confettiColors;
-  confetti({ origin: { y: 0.55 }, particleCount: 40, spread: 70, startVelocity: 30, colors, decay: 0.9 });
+  confetti({
+    origin: { y: 0.55 },
+    particleCount: 40,
+    spread: 70,
+    startVelocity: 30,
+    colors,
+    decay: 0.9,
+  });
 }
 
 /* ============================================================
    APPLY THEME — updates all dynamic styles
    ============================================================ */
 function darkenHex(hex, amount) {
-  const n = parseInt(hex.replace('#', ''), 16);
-  const r = Math.max(0, (n >> 16)        - Math.round(255 * amount));
+  const n = parseInt(hex.replace("#", ""), 16);
+  const r = Math.max(0, (n >> 16) - Math.round(255 * amount));
   const g = Math.max(0, ((n >> 8) & 0xff) - Math.round(255 * amount));
-  const b = Math.max(0, (n & 0xff)        - Math.round(255 * amount));
-  return '#' + ((r << 16) | (g << 8) | b).toString(16).padStart(6, '0');
+  const b = Math.max(0, (n & 0xff) - Math.round(255 * amount));
+  return "#" + ((r << 16) | (g << 8) | b).toString(16).padStart(6, "0");
 }
 
 function applyTheme(theme) {
   // Page title + localStorage
-  document.title = `${theme.label} Wish Generator`;
-  try { localStorage.setItem("lastTheme", String(state.themeIndex)); } catch (_) {}
+  document.title = `${theme.label} Greetings Generator`;
+  try {
+    localStorage.setItem("lastTheme", String(state.themeIndex));
+  } catch (_) {}
 
   // Carousel dots
   renderCarouselDots(state.themeIndex, theme);
@@ -570,9 +707,9 @@ function applyTheme(theme) {
 
   // Sync CSS variables so every var(--primary) consumer gets the right color
   // Must be set on body (not html) to win over the body class cascade
-  document.body.style.setProperty('--primary',       theme.primaryColor);
-  document.body.style.setProperty('--secondary',     theme.secondaryColor);
-  document.body.style.setProperty('--primary-hover', darkenHex(theme.primaryColor, 0.14));
+  document.body.style.setProperty("--primary", theme.primaryColor);
+  document.body.style.setProperty("--secondary", theme.secondaryColor);
+  document.body.style.setProperty("--primary-hover", darkenHex(theme.primaryColor, 0.14));
 
   // Carousel buttons
   ["prev-btn", "next-btn"].forEach((id) => {
@@ -626,8 +763,6 @@ function applyRevealTheme(theme) {
   badge.style.background = `linear-gradient(135deg, ${theme.goldColor}, ${theme.primaryColor})`;
   badge.textContent = theme.cardEmoji;
 
-
-
   // Card emoji box
   const emojiBox = document.getElementById("card-emoji-box");
   emojiBox.style.background = `${theme.primaryColor}22`;
@@ -637,18 +772,18 @@ function applyRevealTheme(theme) {
   // Card badge text
   document.getElementById("card-badge-text").textContent = theme.tagBadge;
 
-  // Share Your Wish (primary action)
+  // Share Your Greeting (primary action)
   const shareBtn = document.getElementById("share-btn");
   if (shareBtn) {
     shareBtn.style.background = theme.primaryColor;
-    shareBtn.style.boxShadow  = theme.buttonShadow;
+    shareBtn.style.boxShadow = theme.buttonShadow;
   }
 
   // Try a Different Message (secondary) — border and text follow theme color
-  const newWishBtn = document.getElementById("new-wish-btn");
-  if (newWishBtn) {
-    newWishBtn.style.borderColor = theme.primaryColor;
-    newWishBtn.style.color       = theme.primaryColor;
+  const newGreetingBtn = document.getElementById("new-greeting-btn");
+  if (newGreetingBtn) {
+    newGreetingBtn.style.borderColor = theme.primaryColor;
+    newGreetingBtn.style.color = theme.primaryColor;
   }
 
   // Start over (tertiary ghost) — color comes from var(--primary) in CSS, no inline override needed
@@ -701,9 +836,7 @@ function updateHeading(theme) {
    ============================================================ */
 function refreshInputBorder(input, theme) {
   const hasValue = input.value.length > 0;
-  input.style.border = hasValue
-    ? `1.5px solid ${theme.primaryColor}99`
-    : "1.5px solid #dddddd";
+  input.style.border = hasValue ? `1.5px solid ${theme.primaryColor}99` : "1.5px solid #dddddd";
   input.style.boxShadow = hasValue ? `0 0 0 4px ${theme.primaryColor}22` : "none";
 }
 
@@ -751,29 +884,31 @@ function clearPhoto() {
 }
 
 /* ============================================================
-   PICK WISH — random message from current theme
+   PICK GREETING — random message from current theme
    ============================================================ */
-function pickWish() {
+function pickGreeting() {
   const pool = THEMES[state.themeIndex].messages;
-  state.wishIndex = Math.floor(Math.random() * pool.length);
-  return pool[state.wishIndex];
+  state.greetingIndex = Math.floor(Math.random() * pool.length);
+  return pool[state.greetingIndex];
 }
 
 /* ============================================================
-   CONFETTI — matches WishRevealScreen.tsx
-   ============================================================ */
+  CONFETTI — matches GreetingRevealScreen.tsx
+  ============================================================ */
 function fireConfetti(theme) {
-  if (typeof confetti === 'undefined') return;
+  if (typeof confetti === "undefined") return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   const colors = theme.confettiColors;
   function fire(ratio, opts) {
-    confetti(Object.assign({ origin: { y: 0.6 }, particleCount: Math.floor(200 * ratio), colors }, opts));
+    confetti(
+      Object.assign({ origin: { y: 0.6 }, particleCount: Math.floor(200 * ratio), colors }, opts),
+    );
   }
-  fire(0.25, { spread: 26,  startVelocity: 55 });
-  fire(0.2,  { spread: 60 });
+  fire(0.25, { spread: 26, startVelocity: 55 });
+  fire(0.2, { spread: 60 });
   fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-  fire(0.1,  { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-  fire(0.1,  { spread: 120, startVelocity: 45 });
+  fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+  fire(0.1, { spread: 120, startVelocity: 45 });
 }
 
 /* ============================================================
@@ -827,21 +962,21 @@ function transitionTo(newScreenId, setupFn) {
 /* ============================================================
    SHOW REVEAL SCREEN
    ============================================================ */
-function showReveal(name, photo, wish) {
+function showReveal(name, photo, greeting) {
   const theme = THEMES[state.themeIndex];
 
   transitionTo("reveal-screen", () => {
     state.name = name;
     state.photo = photo;
-    state.wish = wish;
+    state.greeting = greeting;
 
-    // Greeting text
+    // Greeting heading
     const greetingEl = document.getElementById("greeting-heading");
     greetingEl.textContent = theme.revealGreeting(name);
     greetingEl.style.backgroundImage = theme.headingGradient;
 
-    // Wish text
-    document.getElementById("wish-text").textContent = wish;
+    // Greeting text
+    document.getElementById("greeting-text").textContent = greeting;
 
     // Avatar photo or heart icon
     const avatarImg = document.getElementById("avatar-img");
@@ -899,7 +1034,7 @@ function showCreate() {
     const si = document.getElementById("sender-input");
     if (si) si.value = "";
     state.senderName = "";
-    state.wishDocId = null;
+    state.greetingDocId = null;
     state.firebasePhotoUrl = null;
     clearPhoto();
     refreshGenerateBtn("", theme);
@@ -918,7 +1053,7 @@ function showCreate() {
 
     state.name = "";
     state.photo = null;
-    state.wish = "";
+    state.greeting = "";
   });
 }
 
@@ -927,7 +1062,13 @@ function showCreate() {
    when navigating create → reveal multiple times
    ============================================================ */
 function resetRevealAnimations() {
-  const ids = ["avatar-wrap", "greeting-section", "wish-card", "ad-placeholder", "reveal-actions"];
+  const ids = [
+    "avatar-wrap",
+    "greeting-section",
+    "greeting-card",
+    "ad-placeholder",
+    "reveal-actions",
+  ];
   ids.forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -951,9 +1092,13 @@ function showAdBanner() {
   if (closeBtn) {
     closeBtn.onclick = () => {
       adspace.classList.remove("ad-visible");
-      adspace.addEventListener("transitionend", () => {
-        adspace.style.display = "none";
-      }, { once: true });
+      adspace.addEventListener(
+        "transitionend",
+        () => {
+          adspace.style.display = "none";
+        },
+        { once: true },
+      );
     };
   }
 }
@@ -966,34 +1111,34 @@ function hideAdBanner() {
 }
 
 /* ============================================================
-   SHARE FUNCTIONALITY — matches WishRevealScreen.tsx
-   ============================================================ */
+  SHARE FUNCTIONALITY — matches GreetingRevealScreen.tsx
+  ============================================================ */
 async function handleShare() {
   const theme = THEMES[state.themeIndex];
 
   const base = window.location.href.split("?")[0];
   const fromParam = state.senderName ? `&from=${encodeURIComponent(state.senderName)}` : "";
-  const shareUrl = state.wishDocId
-    ? `${base}?id=${state.wishDocId}${fromParam}`
-    : base;
+  const shareUrl = state.greetingDocId ? `${base}?id=${state.greetingDocId}${fromParam}` : base;
 
   const themeIntros = {
-    "birthday":      `🎂 Someone has been thinking of you on your special day...`,
-    "christmas":     `🎄 A little Christmas magic is waiting for you...`,
-    "easter":        `🌸 A joyful Easter surprise has found its way to you...`,
-    "mothers-day":   `💐 Someone wants to celebrate the incredible person you are...`,
-    "fathers-day":   `👔 A heartfelt message is waiting for you today...`,
-    "eid":           `🌙 Eid Mubarak — someone sent you warm blessings...`,
-    "new-year":      `🥂 A new year wish has found its way to you...`,
-    "happy-holidays":`❄️ A holiday surprise is waiting for you...`,
-    "valentines":    `💘 Someone has sent you a heartfelt Valentine's message...`,
+    birthday: `🎂 Someone has been thinking of you on your special day...`,
+    christmas: `🎄 A little Christmas magic is waiting for you...`,
+    easter: `🌸 A joyful Easter surprise has found its way to you...`,
+    "mothers-day": `💐 Someone wants to celebrate the incredible person you are...`,
+    "fathers-day": `👔 A heartfelt message is waiting for you today...`,
+    eid: `🌙 Eid Mubarak — someone sent you warm blessings...`,
+    "new-year": `🥂 A new year greeting has found its way to you...`,
+    "happy-holidays": `❄️ A holiday surprise is waiting for you...`,
+    valentines: `💘 Someone has sent you a heartfelt Valentine's message...`,
   };
 
-  const intro = themeIntros[theme.id] || `${theme.cardEmoji} A special ${theme.label} greeting is waiting for you...`;
+  const intro =
+    themeIntros[theme.id] ||
+    `${theme.cardEmoji} A special ${theme.label} greeting is waiting for you...`;
 
   const senderLine = state.senderName
-    ? `*${state.senderName}* put together a personal ${theme.label} message just for you — filled with warmth and heartfelt wishes.`
-    : `Someone special put together a personal ${theme.label} message just for you — filled with warmth and heartfelt wishes.`;
+    ? `*${state.senderName}* put together a personal ${theme.label} message just for you — filled with warmth and heartfelt greetings.`
+    : `Someone special put together a personal ${theme.label} message just for you — filled with warmth and heartfelt greetings.`;
 
   const title = state.senderName
     ? `${state.senderName} sent you a ${theme.label} surprise!`
@@ -1036,8 +1181,8 @@ function setTheme(index) {
 }
 
 /* ============================================================
-   FIREBASE HELPERS — save & load wish
-   ============================================================ */
+  FIREBASE HELPERS — save & load greeting
+  ============================================================ */
 
 // Compress photo client-side to a small JPEG (no Storage needed)
 async function compressPhoto(base64DataUrl) {
@@ -1048,7 +1193,7 @@ async function compressPhoto(base64DataUrl) {
       const MAX = 400;
       const scale = Math.min(1, MAX / Math.max(img.width, img.height));
       const canvas = document.createElement("canvas");
-      canvas.width  = Math.round(img.width  * scale);
+      canvas.width = Math.round(img.width * scale);
       canvas.height = Math.round(img.height * scale);
       canvas.getContext("2d").drawImage(img, 0, 0, canvas.width, canvas.height);
       resolve(canvas.toDataURL("image/jpeg", 0.72));
@@ -1066,19 +1211,22 @@ function generateShortId() {
   return id;
 }
 
-// Save the full wish to Firestore, return the document ID
-async function saveWishToDb(data) {
+// Save the full greeting to Firestore, return the document ID
+async function saveGreetingToDb(data) {
   if (!window.db) return null;
   const TIMEOUT_MS = 7000;
   try {
     const id = generateShortId();
     await Promise.race([
-      window.db.collection("wishes").doc(id).set({
-        ...data,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      }),
+      window.db
+        .collection("greetings")
+        .doc(id)
+        .set({
+          ...data,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        }),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Firestore save timeout")), TIMEOUT_MS)
+        setTimeout(() => reject(new Error("Firestore save timeout")), TIMEOUT_MS),
       ),
     ]);
     return id;
@@ -1088,25 +1236,25 @@ async function saveWishToDb(data) {
   }
 }
 
-// Update the wishIndex on an existing Firestore document
-async function updateWishIndex(docId, wishIndex) {
+// Update the greetingIndex on an existing Firestore document
+async function updateGreetingIndex(docId, greetingIndex) {
   if (!window.db || !docId) return;
   try {
-    await window.db.collection("wishes").doc(docId).update({ wishIndex });
+    await window.db.collection("greetings").doc(docId).update({ greetingIndex });
   } catch (e) {
     console.error("Firestore update failed:", e);
   }
 }
 
-// Load a wish document by ID from Firestore (with 8s timeout for offline/slow networks)
-async function loadWishFromDb(docId) {
+// Load a greeting document by ID from Firestore (with 8s timeout for offline/slow networks)
+async function loadGreetingFromDb(docId) {
   if (!window.db) return null;
   const TIMEOUT_MS = 8000;
   try {
     const result = await Promise.race([
-      window.db.collection("wishes").doc(docId).get(),
+      window.db.collection("greetings").doc(docId).get(),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Firestore load timeout")), TIMEOUT_MS)
+        setTimeout(() => reject(new Error("Firestore load timeout")), TIMEOUT_MS),
       ),
     ]);
     return result.exists ? result.data() : null;
@@ -1117,8 +1265,8 @@ async function loadWishFromDb(docId) {
 }
 
 /* ============================================================
-   LOAD FROM SHARED URL — auto-show wish when ?id= param exists
-   ============================================================ */
+  LOAD FROM SHARED URL — auto-show greeting when ?id= param exists
+  ============================================================ */
 const LOADER_MESSAGES = [
   "Hold on, magic incoming ✨",
   "Someone's thinking of you 👀",
@@ -1136,23 +1284,38 @@ function startLoaderMessages() {
   _loaderMsgTimer = setInterval(() => {
     i = (i + 1) % LOADER_MESSAGES.length;
     el.style.opacity = "0";
-    setTimeout(() => { el.textContent = LOADER_MESSAGES[i]; el.style.opacity = "1"; }, 220);
+    setTimeout(() => {
+      el.textContent = LOADER_MESSAGES[i];
+      el.style.opacity = "1";
+    }, 220);
   }, 1800);
 }
 
 function dismissLoader() {
-  if (_loaderMsgTimer) { clearInterval(_loaderMsgTimer); _loaderMsgTimer = null; }
+  if (_loaderMsgTimer) {
+    clearInterval(_loaderMsgTimer);
+    _loaderMsgTimer = null;
+  }
   const loader = document.getElementById("shared-loader");
   if (!loader) return;
   loader.classList.add("loader-out");
-  loader.addEventListener("transitionend", () => { loader.style.display = "none"; }, { once: true });
+  loader.addEventListener(
+    "transitionend",
+    () => {
+      loader.style.display = "none";
+    },
+    { once: true },
+  );
   document.documentElement.classList.remove("is-shared");
 }
 
 function showExpiredLinkUI() {
   const loader = document.getElementById("shared-loader");
   const loaderBox = loader ? loader.querySelector(".loader-box") : null;
-  if (!loaderBox) { dismissLoader(); return; }
+  if (!loaderBox) {
+    dismissLoader();
+    return;
+  }
   // Replace loader content with a friendly expired message
   loaderBox.innerHTML = `
     <span class="loader-icon" style="animation:none">💌</span>
@@ -1163,38 +1326,44 @@ function showExpiredLinkUI() {
     <a href="${window.location.pathname}"
        style="margin-top:4px;display:inline-flex;align-items:center;gap:9px;background:#ff1502;color:white;font-family:'Nunito',sans-serif;font-weight:700;font-size:.92rem;padding:13px 26px;border-radius:12px;text-decoration:none;box-shadow:0 6px 18px rgba(255,21,2,.28)">
       <i class="fa-solid fa-wand-magic-sparkles"></i>
-      Create Your Wish — Free
+      Create Your Greeting — Free
     </a>
   `;
-  if (_loaderMsgTimer) { clearInterval(_loaderMsgTimer); _loaderMsgTimer = null; }
+  if (_loaderMsgTimer) {
+    clearInterval(_loaderMsgTimer);
+    _loaderMsgTimer = null;
+  }
 }
 
 async function loadFromUrl() {
   const params = new URLSearchParams(window.location.search);
-  const docId  = params.get("id");
+  const docId = params.get("id");
   if (!docId) return false;
 
-  const data = await loadWishFromDb(docId);
+  const data = await loadGreetingFromDb(docId);
   if (!data) {
     showExpiredLinkUI();
     return false;
   }
 
   const themeIndex = THEMES.findIndex((t) => t.id === data.themeId);
-  if (themeIndex === -1) { dismissLoader(); return false; }
+  if (themeIndex === -1) {
+    dismissLoader();
+    return false;
+  }
 
   const theme = THEMES[themeIndex];
-  const wish  = theme.messages[data.wishIndex] || theme.messages[0];
+  const greeting = theme.messages[data.greetingIndex] || theme.messages[0];
 
-  state.themeIndex     = themeIndex;
-  state.wishIndex      = data.wishIndex || 0;
-  state.senderName     = data.senderName || "";
+  state.themeIndex = themeIndex;
+  state.greetingIndex = data.greetingIndex || 0;
+  state.senderName = data.senderName || "";
   state.spotifyTrackId = data.spotifyTrackId || null;
 
   applyTheme(theme);
   document.getElementById("app").classList.add("app-ready");
   dismissLoader();
-  showReveal(data.recipientName, data.photoUrl || null, wish);
+  showReveal(data.recipientName, data.photoUrl || null, greeting);
   return true;
 }
 
@@ -1214,14 +1383,14 @@ async function init() {
   if (document.documentElement.classList.contains("is-shared")) startLoaderMessages();
   if (await loadFromUrl()) {
     // Recipient view — hide sender-only buttons
-    document.getElementById("new-wish-btn").style.display = "none";
+    document.getElementById("new-greeting-btn").style.display = "none";
     document.getElementById("share-btn").style.display = "none";
 
-    // Make reset button a primary CTA: "Generate Your Wish"
+    // Make reset button a primary CTA: "Generate Your Greeting"
     const resetBtn = document.getElementById("reset-btn");
     resetBtn.className = "btn-primary-action";
-    resetBtn.style.removeProperty('color');
-    resetBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generate Your Wish`;
+    resetBtn.style.removeProperty("color");
+    resetBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generate Your Greeting`;
     resetBtn.addEventListener("click", () => {
       window.location.href = window.location.pathname;
     });
@@ -1347,48 +1516,50 @@ async function init() {
     const senderInput = document.getElementById("sender-input");
     state.senderName = senderInput ? senderInput.value.trim() : "";
 
-    const wish = pickWish();
+    const greeting = pickGreeting();
 
-    // Compress photo + save wish to Firebase, then show reveal
+    // Compress photo + save greeting to Firebase, then show reveal
     (async () => {
       const photoUrl = await compressPhoto(state.photo);
 
-      await saveWishToDb({
+      await saveGreetingToDb({
         recipientName: name,
-        themeId:       THEMES[state.themeIndex].id,
-        wishIndex:     state.wishIndex,
-        senderName:    state.senderName,
-        photoUrl:      photoUrl || null,
+        themeId: THEMES[state.themeIndex].id,
+        greetingIndex: state.greetingIndex,
+        senderName: state.senderName,
+        photoUrl: photoUrl || null,
         spotifyTrackId: state.spotifyTrackId || null,
-      }).then((docId) => { state.wishDocId = docId || null; });
+      }).then((docId) => {
+        state.greetingDocId = docId || null;
+      });
 
-      showReveal(name, state.photo, wish);
+      showReveal(name, state.photo, greeting);
     })();
   });
 
   // ---- Reveal Buttons ----
-  document.getElementById("new-wish-btn").addEventListener("click", () => {
-    const newWish = pickWish();
-    state.wish = newWish;
+  document.getElementById("new-greeting-btn").addEventListener("click", () => {
+    const newGreeting = pickGreeting();
+    state.greeting = newGreeting;
 
     // Sync the new message to Firestore so the shared link shows it
-    updateWishIndex(state.wishDocId, state.wishIndex);
+    updateGreetingIndex(state.greetingDocId, state.greetingIndex);
 
-    // Animate wish text swap
-    const wishText = document.getElementById("wish-text");
-    wishText.style.transition = "opacity 0.18s ease";
-    wishText.style.opacity = "0";
+    // Animate greeting text swap
+    const greetingText = document.getElementById("greeting-text");
+    greetingText.style.transition = "opacity 0.18s ease";
+    greetingText.style.opacity = "0";
     setTimeout(() => {
-      wishText.textContent = newWish;
-      wishText.style.opacity = "1";
+      greetingText.textContent = newGreeting;
+      greetingText.style.opacity = "1";
     }, 180);
 
     // Card bounce + small confetti celebration
-    const wishCard = document.getElementById("wish-card");
-    wishCard.classList.remove("bouncing");
-    wishCard.offsetHeight;
-    wishCard.classList.add("bouncing");
-    setTimeout(() => wishCard.classList.remove("bouncing"), 450);
+    const greetingCard = document.getElementById("greeting-card");
+    greetingCard.classList.remove("bouncing");
+    greetingCard.offsetHeight;
+    greetingCard.classList.add("bouncing");
+    setTimeout(() => greetingCard.classList.remove("bouncing"), 450);
     fireSmallConfetti(THEMES[state.themeIndex]);
   });
 
@@ -1411,18 +1582,26 @@ async function init() {
 
   // ---- Touch swipe: cycle themes on create screen ----
   let _touchStartX = 0;
-  document.addEventListener("touchstart", (e) => {
-    if (state.screen !== "create") return;
-    _touchStartX = e.changedTouches[0].clientX;
-  }, { passive: true });
-  document.addEventListener("touchend", (e) => {
-    if (state.screen !== "create") return;
-    if (e.target.closest("input, .drop-zone, button")) return;
-    const dx = e.changedTouches[0].clientX - _touchStartX;
-    if (Math.abs(dx) > 50) {
-      setTheme((state.themeIndex + (dx < 0 ? 1 : -1) + THEMES.length) % THEMES.length);
-    }
-  }, { passive: true });
+  document.addEventListener(
+    "touchstart",
+    (e) => {
+      if (state.screen !== "create") return;
+      _touchStartX = e.changedTouches[0].clientX;
+    },
+    { passive: true },
+  );
+  document.addEventListener(
+    "touchend",
+    (e) => {
+      if (state.screen !== "create") return;
+      if (e.target.closest("input, .drop-zone, button")) return;
+      const dx = e.changedTouches[0].clientX - _touchStartX;
+      if (Math.abs(dx) > 50) {
+        setTheme((state.themeIndex + (dx < 0 ? 1 : -1) + THEMES.length) % THEMES.length);
+      }
+    },
+    { passive: true },
+  );
 }
 
 /* ============================================================
