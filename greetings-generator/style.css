@@ -1548,6 +1548,68 @@ html.is-shared .shared-loader {
 }
 
 /* ============================================================
+   SHARED TEASER SCREEN
+   ============================================================ */
+.shared-inner {
+  gap: 0;
+  text-align: center;
+}
+
+.teaser-envelope {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 28px;
+  display: block;
+  animation: teaserFloat 2.8s ease-in-out infinite;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.12));
+  user-select: none;
+}
+
+@keyframes teaserFloat {
+  0%, 100% { transform: translateY(0) rotate(-4deg) scale(1); }
+  50%       { transform: translateY(-14px) rotate(4deg) scale(1.06); }
+}
+
+.teaser-from {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeSlideUp 0.5s var(--ease-spring) 0.2s both;
+  transition: color var(--dur-base) var(--ease-in-out);
+}
+
+.teaser-heading {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeSlideUp 0.55s var(--ease-spring) 0.35s both;
+}
+
+.teaser-sub {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #888888;
+  margin-bottom: 32px;
+  line-height: 1.55;
+  opacity: 0;
+  animation: fadeSlideUp 0.55s var(--ease-spring) 0.45s both;
+}
+
+.teaser-btn {
+  opacity: 0;
+  animation: fadeSlideUp 0.55s var(--ease-spring) 0.55s both;
+}
+
+/* ============================================================
    GREETING CARD BOUNCE (on regenerate)
    ============================================================ */
 @keyframes cardBounce {
