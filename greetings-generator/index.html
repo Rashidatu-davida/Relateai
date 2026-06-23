@@ -299,6 +299,30 @@
         </div>
       </div>
 
+      <!-- ===================== SHARED TEASER SCREEN ===================== -->
+      <div id="shared-screen" class="screen" style="display: none">
+        <div class="floating-elements" id="shared-floats" aria-hidden="true"></div>
+
+        <div class="screen-inner shared-inner">
+          <!-- Big animated envelope -->
+          <div class="teaser-envelope" id="teaser-envelope" aria-hidden="true">💌</div>
+
+          <!-- Who sent it -->
+          <p class="teaser-from" id="teaser-from"></p>
+
+          <!-- Heading -->
+          <h1 class="teaser-heading" id="teaser-heading">You have a special greeting waiting for you</h1>
+
+          <p class="teaser-sub">Tap below to open your personal message</p>
+
+          <!-- Reveal button -->
+          <button class="generate-btn teaser-btn" id="shared-reveal-btn">
+            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+            <strong>Open Your Greeting</strong>
+          </button>
+        </div>
+      </div>
+
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </div>
     <!-- /#app -->
