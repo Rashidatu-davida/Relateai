@@ -1218,24 +1218,35 @@ function generateShortId() {
 // Save the full greeting to Firestore, return the document ID
 async function saveGreetingToDb(data) {
   if (!window.db) return null;
-  const TIMEOUT_MS = 7000;
+  const id = generateShortId();
+
+  const writePromise = window.db
+    .collection("wishes")
+    .doc(id)
+    .set({
+      ...data,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
   try {
-    const id = generateShortId();
     await Promise.race([
-      window.db
-        .collection("greetings")
-        .doc(id)
-        .set({
-          ...data,
-          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-        }),
+      writePromise,
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Firestore save timeout")), TIMEOUT_MS),
+        setTimeout(() => reject(new Error("SAVE_TIMEOUT")), 10000)
       ),
     ]);
     return id;
   } catch (e) {
-    console.warn("Firestore save skipped:", e.message);
+    if (e.message === "SAVE_TIMEOUT") {
+      // Slow connection — write is still in flight; return ID so share URL works.
+      // If the write later fails, log it but don't surface it to the user.
+      writePromise.catch((err) =>
+        console.error("Firestore delayed save failed:", err.message)
+      );
+      return id;
+    }
+    // Actual Firestore error (permission denied, quota, etc.)
+    console.error("Firestore save failed:", e.message, e.code || "");
     return null;
   }
 }
@@ -1244,7 +1255,7 @@ async function saveGreetingToDb(data) {
 async function updateGreetingIndex(docId, greetingIndex) {
   if (!window.db || !docId) return;
   try {
-    await window.db.collection("greetings").doc(docId).update({ greetingIndex });
+    await window.db.collection("wishes").doc(docId).update({ greetingIndex });
   } catch (e) {
     console.error("Firestore update failed:", e);
   }
@@ -1256,7 +1267,7 @@ async function loadGreetingFromDb(docId) {
   const TIMEOUT_MS = 8000;
   try {
     const result = await Promise.race([
-      window.db.collection("greetings").doc(docId).get(),
+      window.db.collection("wishes").doc(docId).get(),
       new Promise((_, reject) =>
         setTimeout(() => reject(new Error("Firestore load timeout")), TIMEOUT_MS),
       ),
@@ -1367,8 +1378,74 @@ async function loadFromUrl() {
   applyTheme(theme);
   document.getElementById("app").classList.add("app-ready");
   dismissLoader();
-  showReveal(data.recipientName, data.photoUrl || null, greeting);
+
+  // Show teaser screen first — recipient taps to reveal
+  showSharedTeaser(data, theme, greeting);
   return true;
+}
+
+/* ============================================================
+   SHARED TEASER SCREEN — shown to recipient before reveal
+   ============================================================ */
+function showSharedTeaser(data, theme, greeting) {
+  const screen = document.getElementById("shared-screen");
+  const createScreen = document.getElementById("create-screen");
+
+  // Hide create screen, show teaser
+  createScreen.style.display = "none";
+  screen.style.display = "flex";
+
+  // Populate content
+  const fromEl = document.getElementById("teaser-from");
+  if (fromEl) {
+    fromEl.textContent = data.senderName
+      ? `A greeting from ${data.senderName}`
+      : "Someone special sent you a greeting";
+  }
+
+  const headingEl = document.getElementById("teaser-heading");
+  if (headingEl) {
+    headingEl.textContent = data.recipientName
+      ? `Hey ${data.recipientName}! You have a special ${theme.label} greeting waiting for you 🎉`
+      : `You have a special ${theme.label} greeting waiting for you`;
+  }
+
+  // Update the envelope emoji to match the theme
+  const envelopeEl = document.getElementById("teaser-envelope");
+  if (envelopeEl) envelopeEl.textContent = theme.emoji;
+
+  // Render floating elements for teaser screen
+  renderFloatingElements("shared-floats", theme, false);
+
+  // Reveal button — transitions to the actual greeting
+  const revealBtn = document.getElementById("shared-reveal-btn");
+  if (revealBtn) {
+    revealBtn.addEventListener("click", () => {
+      // Animate teaser out
+      screen.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+      screen.style.opacity = "0";
+      screen.style.transform = "scale(0.97)";
+      setTimeout(() => {
+        screen.style.display = "none";
+
+        // Show reveal screen with recipient-only UI
+        showReveal(data.recipientName, data.photoUrl || null, greeting);
+
+        // Recipient view — hide sender-only actions
+        document.getElementById("new-greeting-btn").style.display = "none";
+        document.getElementById("share-btn").style.display = "none";
+
+        // Replace "Start over" with "Create Your Own Greeting"
+        const resetBtn = document.getElementById("reset-btn");
+        resetBtn.className = "btn-primary-action";
+        resetBtn.style.removeProperty("opacity");
+        resetBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Create Your Own Greeting`;
+        resetBtn.onclick = () => {
+          window.location.href = window.location.pathname;
+        };
+      }, 320);
+    }, { once: true });
+  }
 }
 
 /* ============================================================
@@ -1385,21 +1462,7 @@ async function init() {
 
   // If opened via a shared link, start loader messages then fetch data
   if (document.documentElement.classList.contains("is-shared")) startLoaderMessages();
-  if (await loadFromUrl()) {
-    // Recipient view — hide sender-only buttons
-    document.getElementById("new-greeting-btn").style.display = "none";
-    document.getElementById("share-btn").style.display = "none";
-
-    // Make reset button a primary CTA: "Generate Your Greeting"
-    const resetBtn = document.getElementById("reset-btn");
-    resetBtn.className = "btn-primary-action";
-    resetBtn.style.removeProperty("color");
-    resetBtn.innerHTML = `<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> Generate Your Greeting`;
-    resetBtn.addEventListener("click", () => {
-      window.location.href = window.location.pathname;
-    });
-    return;
-  }
+  if (await loadFromUrl()) return;
 
   // Apply theme first, then reveal app so styles are never seen unstyled
   applyTheme(THEMES[state.themeIndex]);
