@@ -763,8 +763,6 @@ function applyRevealTheme(theme) {
   badge.style.background = `linear-gradient(135deg, ${theme.goldColor}, ${theme.primaryColor})`;
   badge.textContent = theme.cardEmoji;
 
-  // Card badge text
-  document.getElementById("card-badge-text").textContent = theme.tagBadge;
 
   // Card accent line — solid primary color
   const accentLine = document.getElementById("card-accent-line");
@@ -773,20 +771,6 @@ function applyRevealTheme(theme) {
     accentLine.style.background = theme.primaryColor;
   }
 
-  // Badge pill — background and border tinted from primary
-  const badgePill = document.getElementById("card-badge-pill");
-  if (badgePill) {
-    badgePill.style.background = `${theme.primaryColor}18`;
-    badgePill.style.borderColor = `${theme.primaryColor}33`;
-  }
-
-  // Emoji box inside pill — no border/background needed now
-  const emojiBox = document.getElementById("card-emoji-box");
-  if (emojiBox) {
-    emojiBox.style.background = "none";
-    emojiBox.style.border = "none";
-    emojiBox.textContent = theme.cardEmoji;
-  }
 }
 
 /* ============================================================
