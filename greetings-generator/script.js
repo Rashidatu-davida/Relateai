@@ -782,7 +782,7 @@ function updateCarouselLabel(theme) {
   setTimeout(() => {
     document.getElementById("carousel-emoji").textContent = theme.emoji;
     document.getElementById("carousel-text").textContent = theme.carouselLabel;
-    const byEl = document.getElementById("by-relateai");
+    const byEl = document.getElementById("by-cheers");
     if (byEl) byEl.style.color = theme.primaryColor;
     document.getElementById("carousel-text").style.color = theme.primaryColor;
     label.style.background = `${theme.primaryColor}1a`;
