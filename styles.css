@@ -716,7 +716,13 @@ section { padding: 80px 0; }
   .proof-sep  { display: none; }
 }
 @media (max-width: 479px) {
-  .hero-visual { display: none; }
+  .hero-visual { margin-top: 28px; overflow: hidden; }
+  .hero-card-scene {
+    width: 260px;
+    height: 400px;
+    transform: scale(1);
+  }
+  .hc-center { width: 220px; height: 338px; }
   .hero { padding: 28px 0 0; }
   .hero-buttons { flex-direction: column; gap: 12px; }
   .hero-buttons .primary-btn,
